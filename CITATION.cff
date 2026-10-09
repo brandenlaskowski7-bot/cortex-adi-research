@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the published ADI v1.0 preprint using its version DOI."
+type: article
+title: "Artificial Deterministic Intelligence: Probabilistic Reasoning, Deterministic Authority"
+authors:
+  - family-names: "Laskowski"
+    given-names: "Branden"
+    affiliation: "Cortex Agentics Global"
+version: "1.0"
+date-released: "2026-10-09"
+doi: "10.5281/zenodo.23265200"
+url: "https://github.com/brandenlaskowski7-bot/cortex-adi-research"
+license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23265199"
+    description: "Concept DOI for all versions of the umbrella ADI paper"
+abstract: >-
+  ADI separates bounded probabilistic inference from externally governed authority,
+  memory admission, execution rights, state transitions, verification, and release.
+  Architectural synthesis and bounded first-party evidence; independent replication
+  and full enforcement-boundary validation remain open.
+keywords:
+  - Artificial Deterministic Intelligence
+  - governed memory
+  - model substitution
+  - deterministic authority

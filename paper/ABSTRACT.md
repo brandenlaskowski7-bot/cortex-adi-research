@@ -1,0 +1,13 @@
+# Artificial Deterministic Intelligence: Probabilistic Reasoning, Deterministic Authority
+
+Branden Laskowski · Cortex Agentics Global · v1.0 · 9 October 2026
+
+## Abstract
+
+Language models can propose useful actions without being reliable authorities over the systems that execute them. We define Artificial Deterministic Intelligence (ADI) as an architectural approach in which probabilistic models provide bounded inference while identity, authority, memory admission, policy, execution rights, state transitions, verification, and release are governed by deterministic systems external to the model. Determinism refers to specified control decisions under explicit state and inputs; it does not imply deterministic generation, correct policies, truthful memory, or universal safety. We present a layered reference model and separate conceptual requirements from observations in a governed research evidence ledger. In a first-party synthetic memory benchmark of 30 designs repeated three times per arm, scoped 8B and 35B configurations each met the recorded acceptance contract on 90/90 jobs, while scoped 4B and broader-context 35B configurations accepted 72/90 and 46/90; 43 broader-context responses were truncated under the fixed output budget. A separate eight-task context-admission diagnostic retained PARTIAL overall parity despite matching the corrected context condition. Historical memory tests provide bounded implementation evidence; worker- construction performance records with incomplete artifact lineage remain excluded. These observations motivate, but do not establish, the complete ADI architecture. The proposal synthesizes established work on reference monitors, capability security, formal methods, runtime assurance, neuro-symbolic systems, and governed agents. Its contribution is an explicit lifecycle-wide authority contract, an evidence taxonomy, and falsifiable evaluation questions. Independent replication, comparative evaluation, and validation of the full enforcement boundary remain open. &nbsp;
+
+## Publication notes
+
+This is a preprint, not a peer-reviewed acceptance. Version DOI: [10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200). Concept DOI: [10.5281/zenodo.23265199](https://doi.org/10.5281/zenodo.23265199). License: CC BY 4.0.
+
+The PDF matches the corrected archival file exactly. Its statements about unassigned DOI and private-staging metadata reflect drafting history; the public record and this metadata establish the current publication status. Private companion files referenced by the manuscript are not supplied in this public package. Their absence limits outside verification.
