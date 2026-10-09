@@ -8,7 +8,7 @@
 - [Fixture schema](fixture-schema.json), [12 fixtures](fixtures/), [scoring](scoring.md)
 - [Python client](client/run_fixture.py), [example requests](examples/)
 - [Failure report](../../.github/ISSUE_TEMPLATE/challenge-failure.yml)
-- [Hugging Face preparation](../../huggingface/README.md) — not published there
+- [Gradio Space client](../../huggingface/space/README.md) and [owner upload instructions](../../huggingface/space/LAUNCH.md) — prepared, not published on Hugging Face; [dataset preparation](../../huggingface/README.md) remains separate
 
 Run a synthetic fixture against the public endpoint:
 

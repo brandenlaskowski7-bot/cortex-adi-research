@@ -28,3 +28,7 @@ Read [Claims and limitations](CLAIMS_AND_LIMITATIONS.md), [contribution guidance
 ## License and scope
 
 The ADI paper and original research documentation, synthetic challenge fixtures, and client examples in this repository are licensed under [CC BY 4.0](LICENSE), matching the published Zenodo record. Attribution remains required. Third-party works retain their own terms. This license does not cover unreleased software, implementations, private evidence, or trademarks. Only the files in this new public repository are distributed; the research preparation repository remains private.
+
+## Developer demo preparation
+
+An [upload-ready Gradio Space client](huggingface/space/README.md) offers six guided synthetic memory scenarios with decisions, reasons, and receipts. Local end-to-end and visitor-isolation checks passed. **The Space is not published on Hugging Face.** [Owner creation and go-live instructions](huggingface/space/LAUNCH.md) preserve a private review step before public launch.
