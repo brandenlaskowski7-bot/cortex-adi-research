@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/brandenlaskowski7-bot/cortex-adi-research/challenges/governed-memory/fixture-schema.json",
+  "title": "Cortex Governed Memory Challenge Fixture v0.1",
+  "type": "object",
+  "required": ["challenge_id","subject_id","scope","operations","query","expected_invariant"],
+  "properties": {
+    "challenge_id": {"type":"string","minLength":1},
+    "subject_id": {"type":"string","pattern":"^synthetic-"},
+    "scope": {"type":"string","minLength":1},
+    "operations": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["type"],
+        "properties":{
+          "type":{"enum":["admit","correct","supersede","expire","conflict","duplicate","malformed"]},
+          "record_id":{"type":"string"},
+          "content":{"type":"string"},
+          "source_id":{"type":"string"},
+          "effective_at":{"type":"string"},
+          "expires_at":{"type":["string","null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "query":{"type":"object"},
+    "expected_invariant":{"type":"string","minLength":1}
+  },
+  "additionalProperties": false
+}
