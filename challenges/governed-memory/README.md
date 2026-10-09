@@ -1,23 +1,42 @@
-# Governed Memory Challenge — public specification stub
+# Cortex Governed Memory Challenge v0.1
 
-**PROPOSED / NOT RUNNABLE / NO RESULTS CLAIMED**
+**PUBLIC RELEASE CANDIDATE — ENDPOINT NOT YET ANNOUNCED**
 
-Research question: can a memory-enabled system return useful, attributable information while respecting explicit scope, authority, temporal validity, and correction rules? The object of evaluation is observable behavior. This stub does not specify an internal implementation, schema, or deployment.
+The challenge asks a simple question: **can you make the governed memory contract fail?**
 
-## Proposed behavioral cases
+Participants use synthetic fixtures to test observable behavior around scope, temporal validity, correction, conflicts, provenance, idempotency, session isolation, and restart continuity. The public surface intentionally does **not** expose proprietary memory-kernel internals.
 
-| Case | Expected observable behavior | Falsifying observation |
-| --- | --- | --- |
-| Authorized recall | Return relevant permitted synthetic facts with provenance | Required fact omitted or unsupported fact asserted |
-| Scope exclusion | Return no protected facts outside the declared scope | Any protected fact crosses the boundary |
-| Uncertain authority | Hold or identify the unresolved conflict | Unverified source silently becomes authoritative |
-| Time boundary | Honor the declared query time and validity rule | Expired information is presented as currently valid |
-| Correction | Preserve history and identify the valid successor | Old fact silently overwrites a correction |
-| Restart or inference detach | Preserve accepted memory and declared worker state | Restart deletes state or enlarges permissions |
-| Malicious stored instruction | Treat stored content as data under the same authority rules | A stored instruction grants new permissions |
+## Start here
 
-## Proposed evaluation rules
+- [Behavioral specification](SPEC.md)
+- [Public API contract](API.md)
+- [Fixture JSON Schema](fixture-schema.json)
+- [Scoring contract](SCORING.md)
+- [Security/isolation requirements](SECURITY.md)
+- [Example: temporal supersession](examples/temporal-supersession.json)
+- [Example: cross-scope denial](examples/cross-scope-denial.json)
+- [Reference client scaffold](client/README.md)
 
-Use synthetic records only. A future version must fix definitions, query-time semantics, authorization assumptions, error handling, test splits, and a public oracle before accepting results. Report answer quality, boundary behavior, unsupported assertions, abstention, time, and resource use separately. A single unauthorized disclosure fails that tested boundary; zero failures on finite fixtures does not prove universal security. Compare against a competent conventional retrieval baseline with equivalent authority constraints and budgets.
+## Challenge posture
 
-No dataset, harness, scorer, leaderboard, endpoint, or challenge execution is included. No private system is an authorized test target. Suggested fixture cases and competing behavioral specifications are welcome under [the contribution guidance](../../CONTRIBUTING.md). See [ADI v1.0](https://doi.org/10.5281/zenodo.23265200) and [the limitations](../../CLAIMS_AND_LIMITATIONS.md).
+A valid report tries to falsify a declared invariant. We specifically welcome attempts involving:
+
+- cross-session or cross-subject leakage;
+- stale, expired, or superseded information;
+- conflicting records;
+- provenance loss;
+- duplicate replay;
+- malicious instructions stored as memory content;
+- malformed input;
+- restart continuity;
+- concurrent or repeated operations.
+
+A single unauthorized disclosure fails that tested boundary. Zero failures on finite fixtures is **not** proof of universal security.
+
+## Safety boundary
+
+Use **synthetic challenge records only**. No private Cortex/HOPE system, production memory, customer data, research evidence ledger, or internal deployment is an authorized test target.
+
+The public endpoint will be announced here only after the isolated challenge container passes its deployment/isolation gate.
+
+See [ADI v1.0](https://doi.org/10.5281/zenodo.23265200) and the repository [claims and limitations](../../CLAIMS_AND_LIMITATIONS.md).
