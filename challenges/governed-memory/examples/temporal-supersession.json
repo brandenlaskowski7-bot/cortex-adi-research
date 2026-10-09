@@ -1,0 +1,26 @@
+{
+  "challenge_id": "temporal-supersession-001",
+  "subject_id": "synthetic-user-17",
+  "scope": "profile.preference",
+  "operations": [
+    {
+      "type": "admit",
+      "record_id": "r1",
+      "content": "Preferred office is Wilmington",
+      "source_id": "synthetic-source-a",
+      "effective_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "supersede",
+      "record_id": "r2",
+      "content": "Preferred office is Georgetown",
+      "source_id": "synthetic-source-b",
+      "effective_at": "2026-06-01T00:00:00Z"
+    }
+  ],
+  "query": {
+    "text": "What is the current preferred office?",
+    "as_of": "2026-10-09T00:00:00Z"
+  },
+  "expected_invariant": "Return Georgetown as current and preserve Wilmington as superseded history."
+}
