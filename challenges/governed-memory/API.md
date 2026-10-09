@@ -1,6 +1,6 @@
 # HTTP API — v0.1
 
-Local example base: `http://127.0.0.1:8808`. No internet base URL has been announced. POST requires `Content-Type: application/json`. Bodies are at most 8,192 bytes; headers at most 4,096 bytes. Encoded/chunked requests and browser cross-origin requests are unsupported. No CORS is enabled.
+Public base: **`https://challenge.aiadvantage.shop`**. TLS is required; HTTP requests do not execute challenge operations. Use the current client or an explicit descriptive `User-Agent` such as `CortexGovernedMemoryChallenge/0.1`; the Cloudflare edge may reject generic Python user-agents. POST requires `Content-Type: application/json`. Bodies are at most 8,192 bytes. Keep client headers within 4,096 bytes; excessive headers are rejected. Encoded/chunked requests and browser-origin requests are unsupported. No CORS is enabled. Requests must use the exact documented paths without query strings.
 
 Except for session creation, root information, and health, send:
 

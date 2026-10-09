@@ -22,7 +22,7 @@ class Client:
         self.observations=[]
 
     def request(self,method,path,body=None,session=None,raw=None,headers=None):
-        h={'Content-Type':'application/json'}
+        h={'Content-Type':'application/json','User-Agent':'CortexGovernedMemoryChallenge/0.1'}
         if session:
             s=self.sessions[session]
             h.update({'X-Challenge-Session':s['session_id'],'Authorization':'Bearer '+s['token']})
