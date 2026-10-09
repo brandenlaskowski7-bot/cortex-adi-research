@@ -1,0 +1,50 @@
+name: Public challenge HTTPS check
+on:
+  workflow_dispatch:
+  push:
+    branches: [release/governed-memory-challenge-v0.1]
+    paths: [.github/workflows/public-challenge-check.yml]
+permissions:
+  contents: read
+jobs:
+  public-api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Verify public HTTPS from a hosted runner
+        shell: python
+        run: |
+          import importlib.util, json, pathlib, sys
+          root=pathlib.Path('challenges/governed-memory')
+          spec=importlib.util.spec_from_file_location('client',root/'client/run_fixture.py')
+          mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+          c=mod.Client('https://challenge.aiadvantage.shop')
+          try:
+              assert c.request('GET','/healthz')[0]==200
+              status,info=c.request('GET','/')
+              assert status==200 and info['status']=='PUBLIC_SYNTHETIC_SANDBOX'
+              print('PASS public DNS, certificate-verified HTTPS, health, and root')
+              c.initialize()
+              passed=0
+              for path in sorted((root/'fixtures').glob('*.json')):
+                  if path.name.startswith('09-'):continue
+                  result=c.run(json.loads(path.read_text()))
+                  assert result['status']=='PASS'
+                  passed+=1
+              assert passed==11
+              print('PASS 11 public behavioral fixtures')
+              print('NOT TESTED here: operator kernel restart; verified separately by owner')
+              assert c.request('POST','/v1/challenge/query',{})[0]==401
+              c.reset()
+              status,receipt=c.request('POST','/v1/challenge/records',json.loads((root/'examples/admit.json').read_text()),'a')
+              assert status==200
+              path='/v1/challenge/result/'+receipt['receipt_id']
+              assert c.request('GET',path,session='a')==(200,receipt)
+              assert c.request('GET',path,session='b')[0]==404
+              c.reset()
+              print('PASS missing authentication, authenticated receipt retrieval, and cross-session receipt denial')
+              print('PASS all six API routes over the public URL; synthetic test data only')
+          except Exception as error:
+              print('FAIL public verification:',type(error).__name__)
+              sys.exit(1)
