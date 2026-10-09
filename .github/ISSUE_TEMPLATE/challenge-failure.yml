@@ -1,0 +1,37 @@
+name: Governed Memory Challenge failure
+description: Report a synthetic invariant violation in an authorized sandbox
+title: '[Challenge v0.1] '
+body:
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safe reproduction
+      options:
+        - label: Only synthetic fixtures and safe responses are included, with no tokens, private data, logs, or source.
+          required: true
+        - label: I tested only an explicitly authorized challenge endpoint.
+          required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Contract revision and fixture ID
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Synthetic fixture and operation order
+      description: Include concurrency and restart steps. Remove credentials.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Expected result, actual safe responses, and receipt IDs
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Invariant, reproduction count, and limitations

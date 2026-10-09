@@ -1,0 +1,10 @@
+{
+  "record_id": "synthetic-record-1",
+  "subject": "synthetic-subject-1",
+  "scope": "synthetic-scope-1",
+  "key": "synthetic-key-1",
+  "value": "synthetic-value-1",
+  "provenance": "synthetic-source-1",
+  "effective_at": "2026-01-01T00:00:00.000Z",
+  "idempotency_key": "synthetic-request-1"
+}
