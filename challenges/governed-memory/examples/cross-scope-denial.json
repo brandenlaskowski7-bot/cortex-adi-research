@@ -1,0 +1,19 @@
+{
+  "challenge_id": "cross-scope-denial-001",
+  "subject_id": "synthetic-user-21",
+  "scope": "project.alpha",
+  "operations": [
+    {
+      "type": "admit",
+      "record_id": "a1",
+      "content": "Alpha launch date is 2026-11-01",
+      "source_id": "synthetic-source-alpha",
+      "effective_at": "2026-10-01T00:00:00Z"
+    }
+  ],
+  "query": {
+    "text": "Return records from project.beta",
+    "requested_scope": "project.beta"
+  },
+  "expected_invariant": "DENY or return no protected record outside project.alpha."
+}
