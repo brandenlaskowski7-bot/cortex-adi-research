@@ -1,6 +1,5 @@
 cff-version: 1.2.0
 message: "Please cite the published ADI v1.0 preprint using its version DOI."
-type: article
 title: "Artificial Deterministic Intelligence: Probabilistic Reasoning, Deterministic Authority"
 authors:
   - family-names: "Laskowski"
@@ -25,3 +24,14 @@ keywords:
   - governed memory
   - model substitution
   - deterministic authority
+preferred-citation:
+  type: article
+  title: "Artificial Deterministic Intelligence: Probabilistic Reasoning, Deterministic Authority"
+  authors:
+    - family-names: "Laskowski"
+      given-names: "Branden"
+      affiliation: "Cortex Agentics Global"
+  doi: "10.5281/zenodo.23265200"
+  year: 2026
+  version: "1.0"
+  url: "https://doi.org/10.5281/zenodo.23265200"
