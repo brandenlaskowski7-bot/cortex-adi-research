@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "id": "07-provenance",
+  "synthetic": true,
+  "steps": [
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-1",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "value": "synthetic-value-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-1"
+      },
+      "expected": {
+        "decision": "HOLD",
+        "provenance_present": false
+      }
+    },
+    {
+      "path": "/v1/challenge/query",
+      "body": {
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "as_of": "2026-10-09T00:00:00.000Z"
+      },
+      "expected": {
+        "decision": "HOLD"
+      }
+    }
+  ]
+}

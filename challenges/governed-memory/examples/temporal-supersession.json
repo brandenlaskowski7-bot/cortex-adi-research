@@ -1,0 +1,80 @@
+{
+  "version": "0.1",
+  "id": "04-supersession",
+  "synthetic": true,
+  "steps": [
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-1",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "value": "synthetic-value-1",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-1"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-2",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "value": "synthetic-value-2",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-06-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-2",
+        "supersedes": "synthetic-record-1"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/query",
+      "body": {
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "as_of": "2026-10-09T00:00:00.000Z"
+      },
+      "expected": {
+        "decision": "RETURN",
+        "record_id": "synthetic-record-2"
+      }
+    },
+    {
+      "path": "/v1/challenge/query",
+      "body": {
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "as_of": "2026-10-09T00:00:00.000Z",
+        "record_id": "synthetic-record-1"
+      },
+      "expected": {
+        "decision": "SUPERSEDED",
+        "record_id": "synthetic-record-1"
+      }
+    },
+    {
+      "path": "/v1/challenge/query",
+      "body": {
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "as_of": "2026-05-01T00:00:00.000Z"
+      },
+      "expected": {
+        "decision": "RETURN",
+        "record_id": "synthetic-record-1"
+      }
+    }
+  ]
+}

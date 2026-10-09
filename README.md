@@ -23,8 +23,8 @@ ADI is the umbrella paper. One supporting paper is planned per week, subject to 
 
 ## Examine and challenge the claims
 
-Read [Claims and limitations](CLAIMS_AND_LIMITATIONS.md), [contribution guidance](CONTRIBUTING.md), and the [governed-memory challenge stub](challenges/governed-memory/README.md). We welcome falsification attempts, contrary results, competing explanations, and technical criticism. No runnable challenge, public raw corpus, independent replication, or peer-review acceptance is claimed.
+Read [Claims and limitations](CLAIMS_AND_LIMITATIONS.md), [contribution guidance](CONTRIBUTING.md), and the [governed-memory challenge v0.1](challenges/governed-memory/README.md). The owner-operated challenge is live at **[https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**. It accepts synthetic structured-symbolic operations only; it is not production Cortex, a natural-language system, or a general security guarantee. We welcome bounded falsification attempts within the published API and limits. Kernel implementation, private evidence, independent replication, and peer-review acceptance are not claimed or distributed.
 
 ## License and scope
 
-The ADI paper and original research documentation in this repository are licensed under [CC BY 4.0](LICENSE), matching the published Zenodo record. Attribution remains required. Third-party works retain their own terms. This license does not cover unreleased software, implementations, private evidence, or trademarks. Only the files in this new public repository are distributed; the research preparation repository remains private.
+The ADI paper and original research documentation, synthetic challenge fixtures, and client examples in this repository are licensed under [CC BY 4.0](LICENSE), matching the published Zenodo record. Attribution remains required. Third-party works retain their own terms. This license does not cover unreleased software, implementations, private evidence, or trademarks. Only the files in this new public repository are distributed; the research preparation repository remains private.

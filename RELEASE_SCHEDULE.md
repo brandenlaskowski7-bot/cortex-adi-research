@@ -25,3 +25,7 @@ Monday–Wednesday: evidence reconciliation, drafting, technical criticism, and 
 Readiness progresses through RESEARCH, DRAFT, EVIDENCE REVIEW, FINAL REVIEW, READY TO RELEASE, and PUBLISHED. HELD records unresolved evidence or review dependencies. No supporting paper currently has READY TO RELEASE status. Each future release needs its own PDF, citation/version metadata, bounded claims and limitations, approved evidence summary, and disclosure review. The umbrella DOIs do not identify unpublished supporting papers.
 
 New evidence updates later papers or explicitly versioned corrections. It does not silently revise a frozen result or erase a failed attempt.
+
+## Governed memory challenge
+
+v0.1 contract, fixtures, and client are on `release/governed-memory-challenge-v0.1`. The local sandbox has bounded first-party verification. No internet endpoint, public GitHub Release, or Hugging Face publication is announced. Supporting-paper release states are unchanged.

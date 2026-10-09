@@ -1,0 +1,7 @@
+# Challenge security and isolation
+
+Use only synthetic fixtures and an explicitly authorized endpoint. No private or production system is a target. The public API cannot expose storage, SQL, shell, filesystem browsing, arbitrary tools, policy source, internal errors, or private evidence. Session tokens must not appear in reports.
+
+The public sandbox uses dedicated synthetic state, authenticated session/scope boundaries, HTTPS, rate and size limits, safe response projection, and receipts. The exact v0.1 API and limits are in [API.md](API.md). Session lifetime is owner-controlled, bounded by total capacity; explicit reset clears only the caller's data. Automatic time-based expiration and automatic reclamation of session slots are not implemented in v0.1. Capacity exhaustion may require owner intervention. Do not submit real personal data or production credentials.
+
+The designated endpoint is **[https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**. Authorization covers bounded tests of the documented synthetic API only, not unrelated hostnames, services, destructive denial-of-service testing, or production Cortex. First-party public-URL checks passed; finite checks are not a general security guarantee or independent security review. Vulnerability reports should contain only safe synthetic reproduction material; use the failure template and omit credentials, raw deployment evidence, and internal topology.

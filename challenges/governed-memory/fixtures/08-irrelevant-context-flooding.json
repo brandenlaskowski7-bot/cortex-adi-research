@@ -1,0 +1,421 @@
+{
+  "version": "0.1",
+  "id": "08-irrelevant-context-flooding",
+  "synthetic": true,
+  "steps": [
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-1",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "value": "synthetic-value-1",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-1"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-2",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-2",
+        "value": "synthetic-value-2",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-2"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-3",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-3",
+        "value": "synthetic-value-3",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-3"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-4",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-4",
+        "value": "synthetic-value-4",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-4"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-5",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-5",
+        "value": "synthetic-value-5",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-5"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-6",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-6",
+        "value": "synthetic-value-6",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-6"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-7",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-7",
+        "value": "synthetic-value-7",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-7"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-8",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-8",
+        "value": "synthetic-value-8",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-8"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-9",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-9",
+        "value": "synthetic-value-9",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-9"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-10",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-10",
+        "value": "synthetic-value-10",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-10"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-11",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-11",
+        "value": "synthetic-value-11",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-11"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-12",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-12",
+        "value": "synthetic-value-12",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-12"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-13",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-13",
+        "value": "synthetic-value-13",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-13"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-14",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-14",
+        "value": "synthetic-value-14",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-14"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-15",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-15",
+        "value": "synthetic-value-15",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-15"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-16",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-16",
+        "value": "synthetic-value-16",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-16"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-17",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-17",
+        "value": "synthetic-value-17",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-17"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-18",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-18",
+        "value": "synthetic-value-18",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-18"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-19",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-19",
+        "value": "synthetic-value-19",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-19"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-20",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-20",
+        "value": "synthetic-value-20",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-20"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-21",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-21",
+        "value": "synthetic-value-21",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-21"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-22",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-22",
+        "value": "synthetic-value-22",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-22"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-23",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-23",
+        "value": "synthetic-value-23",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-23"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-24",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-24",
+        "value": "synthetic-value-24",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-24"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/records",
+      "body": {
+        "record_id": "synthetic-record-25",
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-25",
+        "value": "synthetic-value-25",
+        "provenance": "synthetic-source-1",
+        "effective_at": "2026-01-01T00:00:00.000Z",
+        "idempotency_key": "synthetic-request-25"
+      },
+      "expected": {
+        "decision": "RETURN"
+      }
+    },
+    {
+      "path": "/v1/challenge/query",
+      "body": {
+        "subject": "synthetic-subject-1",
+        "scope": "synthetic-scope-1",
+        "key": "synthetic-key-1",
+        "as_of": "2026-10-09T00:00:00.000Z"
+      },
+      "expected": {
+        "decision": "RETURN",
+        "record_id": "synthetic-record-1",
+        "provenance_present": true
+      }
+    }
+  ]
+}
