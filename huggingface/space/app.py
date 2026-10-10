@@ -7,6 +7,8 @@ import re
 import secrets
 import threading
 import time
+import asyncio
+from contextlib import asynccontextmanager
 from urllib.parse import urlsplit
 
 os.environ['GRADIO_ANALYTICS_ENABLED'] = 'False'
@@ -21,34 +23,58 @@ from scenarios import SCENARIOS, VARIANTS, steps
 COOKIE = 'cortex_demo_visitor'
 COLUMNS = ['Step', 'HTTP', 'Decision', 'Reason category', 'Temporal status', 'Record', 'Provenance', 'Receipt ID', 'Expected outcome']
 GITHUB = 'https://github.com/brandenlaskowski7-bot/cortex-adi-research'
+DOCS = GITHUB + '/blob/feature/huggingface-memory-challenge-demo'
 
 
 class DemoService:
     def __init__(self, client=None):
         self.client = client or Challenge()
         self.visitors = {}
-        self.guard = threading.Lock()
+        self.guard = threading.RLock()
         self.workers = threading.BoundedSemaphore(2)
 
     def visitor(self, key):
         with self.guard:
+            self.purge()
             if key not in self.visitors:
                 if len(self.visitors) >= 24:
-                    raise Unavailable('This demo has reached its visitor capacity. Please contact the owner; repeated refreshes cannot free API session slots.')
+                    raise Unavailable('This demo is busy. Try later: ended and expired visits are automatically reclaimed. Refreshing repeatedly will not help.')
                 self.visitors[key] = Visitor()
             return self.visitors[key]
 
+    def purge(self):
+        with self.guard:
+            for key, visitor in list(self.visitors.items()):
+                if visitor.lock.acquire(blocking=False):
+                    try:
+                        if time.monotonic() >= visitor.retained_until:
+                            visitor.forget()
+                            del self.visitors[key]
+                    finally:
+                        visitor.lock.release()
+
+    def display_lifetime(self, key):
+        # No network request and no renewal of the backend inactivity timer.
+        with self.guard:
+            self.purge()
+            visitor = self.visitors.get(key)
+            if not visitor or not visitor.credentials:
+                return 'No active visit. Run a scenario to start a new synthetic session.', False
+            remaining = max(0, int(min(visitor.absolute_deadline, visitor.idle_deadline) - time.monotonic()))
+            return f'This visit ends in at most {remaining // 60}m {remaining % 60}s. Activity may extend the idle limit, never the 90-minute maximum.', True
+
     def perform(self, key, action, name='Temporal expiry', variant=VARIANTS[0]):
         # Validate enums before creating a visitor or making any network request.
-        if action not in ('run', 'reset', 'receipt'):
+        if action not in ('run', 'reset', 'receipt', 'end'):
             raise Unavailable('Choose a supplied action.')
         try:
             plan = steps(name, variant) if action == 'run' else []
         except (ValueError, TypeError):
             raise Unavailable('Choose a supplied synthetic scenario and set.') from None
-        visitor = self.visitor(key)
-        if not visitor.lock.acquire(blocking=False):
-            raise Unavailable('Your previous action is still running. Please wait.')
+        with self.guard:
+            visitor = self.visitor(key)
+            if not visitor.lock.acquire(blocking=False):
+                raise Unavailable('Your previous action is still running. Please wait.')
         admitted = False
         try:
             now = time.monotonic()
@@ -77,7 +103,13 @@ class DemoService:
                 if status == 200:
                     visitor.receipts.clear()
                     visitor.rows = [row('Reset your session', status, result, 'Matched' if result['decision'] == 'RETURN' else 'MISMATCH')]
-                return 'Reset completed. Your rate budget and session slot remain in use.' if status == 200 else 'Reset was refused; your session was not cleared.', visitor.rows, result
+                return 'Reset completed. Your original time limit, rate budget, and session slot remain in use.' if status == 200 else 'Reset was refused; your session was not cleared.', visitor.rows, result
+            if action == 'end':
+                status, result = self.client.request('end', visitor, {})
+                if status == 200:
+                    visitor.retained_until = visitor.next_action
+                    return 'Session ended. The sandbox confirmed cleanup and released your slot. Local credentials and results were cleared.', [], {}
+                return 'Session end was not confirmed. Automatic expiry still applies.', visitor.rows, {}
             if not visitor.receipts:
                 raise Unavailable('Run a scenario first. Reset removes prior receipts.')
             receipt = next(reversed(visitor.receipts))
@@ -123,7 +155,24 @@ def create_app(service=None):
         except (ValueError, TypeError):
             return False
 
-    server = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
+    @asynccontextmanager
+    async def lifespan(server):
+        async def clean_visitors():
+            while True:
+                await asyncio.sleep(15)
+                if hasattr(service, 'purge'):
+                    service.purge()
+        task = asyncio.create_task(clean_visitors())
+        try:
+            yield
+        finally:
+            task.cancel()
+            try:
+                await task
+            except asyncio.CancelledError:
+                pass
+
+    server = FastAPI(docs_url=None, redoc_url=None, openapi_url=None, lifespan=lifespan)
     server.state.demo_service = service
 
     @server.middleware('http')
@@ -177,6 +226,14 @@ def create_app(service=None):
         return invoke(request, 'reset')
     def retrieve_receipt(request: gr.Request):
         return invoke(request, 'receipt')
+    def end_session(request: gr.Request):
+        return invoke(request, 'end')
+    def session_lifetime(request: gr.Request):
+        value = request.cookies.get(COOKIE)
+        if not valid_cookie(value):
+            return 'Open this app in its own tab and allow cookies.', gr.skip(), [], {}
+        message, active = service.display_lifetime(value)
+        return (message, gr.skip(), gr.skip(), gr.skip()) if active else (message, 'No active visit. Local results are cleared.', [], {})
     def describe(name, variant):
         try:
             plan = steps(name, variant)
@@ -193,7 +250,8 @@ def create_app(service=None):
                 variant = gr.Radio(VARIANTS, value=VARIANTS[0], label='2 · Choose a synthetic subject/key set')
                 guidance = gr.Markdown(SCENARIOS['Temporal expiry'])
                 run = gr.Button('Run synthetic scenario', variant='primary')
-                gr.Markdown('A session starts only when you run. Keep this tab/browser profile to reuse it. **Finite lab: 32 API session slots, no automatic reclamation.** Reset does not free a slot. This demo admits at most 24 visitors per process; two actions may run at once.')
+                gr.Markdown('A session starts only when you run. **90-minute maximum · 15-minute idle cutoff · Automatic cleanup.** End your session when finished. Reset clears the experiment without extending your visit. The lab allows 32 concurrent sessions; this demo allows 24 visitors and two concurrent actions.')
+                lifetime = gr.Markdown('No active visit. The timer begins when you run a scenario.')
             with gr.Column(scale=3):
                 status = gr.Markdown('**Ready to explore.** No live operation has run yet.', elem_id='result')
                 with gr.Accordion('Inspect the exact synthetic requests', open=False):
@@ -202,6 +260,7 @@ def create_app(service=None):
         with gr.Row():
             receipt = gr.Button('Verify latest receipt')
             reset = gr.Button('Reset my synthetic session')
+            end = gr.Button('End session and erase my experiment')
         with gr.Accordion('Latest safe response', open=False):
             detail = gr.JSON(label='Public response fields only')
         gr.Markdown('''### Read the result
@@ -212,14 +271,18 @@ A receipt preserves the original response. Provenance presence means a synthetic
 ### Limits and privacy
 Structured symbolic synthetic records only; no free-text or LLM inference, no production Cortex, and no independent security audit. This Space is a thin HTTPS client, with no private kernel, production memory, or deployment access. Service availability and capacity are finite. Busy or full responses stop the run without automatic retries.
 
-Challenge credentials stay in server memory and are never displayed or logged. A signed HttpOnly browser cookie binds your visitor session; Gradio session hashes are not credentials. Cookies expire after 24 hours. Clearing cookies, restarting the Space, or using a new browser loses access and may consume another finite API slot. Reset before leaving to clear your synthetic data; there is no public session-delete API. The sandbox operator controls backend retention. Hosting providers may retain ordinary connection metadata.
+Challenge credentials stay in server memory and are never displayed or logged. A signed HttpOnly cookie binds your browser; Gradio session hashes are not credentials. Cookies expire after 24 hours, while API access lasts at most 90 minutes and ends after 15 idle minutes. Closing the browser does not stop the sandbox cleanup timer. Valid record/query activity renews only the idle limit; reset, receipt reads, and this display do not. End session revokes access immediately and confirms cleanup before releasing capacity. Expiry revokes access at the deadline, with cleanup attempted every 10 seconds and retried if needed. Failed cleanup keeps the slot unavailable.
+
+The Space clears expired credentials and its cached trace within 15 seconds, even after a browser closes. An open browser clears its display on the next timer update; offline tabs or saved screenshots cannot be remotely erased. Managed synthetic stores and receipts are deleted; this is not a guarantee of forensic disk erasure or deletion of separately retained host backups or provider connection metadata. No production memory is present. This client requires the lifecycle v0.2 API.
 ''')
-        gr.Markdown(f'[ADI paper · DOI 10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200) · [Public API contract]({GITHUB}/blob/main/challenges/governed-memory/API.md) · [GitHub challenge]({GITHUB}/tree/main/challenges/governed-memory) · [v0.1 release]({GITHUB}/releases/tag/memory-challenge-v0.1) · [Report a synthetic failure]({GITHUB}/issues/new?template=challenge-failure.yml)')
+        gr.Markdown(f'[ADI paper · DOI 10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200) · [Public API contract]({DOCS}/challenges/governed-memory/API.md) · [GitHub challenge]({GITHUB}/tree/main/challenges/governed-memory) · [v0.1 release]({GITHUB}/releases/tag/memory-challenge-v0.1) · [Report a synthetic failure]({GITHUB}/issues/new?template=challenge-failure.yml)')
         for component in (scenario, variant):
             component.change(describe, [scenario, variant], [guidance, preview], queue=False, preprocess=False, api_visibility='private')
         run.click(run_scenario, [scenario, variant], [status, trace, detail], queue=False, preprocess=False, api_name='run_scenario', api_visibility='private')
         reset.click(reset_session, [], [status, trace, detail], queue=False, api_name='reset_session', api_visibility='private')
         receipt.click(retrieve_receipt, [], [status, trace, detail], queue=False, api_name='retrieve_receipt', api_visibility='private')
+        end.click(end_session, [], [status, trace, detail], queue=False, api_name='end_session', api_visibility='private')
+        gr.Timer(15).tick(session_lifetime, [], [lifetime, status, trace, detail], queue=False, api_name='session_lifetime', api_visibility='private')
     return gr.mount_gradio_app(server, demo, path='/', show_error=False, enable_monitoring=False,
                                mcp_server=False, ssr_mode=False, footer_links=[], run_history=False,
                                theme=gr.themes.Soft(primary_hue='teal', neutral_hue='slate'), css=CSS)

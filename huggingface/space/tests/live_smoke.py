@@ -60,11 +60,16 @@ finally:
     cleanup=[]
     for browser in (a,b):
         try:
-            result=call(browser,'reset_session',[])
-            cleanup.append(result[0].startswith('Reset completed'))
+            result=call(browser,'end_session',[])
+            cleanup.append(result[0].startswith('Session ended'))
         except Exception:
             cleanup.append(False)
         browser.close()
-    report['cleanup_resets']=cleanup
+    report['confirmed_session_cleanup']=cleanup
+    if not all(cleanup):
+        report['status']='CLEANUP_UNCONFIRMED'
     report['finished_utc']=datetime.now(timezone.utc).isoformat()
     print(json.dumps(report,indent=2),flush=True)
+
+if report.get('status') != 'PASS':
+    raise SystemExit(1)

@@ -4,7 +4,11 @@ Status: **prepared on GitHub; not created, published, or verified on Hugging Fac
 
 The connected account is `BrandenLaskowski7`. The connector grants profile/read scopes and jobs access, but **no repository write/create scope**. There is no local Hugging Face credential. No permission was expanded, no token was requested or copied, and no Space creation was attempted with insufficient authority.
 
-The remaining owner handoff is to create and upload this Space in the Hugging Face UI, then explicitly authorize public go-live after private verification. No secret is needed to run it.
+The next owner decision is approval to reopen the hardened synthetic HTTPS API for external verification. Public ingress is currently stopped. Only after that verification should the owner create/upload a private Space and explicitly approve its public visibility. No secret is needed to run it.
+
+## Before creating the Space
+
+Lifecycle v0.2 is installed locally with a 90-minute maximum visit, 15-minute idle cutoff, automatic erasure/reclamation, and End session. The immutable v0.1 release is unchanged. Ask the operator to verify the reviewed image, zero cleanup backlog, then obtain owner approval to reopen only the dedicated challenge ingress and perform a bounded HTTPS lifecycle test. Keep the entrance closed if any critical check fails. No production change is part of this gate.
 
 ## Click-by-click creation
 
@@ -16,10 +20,10 @@ The remaining owner handoff is to create and upload this Space in the Hugging Fa
 6. Select **Private** visibility for review, then click **Create Space**. Private staging is the intended initial state; do not choose Public at this step.
 7. In **Files**, choose **Add file → Upload files**. Upload the files below directly to the Space root, preserving the `tests/` subfolder if including tests. Do **not** upload the enclosing GitHub repository or any `.git`, `.venv`, cache, token, or local output folder.
 8. Commit the upload to the private Space. Wait for the build to finish. Open **App**, or open its app URL in a separate tab if your browser blocks iframe cookies.
-9. Confirm the six scenario names and limitations are visible. Run **Temporal expiry**, verify the receipt, and reset that same session. Check that the trace reports matched decisions. This uses one finite API session slot. Stop if the endpoint returns capacity/unavailability; do not repeatedly create visitors.
+9. Confirm the six scenario names and limitations are visible. Run **Temporal expiry**, verify the receipt, reset that same session, then click **End session and erase my experiment**. Confirm the cleanup message and cleared trace. Check that the trace reports matched decisions. This uses one finite API session slot. Stop if the endpoint returns capacity/unavailability; do not repeatedly create visitors.
 10. Review the source and private result. Give explicit owner confirmation: **“Go live with BrandenLaskowski7/cortex-governed-memory-challenge using the reviewed GitHub commit.”** Public publication is still pending until that confirmation.
 11. After confirming, open **Settings → Repository visibility → Change visibility → Public** and accept the site's confirmation. Public source may be copied permanently. Publish only the allowlisted client files.
-12. Open the public Space while signed out, verify the app loads, and perform one bounded synthetic scenario/receipt/reset if capacity permits. If capacity is full, report **published, live interaction blocked by capacity**, not verified live. Record the actual Space URL, Hugging Face revision, timestamp, and observed result in the GitHub docs. Do not claim hosted verification from the local tests.
+12. Open the public Space while signed out, verify the app loads, and perform one bounded synthetic scenario/receipt/reset/end if capacity permits. If capacity is full, report **published, live interaction blocked by capacity**, not verified live. Record the actual Space URL, Hugging Face revision, timestamp, and observed result in the GitHub docs. Do not claim hosted verification from the local tests.
 
 Expected URL **if created with that owner/name**: `https://huggingface.co/spaces/BrandenLaskowski7/cortex-governed-memory-challenge`. This is a proposed destination, not an existing/live resource verified by this preparation.
 
@@ -36,7 +40,7 @@ Required at Space root:
 - `LAUNCH.md`
 - `VERIFICATION.md`
 
-Optional, preserving paths: `tests/test_client.py`, `tests/test_boundary.py`, `tests/live_smoke.py`.
+Optional, preserving paths: `tests/test_client.py`, `tests/test_boundary.py`, `tests/test_lifecycle.py`, `tests/live_smoke.py`.
 
 No fixture dataset publication is required for this Space. Existing `huggingface/fixtures.jsonl` and its dataset card are separate preparation and should not replace this Space README.
 
@@ -44,7 +48,7 @@ For a future authorized CLI uploader, authenticate using the normal Hugging Face
 
 ## Before outreach
 
-Coordinate a small first cohort (for example, three developers) because the upstream 32-slot limit has no automatic reclamation. The documented public API cannot report available slots or reclaim them. Do not change production or invent a session-recycling mechanism in this client. Have the challenge owner confirm lab capacity through their existing authorized operations process.
+Coordinate a small first cohort (for example, three developers) because the upstream lab has 32 concurrent slots and finite shared capacity. End and expiry reclaim slots only after successful cleanup. Have the owner confirm capacity and cleanup health through their private controls. Do not change production or evade limits with extra visits.
 
 After public hosted verification, invite developers to choose one invariant, run a synthetic scenario, and report the expected versus observed decision, reason category, receipt ID, and UTC time through the GitHub failure template. Ask them to omit credentials and real data. The first practical outreach step is a small invitation to three agent/memory-tool developers, with the verified Space link, contract, and a request to find a counterexample. No invitation has been sent.
 

@@ -1,4 +1,27 @@
-# Preparation verification — 9 October 2026
+# Lifecycle preparation verification — 10 October 2026
+
+**Current status: lifecycle v0.2 installed and verified locally; public ingress OFF; Hugging Face Space not created or live.** The October 9 public HTTPS evidence below is historical and does not establish current uptime.
+
+The current connected Hugging Face account is `BrandenLaskowski7`, with profile/read/jobs permissions and no repository create/write permission. No write privilege was expanded. Upload remains an owner step after the API launch gate.
+
+## Current checks
+
+- **29/29 offline client tests passed**, including visitor/cookie isolation, bounded HTTPS transport, synthetic input and route restrictions, expiry-driven credential/trace erasure, confirmed End cleanup, reset deadline preservation, and cache reclamation after browser closure.
+- **27/27 guided scenario steps passed** between 16:31:02 and 16:32:17 UTC on 10 October 2026. The local Gradio callbacks used a private test-only adapter to forward their fixed HTTPS-shaped requests through the actual local gateway and hardened Docker runtime. The published client contains no configurable URL or loopback override. This was a local end-to-end test, **not an external HTTPS test**.
+- **7/7 associated checks passed:** separate cookie visitors despite an identical Gradio session hash; reset isolation; authenticated lifecycle status through the gateway; End revocation/cleared UI/other-visitor preservation; both sessions ended with confirmed cleanup; blocked alternate queue and credential-shaped output; zero occupied slots and zero cleanup backlog afterward.
+- Owner-side verification recorded **16/16 lifecycle unit tests, 24/24 disposable Docker contract checks, 5/5 shortened-duration Docker timing checks, and 16/16 installed-container boundary checks**. Copied kernel source hashes remained unchanged. Implementation, images, topology, raw evidence, and private credentials are excluded from this public repository.
+
+Timing tests used the same runtime code with owner-only limits shortened to 20 seconds absolute and 5 seconds idle. Unit tests cover the full 90-minute/15-minute boundaries. The regular installed policy was separately verified as 90 minutes absolute, 15 minutes idle, with a 10-second cleanup sweep. This is not a 90-minute wall-clock endurance result or an independent security audit.
+
+An initial hosted timing unit test assumed creation occurred exactly at the fake clock's starting value. It was corrected to test the actual persisted deadline; the corrected private hosted checks passed. No production service was modified by the lifecycle work. Public ingress is intentionally stopped; its last pre-hardening health request returned an unavailable Cloudflare response. Reopening requires owner approval followed by fresh external health, session, isolation, and cleanup checks.
+
+## Remaining launch gate
+
+Approve reopening only the dedicated challenge HTTPS entrance, verify the lifecycle externally with two bounded synthetic visitors, create/upload the private Space through the owner account, inspect it, then obtain explicit owner confirmation for public visibility. A proposed Space URL is not evidence that it exists. Do not announce a live demo until public hosted interaction is verified. See [LAUNCH.md](LAUNCH.md).
+
+---
+
+# Historical v0.1 preparation verification — 9 October 2026
 
 **Status: upload-ready public client; Hugging Face Space not created or live.**
 

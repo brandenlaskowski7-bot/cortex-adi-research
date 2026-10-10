@@ -1,3 +1,13 @@
+# Current lifecycle status — 10 October 2026
+
+**Public ingress is OFF. The v0.2 lifecycle update is installed and verified locally; Hugging Face is prepared but not published.** The earlier v0.1 public release remains historical and unchanged. Current health/capacity must be reverified after owner-approved reopening.
+
+See [lifecycle and retention](LIFECYCLE.md), [current preparation evidence](../../huggingface/space/VERIFICATION.md), and [owner launch handoff](../../huggingface/space/LAUNCH.md). No independent audit is claimed.
+
+---
+
+## Historical release record
+
 # Challenge status
 
 Updated 9 October 2026.
