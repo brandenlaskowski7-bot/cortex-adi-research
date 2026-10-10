@@ -1,9 +1,9 @@
 name: Public Space client checks
 on:
   push:
-    paths: ['huggingface/space/**', '.github/workflows/space-client-check.yml']
+    paths: ['huggingface/space/**', 'huggingface/static-space/**', '.github/workflows/space-client-check.yml']
   pull_request:
-    paths: ['huggingface/space/**', '.github/workflows/space-client-check.yml']
+    paths: ['huggingface/space/**', 'huggingface/static-space/**', '.github/workflows/space-client-check.yml']
 permissions:
   contents: read
 jobs:

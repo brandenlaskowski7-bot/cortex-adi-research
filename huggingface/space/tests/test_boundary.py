@@ -87,3 +87,15 @@ def test_crafted_input_is_not_echoed_in_ui_or_logs(caplog):
         assert 'SECRET-SENTINEL' not in response.text
         assert 'SECRET-SENTINEL' not in caplog.text
         assert not app.state.demo_service.visitors
+
+
+def test_self_hosted_cookie_and_public_prefix(monkeypatch):
+    import app as module
+    monkeypatch.setattr(module, 'SELF_HOSTED', True)
+    with TestClient(create_app(StubService()), base_url='https://challenge.aiadvantage.shop') as b:
+        response = b.get('/')
+        cookie = response.headers['set-cookie']
+        assert 'Secure' in cookie and 'HttpOnly' in cookie
+        assert 'SameSite=none' in cookie and 'Path=/demo' in cookie
+        assert b.get('/config').json()['root'].endswith('/demo')
+        assert b.get('/healthz').json() == {'ok': True, 'client_only': True}

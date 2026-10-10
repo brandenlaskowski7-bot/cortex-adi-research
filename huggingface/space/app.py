@@ -21,6 +21,7 @@ from challenge import Challenge, Unavailable, Visitor
 from scenarios import SCENARIOS, VARIANTS, steps
 
 COOKIE = 'cortex_demo_visitor'
+SELF_HOSTED = os.environ.get('CORTEX_SELF_HOSTED') == '1'
 COLUMNS = ['Step', 'HTTP', 'Decision', 'Reason category', 'Temporal status', 'Record', 'Provenance', 'Receipt ID', 'Expected outcome']
 GITHUB = 'https://github.com/brandenlaskowski7-bot/cortex-adi-research'
 DOCS = GITHUB + '/blob/feature/huggingface-memory-challenge-demo'
@@ -175,6 +176,10 @@ def create_app(service=None):
     server = FastAPI(docs_url=None, redoc_url=None, openapi_url=None, lifespan=lifespan)
     server.state.demo_service = service
 
+    @server.get('/healthz')
+    async def client_health():
+        return {'ok': True, 'client_only': True}
+
     @server.middleware('http')
     async def boundary(request: Request, call_next):
         path = request.url.path
@@ -186,7 +191,7 @@ def create_app(service=None):
             if not (path.startswith('/gradio_api/run/') or path.startswith('/gradio_api/heartbeat/')):
                 return JSONResponse({'detail': 'This demo exposes only its bounded UI actions.'}, status_code=403)
             if not valid:
-                return JSONResponse({'detail': 'Open the app page first. Enable cookies, or open the Space in its own tab.'}, status_code=401)
+                return JSONResponse({'detail': 'Open the app page first. Enable cookies, or open the demo in its own tab.'}, status_code=401)
             origin = request.headers.get('origin')
             if origin and urlsplit(origin).netloc != request.headers.get('host'):
                 return JSONResponse({'detail': 'Cross-origin actions are not accepted.'}, status_code=403)
@@ -201,8 +206,8 @@ def create_app(service=None):
         response = await call_next(request)
         if path == '/' and request.method == 'GET' and not valid:
             response.set_cookie(COOKIE, issue_cookie(), max_age=86400, httponly=True,
-                                secure=bool(os.environ.get('SPACE_ID')) or request.url.scheme == 'https',
-                                samesite='none' if os.environ.get('SPACE_ID') else 'lax', path='/')
+                                secure=SELF_HOSTED or bool(os.environ.get('SPACE_ID')) or request.url.scheme == 'https',
+                                samesite='none' if SELF_HOSTED or os.environ.get('SPACE_ID') else 'lax', path='/demo' if SELF_HOSTED else '/')
         if path == '/' or path.startswith('/gradio_api/run/'):
             response.headers['Cache-Control'] = 'no-store'
         response.headers['X-Content-Type-Options'] = 'nosniff'
@@ -269,11 +274,11 @@ def create_app(service=None):
 A receipt preserves the original response. Provenance presence means a synthetic source reference exists, not that an assertion is true. Scenario matching checks expected HTTP status and decision; it is not exhaustive verification of every invariant.
 
 ### Limits and privacy
-Structured symbolic synthetic records only; no free-text or LLM inference, no production Cortex, and no independent security audit. This Space is a thin HTTPS client, with no private kernel, production memory, or deployment access. Service availability and capacity are finite. Busy or full responses stop the run without automatic retries.
+Structured symbolic synthetic records only; no free-text or LLM inference, no production Cortex, and no independent security audit. This demo is a thin HTTPS client, with no private kernel, production memory, or deployment access. Service availability and capacity are finite. Busy or full responses stop the run without automatic retries.
 
 Challenge credentials stay in server memory and are never displayed or logged. A signed HttpOnly cookie binds your browser; Gradio session hashes are not credentials. Cookies expire after 24 hours, while API access lasts at most 90 minutes and ends after 15 idle minutes. Closing the browser does not stop the sandbox cleanup timer. Valid record/query activity renews only the idle limit; reset, receipt reads, and this display do not. End session revokes access immediately and confirms cleanup before releasing capacity. Expiry revokes access at the deadline, with cleanup attempted every 10 seconds and retried if needed. Failed cleanup keeps the slot unavailable.
 
-The Space clears expired credentials and its cached trace within 15 seconds, even after a browser closes. An open browser clears its display on the next timer update; offline tabs or saved screenshots cannot be remotely erased. Managed synthetic stores and receipts are deleted; this is not a guarantee of forensic disk erasure or deletion of separately retained host backups or provider connection metadata. No production memory is present. This client requires the lifecycle v0.2 API.
+The demo clears expired credentials and its cached trace within 15 seconds, even after a browser closes. An open browser clears its display on the next timer update; offline tabs or saved screenshots cannot be remotely erased. Managed synthetic stores and receipts are deleted; this is not a guarantee of forensic disk erasure or deletion of separately retained host backups or provider connection metadata. No production memory is present. This client requires the lifecycle v0.2 API.
 ''')
         gr.Markdown(f'[ADI paper · DOI 10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200) · [Public API contract]({DOCS}/challenges/governed-memory/API.md) · [GitHub challenge]({GITHUB}/tree/main/challenges/governed-memory) · [v0.1 release]({GITHUB}/releases/tag/memory-challenge-v0.1) · [Report a synthetic failure]({GITHUB}/issues/new?template=challenge-failure.yml)')
         for component in (scenario, variant):
@@ -284,11 +289,12 @@ The Space clears expired credentials and its cached trace within 15 seconds, eve
         end.click(end_session, [], [status, trace, detail], queue=False, api_name='end_session', api_visibility='private')
         gr.Timer(15).tick(session_lifetime, [], [lifetime, status, trace, detail], queue=False, api_name='session_lifetime', api_visibility='private')
     return gr.mount_gradio_app(server, demo, path='/', show_error=False, enable_monitoring=False,
+                               root_path='/demo' if SELF_HOSTED else None,
                                mcp_server=False, ssr_mode=False, footer_links=[], run_history=False,
                                theme=gr.themes.Soft(primary_hue='teal', neutral_hue='slate'), css=CSS)
 
 
 app = create_app()
 if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0' if os.environ.get('SPACE_ID') else '127.0.0.1', port=7860,
+    uvicorn.run(app, host='0.0.0.0' if SELF_HOSTED or os.environ.get('SPACE_ID') else '127.0.0.1', port=7860,
                 access_log=False, log_level='warning', proxy_headers=False)

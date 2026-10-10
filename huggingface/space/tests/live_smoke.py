@@ -1,6 +1,7 @@
 """Opt-in first-party E2E. Run app.py first; consumes TWO finite API slots.
 No credentials or raw request headers are printed, saved, or returned.
 """
+import argparse
 import json
 import time
 from datetime import datetime, timezone
@@ -10,10 +11,14 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scenarios import SCENARIOS
 
-BASE='http://127.0.0.1:7860'
-report={'started_utc':datetime.now(timezone.utc).isoformat(),'kind':'first-party local UI HTTP to public HTTPS API','scenario_results':[], 'checks': []}
-a=httpx.Client(base_url=BASE, timeout=120, trust_env=False)
-b=httpx.Client(base_url=BASE, timeout=120, trust_env=False)
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--self-hosted',action='store_true',help='Test the fixed HTTPS demo endpoint instead of local port 7860.')
+args=parser.parse_args()
+BASE='https://challenge.aiadvantage.shop/demo/' if args.self_hosted else 'http://127.0.0.1:7860'
+HEADERS={'User-Agent':'CortexGovernedMemoryChallenge/0.1'}
+report={'started_utc':datetime.now(timezone.utc).isoformat(),'kind':'first-party HTTPS demo to HTTPS API' if args.self_hosted else 'first-party local UI HTTP to public HTTPS API','scenario_results':[], 'checks': []}
+a=httpx.Client(base_url=BASE, timeout=45, trust_env=False, follow_redirects=False, headers=HEADERS)
+b=httpx.Client(base_url=BASE, timeout=45, trust_env=False, follow_redirects=False, headers=HEADERS)
 last={}
 def call(browser, action, inputs):
     time.sleep(max(0, 8.2-(time.monotonic()-last.get(id(browser),0))))
@@ -52,7 +57,7 @@ try:
     receipt=call(b,'retrieve_receipt',[])
     assert receipt[0].startswith('Receipt matched')
     report['checks'].append('Visitor A reset leaves visitor B receipt unchanged')
-    assert a.post('/gradio_api/call/run_scenario',json={'data':[]}).status_code==403
+    assert a.post('/gradio_api/call/run_scenario',json={'data':[]}).status_code==(404 if args.self_hosted else 403)
     report['checks'].append('Alternate queue/call path blocked')
     report['checks'].append('No token, session_id, or Authorization in local UI responses')
     report['status']='PASS'
