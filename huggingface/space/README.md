@@ -1,7 +1,7 @@
 ---
 title: Cortex Governed Memory Challenge
 emoji: 🧭
-colorFrom: teal
+colorFrom: green
 colorTo: blue
 sdk: gradio
 sdk_version: 6.30.0
@@ -19,7 +19,9 @@ short_description: Six synthetic memory experiments with decisions and receipts
 
 # Cortex Governed Memory Challenge v0.1
 
-**Upload-ready client requiring lifecycle API v0.2. Public ingress is stopped pending owner approval and external verification. No Hugging Face Space has been published or verified.**
+**Public client requiring lifecycle API v0.2. The free launch uses a private Hugging Face Static Space plus this client on the owner-operated Mac. Public activation remains pending. See [LAUNCH.md](LAUNCH.md).**
+
+This folder contains the Gradio client, not the upload package for the free Space. Upload only [../static-space/](../static-space/) to Hugging Face. Hosted Gradio/Docker currently require a paid plan; no subscription is used by this preparation.
 
 Explore when a synthetic record should be returned, held, denied, expired, or superseded. This approachable Gradio interface is a **thin client** of the documented [public HTTPS API](https://challenge.aiadvantage.shop). It contains no private Cortex kernel or deployment code.
 
@@ -36,11 +38,11 @@ Choose one of six scenarios: **temporal expiry, supersession, conflict/HOLD, pro
 
 ## Privacy and client boundary
 
-Tokens and upstream session IDs live only in server memory. They never enter Gradio components, logs, exported traces, URLs, or browser storage. A separate random, signed HttpOnly cookie binds each browser visitor to its server-side credentials. Hosted cookies are Secure/SameSite=None for the Space iframe. Gradio session hashes are ignored for authority. All operations use direct responses; alternate queue/call, file, proxy, and upload routes are blocked.
+Tokens and upstream session IDs live only in server memory. They never enter Gradio components, logs, exported traces, URLs, or browser storage. A separate random, signed HttpOnly cookie binds each browser visitor to its server-side credentials. Self-hosted cookies are Secure/SameSite=None and scoped to `/demo` for the Space iframe. Gradio session hashes are ignored for authority. All operations use direct responses; alternate queue/call, file, proxy, and upload routes are blocked.
 
-Cookies expire after 24 hours. Clearing cookies, restarting the Space, or changing browser/profile loses access. The client never shares or reuses credentials across visitors. End your session when finished. The server expires abandoned visits and cleans managed stores without a browser callback. The Space clears expired credentials and cached traces on a 15-second timer, including after browser closure. Open pages clear on their next timer update; disconnected pages or saved copies cannot be remotely erased. Reset does not extend the visit. Managed-store deletion is not forensic disk erasure or deletion of separate backups/exports. If iframe cookies are blocked, open the Space's app in its own tab. Ordinary hosting/network metadata may still be retained by providers.
+Cookies expire after 24 hours. Clearing cookies, restarting the demo, or changing browser/profile loses access. The client never shares or reuses credentials across visitors. End your session when finished. The server expires abandoned visits and cleans managed stores without a browser callback. The demo clears expired credentials and cached traces on a 15-second timer, including after browser closure. Open pages clear on their next timer update; disconnected pages or saved copies cannot be remotely erased. Reset does not extend the visit. Managed-store deletion is not forensic disk erasure or deletion of separate backups/exports. If iframe cookies are blocked, open the demo in its own tab. Ordinary hosting/network metadata may still be retained by providers.
 
-Outbound requests use only `https://challenge.aiadvantage.shop`, certificate verification, exact documented routes, explicit `CortexGovernedMemoryChallenge/0.1`, no redirects or environment proxies, 4-second connect/write, 8-second read and 2-second pool timeouts, and bounded response sizes. Requests are spaced at least 0.5 seconds apart globally, creations are limited to four/minute, actions to one/visitor/eight seconds, with at most two concurrent actions and 24 visitors per process. Upstream 429/503 triggers a shared 60-second backoff. No automatic retries occur. Ambiguous session creation is never retried for that visitor. These client limits supplement the authoritative API limits; they are not DDoS protection.
+Outbound requests use only `https://challenge.aiadvantage.shop`, certificate verification, exact documented routes, explicit `CortexGovernedMemoryChallenge/0.1`, no redirects or environment proxies, 4-second connect/write, 8-second read and 2-second pool timeouts, and bounded response sizes. Requests are spaced at least 0.5 seconds apart globally, creations are limited to four/minute, actions to one/visitor/eight seconds, with at most two concurrent actions and 24 visitors per process. Upstream 429/503 triggers a shared 60-second backoff. No automatic retries occur. Ambiguous session creation is never retried for that visitor. The separate public page has bounded asset and callback traffic; browser loading may fail under load. These client limits supplement the authoritative API limits; they are not DDoS protection.
 
 Use one process and one replica. Multiple workers would create separate cookie-signing keys, session vaults, and rate budgets. Do not add a Hugging Face access token or production secret to Space settings: this client needs none.
 
@@ -55,13 +57,13 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-Open `http://127.0.0.1:7860`. The local bind is loopback-only; Hugging Face uses port 7860 on its hosted interface. No public Gradio share tunnel is created.
+Open `http://127.0.0.1:7860`. The local bind is loopback-only; The reviewed self-hosted mode uses port 7860 inside its separate container and a fixed `/demo/` HTTPS prefix. No public Gradio share tunnel is created.
 
 From this folder, install `pytest==9.1.1` and run `python -m pytest tests -q`. These are offline boundary/transport tests using synthetic mocks, not live-kernel evidence.
 
 **Optional live check:** with the app running, `python tests/live_smoke.py`. This deliberately consumes **two new finite API session slots**, runs the six scenarios, checks two visitors with identical Gradio session hashes, verifies receipt and reset isolation, then ends both visits and confirms cleanup. Successful end releases their slots. Run once with owner awareness; never put it in recurring CI. Output contains sanitized outcomes only.
 
-See [LAUNCH.md](LAUNCH.md) for the exact upload allowlist, owner creation/publication steps, and verification gate, and [VERIFICATION.md](VERIFICATION.md) for the actual preparation results.
+See [LAUNCH.md](LAUNCH.md) for the free Static Space upload allowlist, owner activation steps, and verification gate, and [VERIFICATION.md](VERIFICATION.md) for the actual preparation results.
 
 ## Research, contract, and reporting
 

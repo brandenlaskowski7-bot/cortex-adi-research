@@ -22,8 +22,8 @@ b=httpx.Client(base_url=BASE, timeout=45, trust_env=False, follow_redirects=Fals
 last={}
 def call(browser, action, inputs):
     time.sleep(max(0, 8.2-(time.monotonic()-last.get(id(browser),0))))
-    last[id(browser)]=time.monotonic()
     response=browser.post('/gradio_api/run/'+action,json={'data':inputs,'session_hash':'deliberately-identical-test-hash'})
+    last[id(browser)]=time.monotonic()
     assert response.status_code==200, 'Local callback refused'
     payload=response.json()
     assert 'data' in payload, 'Callback failed'

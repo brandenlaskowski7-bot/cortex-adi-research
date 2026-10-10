@@ -1,7 +1,7 @@
 ---
 title: Cortex Governed Memory Challenge
 emoji: 🧭
-colorFrom: teal
+colorFrom: green
 colorTo: blue
 sdk: static
 app_file: index.html

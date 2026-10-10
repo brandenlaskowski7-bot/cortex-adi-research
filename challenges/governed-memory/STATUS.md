@@ -1,6 +1,8 @@
 # Current lifecycle status — 10 October 2026
 
-**Public ingress is OFF. The v0.2 lifecycle update is installed and verified locally; Hugging Face is prepared but not published.** The earlier v0.1 public release remains historical and unchanged. Current health/capacity must be reverified after owner-approved reopening.
+**Public ingress is OFF. Lifecycle v0.2 and the separate public demo client passed bounded external HTTPS checks; the free Hugging Face Static Space is created, populated, and PRIVATE. Public activation remains pending.** The earlier v0.1 release remains historical and unchanged. The completed temporary test left admission paused, no active visits or cleanup backlog, and the client stopped. Recheck current health/capacity when activating.
+
+Private preparation: https://huggingface.co/spaces/BrandenLaskowski7/cortex-governed-memory-challenge. The free arrangement uses the existing owner-operated Mac for the interactive client; no Hugging Face subscription or paid compute was purchased.
 
 See [lifecycle and retention](LIFECYCLE.md), [current preparation evidence](../../huggingface/space/VERIFICATION.md), and [owner launch handoff](../../huggingface/space/LAUNCH.md). No independent audit is claimed.
 

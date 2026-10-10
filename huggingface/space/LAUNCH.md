@@ -1,55 +1,49 @@
-# Owner launch handoff
+# Free launch handoff
 
-Status: **prepared on GitHub; not created, published, or verified on Hugging Face**.
+The owner chose **no subscription**. Use the existing **private Static Space**:
 
-The connected account is `BrandenLaskowski7`. The connector grants profile/read scopes and jobs access, but **no repository write/create scope**. There is no local Hugging Face credential. No permission was expanded, no token was requested or copied, and no Space creation was attempted with insufficient authority.
+**https://huggingface.co/spaces/BrandenLaskowski7/cortex-governed-memory-challenge**
 
-The next owner decision is approval to reopen the hardened synthetic HTTPS API for external verification. Public ingress is currently stopped. Only after that verification should the owner create/upload a private Space and explicitly approve its public visibility. No secret is needed to run it.
+Hugging Face's creation screen currently requires a paid plan for hosted Gradio/Docker Spaces. CPU Basic's lack of an hourly hardware charge does not remove that subscription requirement. Static Spaces remain free. This preparation uses the free Static option; no subscription or paid compute was purchased.
 
-## Before creating the Space
+## What is prepared
 
-Lifecycle v0.2 is installed locally with a 90-minute maximum visit, 15-minute idle cutoff, automatic erasure/reclamation, and End session. The immutable v0.1 release is unchanged. Ask the operator to verify the reviewed image, zero cleanup backlog, then obtain owner approval to reopen only the dedicated challenge ingress and perform a bounded HTTPS lifecycle test. Keep the entrance closed if any critical check fails. No production change is part of this gate.
+- Hugging Face serves the public-safe guide in `huggingface/static-space/`.
+- The guide embeds or links to `https://challenge.aiadvantage.shop/demo/`.
+- The Gradio client runs on the owner's existing Mac in a separate resource-limited client container. Its source is the public `huggingface/space/` folder. It calls only the fixed documented HTTPS API. No private kernel, credentials, production memory, Docker internals, or evidence ledger are uploaded to Hugging Face or this public repository.
+- The isolated synthetic lab enforces 90-minute maximum visits, 15-minute idle expiry, reset without deadline extension, End session, and automatic cleanup. Credentials stay per visitor in the client server's memory. See [lifecycle](../../challenges/governed-memory/LIFECYCLE.md).
+- The owner's separate local ON/OFF controls check the reviewed deployment, start/stop only the demo entrance, and revoke/clean lab visits when turned off. Their private implementation stays outside this repository.
 
-## Click-by-click creation
+The account `BrandenLaskowski7` is authenticated in the owner's browser and the private Space was created and populated through that interface. The connector remains read-only for repositories; no new write token or expanded connector permission was created.
 
-1. Sign into [Hugging Face](https://huggingface.co) as **BrandenLaskowski7**.
-2. Open [Create a new Space](https://huggingface.co/new-space).
-3. Select owner **BrandenLaskowski7**. Enter Space name **cortex-governed-memory-challenge**. If it already exists, inspect it; do not overwrite an unrelated Space.
-4. Enter short description **Six synthetic memory experiments with decisions and receipts**.
-5. Choose **CC BY 4.0** as license, **Gradio** as SDK, **Blank** template if offered, and free **CPU Basic** hardware. No GPU or paid hardware is required.
-6. Select **Private** visibility for review, then click **Create Space**. Private staging is the intended initial state; do not choose Public at this step.
-7. In **Files**, choose **Add file → Upload files**. Upload the files below directly to the Space root, preserving the `tests/` subfolder if including tests. Do **not** upload the enclosing GitHub repository or any `.git`, `.venv`, cache, token, or local output folder.
-8. Commit the upload to the private Space. Wait for the build to finish. Open **App**, or open its app URL in a separate tab if your browser blocks iframe cookies.
-9. Confirm the six scenario names and limitations are visible. Run **Temporal expiry**, verify the receipt, reset that same session, then click **End session and erase my experiment**. Confirm the cleanup message and cleared trace. Check that the trace reports matched decisions. This uses one finite API session slot. Stop if the endpoint returns capacity/unavailability; do not repeatedly create visitors.
-10. Review the source and private result. Give explicit owner confirmation: **“Go live with BrandenLaskowski7/cortex-governed-memory-challenge using the reviewed GitHub commit.”** Public publication is still pending until that confirmation.
-11. After confirming, open **Settings → Repository visibility → Change visibility → Public** and accept the site's confirmation. Public source may be copied permanently. Publish only the allowlisted client files.
-12. Open the public Space while signed out, verify the app loads, and perform one bounded synthetic scenario/receipt/reset/end if capacity permits. If capacity is full, report **published, live interaction blocked by capacity**, not verified live. Record the actual Space URL, Hugging Face revision, timestamp, and observed result in the GitHub docs. Do not claim hosted verification from the local tests.
+## The one remaining owner decision
 
-Expected URL **if created with that owner/name**: `https://huggingface.co/spaces/BrandenLaskowski7/cortex-governed-memory-challenge`. This is a proposed destination, not an existing/live resource verified by this preparation.
+**Explicitly approve public activation of the prepared free demo.** For example: “Turn on the free Cortex challenge and make the prepared Space public.” Until that decision, leave the Space private and the public entrance off. A private Space displaying “Running” does not mean the challenge is publicly launched.
 
-## Upload allowlist
+After approval, the operator opens the reviewed demo entrance, verifies HTTPS health/capacity, changes this Space to Public, and verifies it while signed out. If a critical check fails, close the entrance and report the failure. Never call it live solely because a Space exists or a build is green.
 
-Required at Space root:
+For an owner doing the final switch manually:
 
-- `app.py`
-- `challenge.py`
-- `scenarios.py`
-- `requirements.txt`
-- `README.md`
-- `LICENSE`
-- `LAUNCH.md`
-- `VERIFICATION.md`
+1. Keep the Mac awake, Docker running, and internet connected. The free arrangement depends on these existing resources; it is not free cloud compute or guaranteed uptime.
+2. Open the supplied **Turn ON Cortex Challenge** control. It must report verified HTTPS readiness. If it says NOT READY, leave the Space private and ask the operator to inspect the named prerequisite.
+3. Sign into Hugging Face and open the Space link above.
+4. Open **Settings**, find **Repository visibility**, choose **Change visibility → Public**, and confirm only after reviewing the public-safe files. Public source may be copied permanently.
+5. Open the public Space while signed out. Click **Open interactive lab here**, or **Open in a new tab** if embedded cookies are blocked. Run one synthetic scenario, inspect the decision and receipt, then **End session and erase my experiment**.
+6. If busy/full, stop and report the capacity limit; do not repeatedly open sessions. If the check fails critically, use **Turn OFF Cortex Challenge**. That closes the entrance, pauses new visits, revokes managed visits, and stops the separate demo client.
 
-Optional, preserving paths: `tests/test_client.py`, `tests/test_boundary.py`, `tests/test_lifecycle.py`, `tests/live_smoke.py`.
+## Recreate or restore the free Space
 
-No fixture dataset publication is required for this Space. Existing `huggingface/fixtures.jsonl` and its dataset card are separate preparation and should not replace this Space README.
+These steps are for recovery, not an additional action needed for the existing Space.
 
-For a future authorized CLI uploader, authenticate using the normal Hugging Face flow, then create a **private** Gradio Space and upload **only this folder** with the allowlist above. Never paste a token into chat, source, a command argument, or a screenshot.
+1. Open [New Space](https://huggingface.co/new-space), choose your account and an available name.
+2. Choose **Static → Blank**, **CC BY 4.0**, and **Private**. Do not select Gradio, Docker, PRO, a GPU, or paid hardware for this free plan.
+3. Create the Space, then open **Files → Contribute → Upload files**.
+4. Upload **only** `huggingface/static-space/index.html`, `README.md`, and `LICENSE` directly to the Space root. The README must retain `sdk: static` and `app_file: index.html`.
+5. Commit and open **App** to inspect the guide. If upload is unavailable, use the site's file editor to paste those exact file contents.
+6. Keep visibility Private until the explicit activation decision above. Never upload the enclosing repository, `.git`, `.venv`, local outputs, private implementation, runtime files, or secrets.
 
-## Before outreach
+## First developer outreach
 
-Coordinate a small first cohort (for example, three developers) because the upstream lab has 32 concurrent slots and finite shared capacity. End and expiry reclaim slots only after successful cleanup. Have the owner confirm capacity and cleanup health through their private controls. Do not change production or evade limits with extra visits.
+After verified public activation, invite three developers who build agent or memory tools to test one invariant each. Share the verified Space URL, API contract, and [synthetic failure template](https://github.com/brandenlaskowski7-bot/cortex-adi-research/issues/new?template=challenge-failure.yml). Ask for expected versus observed decision, reason category, receipt ID, and UTC time; omit credentials and real data. No invitations have been sent.
 
-After public hosted verification, invite developers to choose one invariant, run a synthetic scenario, and report the expected versus observed decision, reason category, receipt ID, and UTC time through the GitHub failure template. Ask them to omit credentials and real data. The first practical outreach step is a small invitation to three agent/memory-tool developers, with the verified Space link, contract, and a request to find a counterexample. No invitation has been sent.
-
-Reference: [Hugging Face Gradio Space creation guide](https://huggingface.co/docs/hub/spaces-sdks-gradio).
+[Hugging Face Space overview](https://huggingface.co/docs/hub/spaces-overview) · [Static Space documentation](https://huggingface.co/docs/hub/spaces-sdks-static) · [Verification record](VERIFICATION.md)

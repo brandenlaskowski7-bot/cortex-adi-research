@@ -1,23 +1,28 @@
-# Lifecycle preparation verification — 10 October 2026
+# Free launch preparation verification — 10 October 2026
 
-**Current status: lifecycle v0.2 installed and verified locally; public ingress OFF; Hugging Face Space not created or live.** The October 9 public HTTPS evidence below is historical and does not establish current uptime.
+**Status: the free Static Space is created and populated, remains PRIVATE, and public ingress is OFF. The demo client is stopped. New visits are paused; no active sessions or cleanup backlog remain. Public launch is pending explicit owner activation.**
 
-The current connected Hugging Face account is `BrandenLaskowski7`, with profile/read/jobs permissions and no repository create/write permission. No write privilege was expanded. Upload remains an owner step after the API launch gate.
+Space: https://huggingface.co/spaces/BrandenLaskowski7/cortex-governed-memory-challenge
 
-## Current checks
+Private Space revision observed in the authenticated browser: `aa221d6ba217781f524b5d16bc661594b856a4ac`. Only the static page, guide, and attribution license were added; the default non-sensitive template files remain. No kernel, credentials, deployment files, or private evidence were uploaded. The browser authenticated as the owner; connector repository scopes remain read-only. No subscription or paid compute was purchased.
 
-- **29/29 offline client tests passed**, including visitor/cookie isolation, bounded HTTPS transport, synthetic input and route restrictions, expiry-driven credential/trace erasure, confirmed End cleanup, reset deadline preservation, and cache reclamation after browser closure.
-- **27/27 guided scenario steps passed** between 16:31:02 and 16:32:17 UTC on 10 October 2026. The local Gradio callbacks used a private test-only adapter to forward their fixed HTTPS-shaped requests through the actual local gateway and hardened Docker runtime. The published client contains no configurable URL or loopback override. This was a local end-to-end test, **not an external HTTPS test**.
-- **7/7 associated checks passed:** separate cookie visitors despite an identical Gradio session hash; reset isolation; authenticated lifecycle status through the gateway; End revocation/cleared UI/other-visitor preservation; both sessions ended with confirmed cleanup; blocked alternate queue and credential-shaped output; zero occupied slots and zero cleanup backlog afterward.
-- Owner-side verification recorded **16/16 lifecycle unit tests, 24/24 disposable Docker contract checks, 5/5 shortened-duration Docker timing checks, and 16/16 installed-container boundary checks**. Copied kernel source hashes remained unchanged. Implementation, images, topology, raw evidence, and private credentials are excluded from this public repository.
+## Current evidence
 
-Timing tests used the same runtime code with owner-only limits shortened to 20 seconds absolute and 5 seconds idle. Unit tests cover the full 90-minute/15-minute boundaries. The regular installed policy was separately verified as 90 minutes absolute, 15 minutes idle, with a 10-second cleanup sweep. This is not a 90-minute wall-clock endurance result or an independent security audit.
+- **30/30 offline client tests passed**, including fixed HTTPS transport, User-Agent/timeouts, bounded inputs, per-visitor credentials and cookie isolation, forged-cookie/cross-origin rejection, blocked uploads/files/proxy/queues, finite capacity/backoff, expiry-driven erasure, and the self-hosted HTTPS prefix/cookie policy. These use mocks and do not prove kernel behavior.
+- **22/22 local demo proxy checks passed**: HTML/assets and callback delivery, HTTPS root, Secure/HttpOnly scoped cookies, restricted embedding, unchanged API origin denial, prohibited paths, body-size limits, and host/HTTPS enforcement. This is owner-side infrastructure evidence, not an independent audit.
+- At **16:45:51–16:46:14 UTC**, certificate-verified external API lifecycle checks passed **17/17**, with two isolated synthetic visitors and confirmed cleanup. The same fixed HTTPS client also matched all **27/27** guided scenario steps.
+- At **17:09:26–17:11:01 UTC**, the installed Gradio client was exercised through the actual public HTTPS `/demo/` entrance. **27/27 guided steps matched** across temporal expiry, supersession, conflict/HOLD, provenance, scope isolation, and reset. Two independent cookie jars deliberately used the same Gradio session hash. Distinct receipts, exact receipt retrieval, reset isolation, blocked alternate call path, and absence of credential-shaped UI output passed. Both visitors ended with confirmed cleanup (**7 associated checks including those two cleanups**).
+- The authenticated Hugging Face **private Static Space** rendered the embedded Gradio app. A separate browser visitor completed Temporal expiry (**5/5** matched steps), verified its receipt, then ended the session; the trace and local result display cleared. This is private-preview browser evidence. Signed-out public Space access is intentionally not tested until publication is approved.
+- The temporary test controller closed the public entrance at **17:14:12 UTC**, confirmed paused admission, zero active sessions, zero cleanup backlog, and stopped the separate client. The private Space still displays Running for its static page; this does not establish a public challenge launch.
+- Prior lifecycle verification remains **16/16 unit tests, 24/24 disposable Docker contract checks, 5/5 shortened-duration timing checks, and 16/16 installed kernel/relay boundary checks**. Copied kernel hashes remained unchanged. Private implementation, images, topology, and raw evidence are excluded from this public repository.
 
-An initial hosted timing unit test assumed creation occurred exactly at the fake clock's starting value. It was corrected to test the actual persisted deadline; the corrected private hosted checks passed. No production service was modified by the lifecycle work. Public ingress is intentionally stopped; its last pre-hardening health request returned an unavailable Cloudflare response. Reopening requires owner approval followed by fresh external health, session, isolation, and cleanup checks.
+An initial free-demo test matched all scenarios but encountered browser asset concurrency limits and one unconfirmed client End result from overly tight test pacing. The automatic owner shutdown confirmed final cleanup. The demo proxy concurrency ceiling was adjusted for normal browser asset loading, and the test now waits after each response before the next action. The complete corrected test and browser preview then passed. No failed attempt is reported as a successful end-to-end result.
 
-## Remaining launch gate
+The timing tests use the same lifecycle code with owner-only limits shortened to 20 seconds absolute and 5 seconds idle. Unit tests cover the 90-minute/15-minute boundaries; installed defaults were separately checked. This is not a 90-minute wall-clock endurance test, an independent security audit, or a production Cortex evaluation.
 
-Approve reopening only the dedicated challenge HTTPS entrance, verify the lifecycle externally with two bounded synthetic visitors, create/upload the private Space through the owner account, inspect it, then obtain explicit owner confirmation for public visibility. A proposed Space URL is not evidence that it exists. Do not announce a live demo until public hosted interaction is verified. See [LAUNCH.md](LAUNCH.md).
+## Activation still pending
+
+The free architecture uses Hugging Face Static plus the owner's existing Mac, Docker, and internet connection. Those existing resources must remain available. Availability and shared capacity are finite; no uptime guarantee or independent audit is claimed. No public launch announcement or outreach has been sent. See [LAUNCH.md](LAUNCH.md) for the one owner activation decision and exact manual steps.
 
 ---
 
