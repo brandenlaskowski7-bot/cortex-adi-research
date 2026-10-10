@@ -1,0 +1,45 @@
+{
+  "map_id": "synthetic-review-store",
+  "map_version": "0.1",
+  "location_id": "SYNTHETIC-001",
+  "data_classification": "wholly-synthetic",
+  "notice": "Wholly synthetic public-review fixture; no retailer or customer data.",
+  "nodes": [
+    {"id": "ENT", "x": 0, "y": 0, "label": "Entrance", "traversable": true},
+    {"id": "A1", "x": 2, "y": 0, "label": "Aisle A South", "traversable": true},
+    {"id": "A2", "x": 4, "y": 0, "label": "Aisle A North", "traversable": true},
+    {"id": "J1", "x": 6, "y": 0, "label": "Junction 1", "traversable": true},
+    {"id": "B1", "x": 2, "y": 3, "label": "Aisle B South", "traversable": true},
+    {"id": "B2", "x": 4, "y": 3, "label": "Aisle B North", "traversable": true},
+    {"id": "J2", "x": 6, "y": 3, "label": "Junction 2", "traversable": true},
+    {"id": "C1", "x": 2, "y": 6, "label": "Aisle C South", "traversable": true},
+    {"id": "C2", "x": 4, "y": 6, "label": "Aisle C North", "traversable": true},
+    {"id": "J3", "x": 6, "y": 6, "label": "Junction 3", "traversable": true},
+    {"id": "CHK", "x": 0, "y": 6, "label": "Checkout", "traversable": true},
+    {"id": "BAY", "x": 8, "y": 6, "label": "Receiving Bay", "traversable": true}
+  ],
+  "edges": [
+    {"a": "ENT", "b": "A1", "distance_m": 2},
+    {"a": "A1", "b": "A2", "distance_m": 2},
+    {"a": "A2", "b": "J1", "distance_m": 2},
+    {"a": "J1", "b": "J2", "distance_m": 3},
+    {"a": "J2", "b": "J3", "distance_m": 3},
+    {"a": "J3", "b": "BAY", "distance_m": 2},
+    {"a": "A1", "b": "B1", "distance_m": 3},
+    {"a": "B1", "b": "B2", "distance_m": 2},
+    {"a": "B2", "b": "J2", "distance_m": 2},
+    {"a": "B1", "b": "C1", "distance_m": 3},
+    {"a": "C1", "b": "C2", "distance_m": 2},
+    {"a": "C2", "b": "J3", "distance_m": 2},
+    {"a": "C1", "b": "CHK", "distance_m": 2},
+    {"a": "CHK", "b": "ENT", "distance_m": 6}
+  ],
+  "merchandise": [
+    {"sku": "SYN-APPLE", "name": "Synthetic Apples", "node_id": "A2", "aisle": "A", "section": "north"},
+    {"sku": "SYN-BREAD", "name": "Synthetic Bread", "node_id": "B1", "aisle": "B", "section": "south"},
+    {"sku": "SYN-CEREAL", "name": "Synthetic Cereal", "node_id": "B2", "aisle": "B", "section": "north"},
+    {"sku": "SYN-MILK", "name": "Synthetic Milk", "node_id": "C2", "aisle": "C", "section": "north"},
+    {"sku": "SYN-FROZEN", "name": "Synthetic Frozen Item", "node_id": "J3", "aisle": "C", "section": "freezer"},
+    {"sku": "SYN-BULK", "name": "Synthetic Bulk Item", "node_id": "A2", "aisle": "A", "section": "north"}
+  ]
+}

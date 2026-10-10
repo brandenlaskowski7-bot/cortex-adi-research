@@ -25,6 +25,12 @@ ADI is the umbrella paper. One supporting paper is planned per week, subject to 
 
 Read [Claims and limitations](CLAIMS_AND_LIMITATIONS.md), [contribution guidance](CONTRIBUTING.md), and the [governed-memory challenge v0.1](challenges/governed-memory/README.md). The owner-operated challenge is live at **[https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**. It accepts synthetic structured-symbolic operations only; it is not production Cortex, a natural-language system, or a general security guarantee. We welcome bounded falsification attempts within the published API and limits. Kernel implementation, private evidence, independent replication, and peer-review acceptance are not claimed or distributed.
 
+## Cortex Spatial Intelligence public review
+
+The [Cortex Spatial Intelligence public peer-review release v0.1](projects/cortex-spatial-intelligence/README.md) provides an independently written, wholly synthetic reference surface for deterministic shopper and picker routing, graph-distance stocking plans, and route-protected promotion decisions. It includes an interactive Gradio package, 22 deterministic tests, a technical paper, a claims ledger, an observable API contract, limitations, and reproducibility evidence.
+
+This release is not the private production engine or commercial SDK. It contains no real retailer maps, customer data, positioning histories, production credentials, or proprietary implementation source. Its project-level [Public Review License](projects/cortex-spatial-intelligence/LICENSE.md) applies to that package; the repository's CC BY 4.0 license does not expand rights to the project-level software or any undisclosed implementation.
+
 ## License and scope
 
 The ADI paper and original research documentation, synthetic challenge fixtures, and client examples in this repository are licensed under [CC BY 4.0](LICENSE), matching the published Zenodo record. Attribution remains required. Third-party works retain their own terms. This license does not cover unreleased software, implementations, private evidence, or trademarks. Only the files in this new public repository are distributed; the research preparation repository remains private.

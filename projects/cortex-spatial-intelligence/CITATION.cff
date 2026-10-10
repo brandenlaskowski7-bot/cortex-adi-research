@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you review or reference this public release, please cite it as follows."
+title: "Cortex Spatial Intelligence Public Peer-Review Release"
+type: software
+version: 0.1.0
+date-released: 2026-10-10
+authors:
+  - family-names: Laskowski
+    given-names: Branden
+    affiliation: Cortex Agentics Global Inc.
+abstract: "An independently written, synthetic reference demonstrator for deterministic indoor routing, stocking, and route-protected promotion policies."
+license: other
+keywords:
+  - indoor routing
+  - deterministic systems
+  - spatial intelligence
+  - replenishment
+  - governed promotions
+
