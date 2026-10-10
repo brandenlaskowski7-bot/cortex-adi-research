@@ -23,8 +23,12 @@ ADI is the umbrella paper. One supporting paper is planned per week, subject to 
 
 ## Examine and challenge the claims
 
-Read [Claims and limitations](CLAIMS_AND_LIMITATIONS.md), [contribution guidance](CONTRIBUTING.md), and the [governed-memory challenge v0.1](challenges/governed-memory/README.md). The owner-operated challenge is live at **[https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**. It accepts synthetic structured-symbolic operations only; it is not production Cortex, a natural-language system, or a general security guarantee. We welcome bounded falsification attempts within the published API and limits. Kernel implementation, private evidence, independent replication, and peer-review acceptance are not claimed or distributed.
+Read [Claims and limitations](CLAIMS_AND_LIMITATIONS.md), [contribution guidance](CONTRIBUTING.md), and the [governed-memory challenge v0.1](challenges/governed-memory/README.md). The owner-operated challenge is currently **offline for lifecycle hardening**; its prepared address is **[https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**. It accepts synthetic structured-symbolic operations only; it is not production Cortex, a natural-language system, or a general security guarantee. We welcome bounded falsification attempts within the published API and limits. Kernel implementation, private evidence, independent replication, and peer-review acceptance are not claimed or distributed.
 
 ## License and scope
 
 The ADI paper and original research documentation, synthetic challenge fixtures, and client examples in this repository are licensed under [CC BY 4.0](LICENSE), matching the published Zenodo record. Attribution remains required. Third-party works retain their own terms. This license does not cover unreleased software, implementations, private evidence, or trademarks. Only the files in this new public repository are distributed; the research preparation repository remains private.
+
+## Developer demo preparation
+
+A [free Static Space](huggingface/static-space/README.md) embeds or links to the [owner-hosted Gradio client](huggingface/space/README.md), offering six guided synthetic memory scenarios with decisions, reasons, and receipts. The lifecycle update adds a 90-minute maximum visit, 15-minute idle expiry, automatic cleanup, and End session. See the [current verification and launch status](huggingface/space/VERIFICATION.md). **The Space is created and private; public activation is pending.** [Free launch instructions](huggingface/space/LAUNCH.md) explain the owner-operated setup and final activation. No subscription was purchased.

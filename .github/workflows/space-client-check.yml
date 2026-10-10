@@ -1,0 +1,23 @@
+name: Public Space client checks
+on:
+  push:
+    paths: ['huggingface/space/**', 'huggingface/static-space/**', '.github/workflows/space-client-check.yml']
+  pull_request:
+    paths: ['huggingface/space/**', 'huggingface/static-space/**', '.github/workflows/space-client-check.yml']
+permissions:
+  contents: read
+jobs:
+  offline-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: huggingface/space/requirements.txt
+      - run: python -m pip install -r huggingface/space/requirements.txt pytest==9.1.1
+      - run: python -m pytest huggingface/space/tests -q
+        env:
+          GRADIO_ANALYTICS_ENABLED: 'False'
+# Deliberately no live smoke in CI: each run consumes finite upstream slots.

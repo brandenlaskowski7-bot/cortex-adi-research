@@ -2,13 +2,13 @@
 
 **Try to make the sandbox violate a published invariant.**
 
-**Live HTTPS base: [https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**. This owner-operated synthetic sandbox uses a dedicated Cloudflare Tunnel and accepts only the documented challenge routes. This directory distributes the behavioral contract, synthetic fixtures, and API client. Private implementation, deployment artifacts, and raw evidence remain **PRIVATE STAGING — NOT RELEASED**.
+**Prepared HTTPS base: [https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**. **Public ingress is stopped during lifecycle v0.2 preparation (10 October 2026). Owner approval and fresh external verification are required before reopening.** [Lifecycle controls and retention](LIFECYCLE.md) are installed and checked locally. This owner-operated synthetic sandbox uses a dedicated Cloudflare Tunnel and accepts only the documented challenge routes. This directory distributes the behavioral contract, synthetic fixtures, and API client. Private implementation, deployment artifacts, and raw evidence remain **PRIVATE STAGING — NOT RELEASED**.
 
 - [Behavioral contract](SPEC.md), [API](API.md), [status](STATUS.md)
 - [Fixture schema](fixture-schema.json), [12 fixtures](fixtures/), [scoring](scoring.md)
 - [Python client](client/run_fixture.py), [example requests](examples/)
 - [Failure report](../../.github/ISSUE_TEMPLATE/challenge-failure.yml)
-- [Hugging Face preparation](../../huggingface/README.md) — not published there
+- [Free Static Space](../../huggingface/static-space/README.md), [public Gradio client](../../huggingface/space/README.md), and [owner activation instructions](../../huggingface/space/LAUNCH.md) — created privately, not publicly launched; [dataset preparation](../../huggingface/README.md) remains separate
 
 Run a synthetic fixture against the public endpoint:
 

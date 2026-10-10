@@ -1,3 +1,15 @@
+# Current lifecycle status — 10 October 2026
+
+**Public ingress is OFF. Lifecycle v0.2 and the separate public demo client passed bounded external HTTPS checks; the free Hugging Face Static Space is created, populated, and PRIVATE. Public activation remains pending.** The earlier v0.1 release remains historical and unchanged. The completed temporary test left admission paused, no active visits or cleanup backlog, and the client stopped. Recheck current health/capacity when activating.
+
+Private preparation: https://huggingface.co/spaces/BrandenLaskowski7/cortex-governed-memory-challenge. The free arrangement uses the existing owner-operated Mac for the interactive client; no Hugging Face subscription or paid compute was purchased.
+
+See [lifecycle and retention](LIFECYCLE.md), [current preparation evidence](../../huggingface/space/VERIFICATION.md), and [owner launch handoff](../../huggingface/space/LAUNCH.md). No independent audit is claimed.
+
+---
+
+## Historical release record
+
 # Challenge status
 
 Updated 9 October 2026.
@@ -10,7 +22,7 @@ Updated 9 October 2026.
 - A [separately hosted GitHub runner](https://github.com/brandenlaskowski7-bot/cortex-adi-research/actions/runs/37986270510) also passed normal public DNS/TLS, root/health, all six API routes, 11 behavioral fixtures, missing-auth rejection, exact receipt retrieval, and cross-session receipt denial. It had no operator restart access; restart persistence was verified by the owner-run public-URL suite above. Hosted logs contain only sanitized outcomes; no session tokens or raw receipts are printed.
 - Internet endpoint: **[https://challenge.aiadvantage.shop](https://challenge.aiadvantage.shop)**, using a dedicated named Cloudflare Tunnel.
 - Public release: [memory-challenge-v0.1](https://github.com/brandenlaskowski7-bot/cortex-adi-research/releases/tag/memory-challenge-v0.1). The immutable tag predates live-endpoint documentation; release notes identify the launch commits.
-- Hugging Face: preparation only; no dataset or Space published.
+- Hugging Face: [upload-ready Gradio Space client](../../huggingface/space/README.md) prepared with six guided scenarios. Local live-API smoke and two-visitor isolation passed; [verification details](../../huggingface/space/VERIFICATION.md). The connected account lacks repository write/create scope. No Space was created or published; [owner handoff](../../huggingface/space/LAUNCH.md). Dataset remains unpublished.
 - Kernel/deployment code, raw proof, and private research: **PRIVATE STAGING — NOT RELEASED**.
 - Independent replication, adversarial security review, and unrestricted natural-language evaluation: not established.
 - Availability: small owner-operated sandbox, no uptime guarantee. Session capacity is finite, with no automatic session-slot reclamation; global budgets can affect all callers. Cloudflare may reject generic Python user-agents; use the current identified client.
