@@ -11,7 +11,7 @@ on:
       publish_dataset:
         description: Create or update the synthetic fixture dataset
         required: true
-        default: true
+        default: false
         type: boolean
 
 permissions:
