@@ -1,0 +1,96 @@
+name: Publish reviewed Hugging Face public assets
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_space:
+        description: Publish the reviewed static Space package
+        required: true
+        default: true
+        type: boolean
+      publish_dataset:
+        description: Create or update the synthetic fixture dataset
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  verify-public-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public package boundaries
+        shell: python
+        run: |
+          from pathlib import Path
+          static = Path('huggingface/static-space')
+          assert (static / 'README.md').is_file()
+          assert (static / 'index.html').is_file()
+          assert (Path('huggingface/dataset') / 'README.md').is_file()
+          assert Path('huggingface/fixtures.jsonl').is_file()
+          blocked = ('token', 'secret', 'password', 'private kernel', 'deployment internals')
+          text = (static / 'README.md').read_text().lower()
+          assert not any(item in text for item in blocked)
+
+  publish-space:
+    needs: verify-public-package
+    if: inputs.publish_space
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      SPACE_ID: BrandenLaskowski7/cortex-governed-memory-challenge
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'huggingface_hub>=0.30,<1'
+      - name: Publish static Space package
+        shell: python
+        run: |
+          import os
+          from huggingface_hub import HfApi
+          HfApi().upload_folder(
+              repo_id=os.environ['SPACE_ID'],
+              repo_type='space',
+              folder_path='huggingface/static-space',
+              commit_message='Publish reviewed ADI Governed Memory Lab update',
+          )
+
+  publish-dataset:
+    needs: verify-public-package
+    if: inputs.publish_dataset
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      DATASET_ID: BrandenLaskowski7/adi-governed-memory-fixtures
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'huggingface_hub>=0.30,<1'
+      - name: Create or update synthetic fixture dataset
+        shell: python
+        run: |
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi()
+          api.create_repo(os.environ['DATASET_ID'], repo_type='dataset', exist_ok=True)
+          api.upload_file(
+              path_or_fileobj='huggingface/dataset/README.md',
+              path_in_repo='README.md',
+              repo_id=os.environ['DATASET_ID'],
+              repo_type='dataset',
+              commit_message='Publish synthetic fixture dataset card',
+          )
+          api.upload_file(
+              path_or_fileobj='huggingface/fixtures.jsonl',
+              path_in_repo='fixtures.jsonl',
+              repo_id=os.environ['DATASET_ID'],
+              repo_type='dataset',
+              commit_message='Publish synthetic governed-memory fixtures',
+          )

@@ -16,7 +16,7 @@ ADI asks a practical question: **who or what has authority to decide?** This fre
 
 The interactive lab is at **https://challenge.aiadvantage.shop/demo/**. Hugging Face serves these public-safe guide files; the existing owner-operated environment hosts the resource-limited synthetic client. No paid Hugging Face compute, GPU, API inference, or subscription is used.
 
-This is not Cortex itself. The Space contains no kernel source, production memory, deployment internals, credentials, or private evidence ledger. It demonstrates ADI-inspired governed-memory behavior using fixed symbolic data; it does not expose the private continuity substrate behind the work.
+This is not Cortex itself. The Space contains no kernel source, production memory, operational topology, credentials, or private evidence ledger. It demonstrates ADI-inspired governed-memory behavior using fixed symbolic data; it does not expose the private continuity substrate behind the work.
 
 ## What you can learn here
 
