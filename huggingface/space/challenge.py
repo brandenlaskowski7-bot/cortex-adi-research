@@ -2,6 +2,7 @@
 import json
 import logging
 import math
+import os
 import re
 import threading
 import time
@@ -11,7 +12,12 @@ from datetime import datetime
 
 import httpx
 
-BASE = 'https://challenge.aiadvantage.shop'
+# The hosted Space continues to use the public HTTPS contract.  The owner-run
+# demo is served by that same public ingress, but its server-side calls may use
+# the dedicated loopback relay when the Mac cannot negotiate a TLS connection
+# back to its own Cloudflare hostname.  This value is image-controlled only;
+# browser input never selects an upstream.
+BASE = os.environ.get('CORTEX_CHALLENGE_BASE', 'https://challenge.aiadvantage.shop').rstrip('/')
 USER_AGENT = 'CortexGovernedMemoryChallenge/0.1'
 PREFIX = '/v1/challenge/'
 RECEIPT = re.compile(r'receipt-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
