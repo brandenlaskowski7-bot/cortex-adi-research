@@ -1,0 +1,60 @@
+name: Post Hugging Face introductions
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  introduce-the-lab:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      SPACE_ID: BrandenLaskowski7/cortex-governed-memory-challenge
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'huggingface_hub>=0.30,<1'
+      - name: Publish the approved introductions once
+        shell: python
+        run: |
+          import os
+          from huggingface_hub import HfApi
+
+          posts = [
+              (
+                  'ADI Governed Memory Lab: deterministic decisions, not a black box',
+                  'What should happen when a memory is expired, superseded, outside its declared scope, unsupported by provenance, or in conflict with another candidate?\n\n'
+                  'The ADI Governed Memory Lab is a small public, synthetic demonstration of one answer: make the decision deterministic, show the reason category, and preserve a receipt for the operation.\n\n'
+                  'Try the six fixed scenarios here: https://challenge.aiadvantage.shop/demo/\n\n'
+                  'This is not Cortex, a general-purpose memory product, or a security claim. It contains no real records, prompts, private policies, or production infrastructure. It is an invitation to test explicit rules and report a synthetic counterexample.'
+              ),
+              (
+                  'Memory is not simply retrieved: it has an eligibility window',
+                  'In the temporal-expiry scenario, the same synthetic record is current one millisecond before expiry, historical exactly at expiry, and absent before its effective time.\n\n'
+                  'That distinction matters because a retrieval system can be technically responsive while still returning information that is no longer eligible for use. The lab makes the transition visible and records each response with a receipt.\n\n'
+                  'Run the synthetic scenario: https://challenge.aiadvantage.shop/demo/'
+              ),
+              (
+                  'Looking for synthetic counterexamples to governed-memory rules',
+                  'The lab is designed to be challenged. Pick one invariant—time, scope, provenance, conflict handling, replacement, or cleanup—run the fixed synthetic scenario, and compare the expected decision with the observed response.\n\n'
+                  'If you find a mismatch, report the scenario, expected and observed decision, reason category, receipt ID, and UTC time. Please do not send credentials or real data.\n\n'
+                  'Public reporting path: https://github.com/brandenlaskowski7-bot/cortex-adi-research/issues/new?template=challenge-failure.yml'
+              ),
+          ]
+          api = HfApi()
+          existing = {item.title for item in api.get_repo_discussions(
+              os.environ['SPACE_ID'], repo_type='space'
+          )}
+          for title, body in posts:
+              if title not in existing:
+                  api.create_discussion(
+                      os.environ['SPACE_ID'], title,
+                      description=body, repo_type='space'
+                  )
+                  print(f'published: {title}')
+              else:
+                  print(f'already present: {title}')
