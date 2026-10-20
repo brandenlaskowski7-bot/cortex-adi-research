@@ -1,0 +1,51 @@
+name: Reply to MemoryArena eligibility discussion
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reply-once:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'huggingface_hub>=0.30,<1'
+      - name: Publish the approved response once
+        shell: python
+        run: |
+          import os
+          from huggingface_hub import HfApi
+
+          repo_id = 'ZexueHe/memoryarena'
+          discussion_num = 5
+          response = (
+              'Congratulations on publishing the adapter, configs, and per-run logs—the token figures alongside SR and PS are especially useful. '
+              'One boundary I would be interested in testing separately is eligibility: if a state is retained and concise, what makes it still legitimate to inject after an expiry, replacement, scope change, or contradiction? '
+              'I am experimenting with tiny synthetic fixtures that label decisions as current, historical, held, denied, or unresolved and preserve a receipt. '
+              'Would an explicit eligibility failure mode be useful in a benchmark like this, or does it belong outside the current task design?'
+          )
+          api = HfApi(token=os.environ['HF_TOKEN'])
+          discussion = api.get_discussion_details(
+              repo_id, discussion_num, repo_type='dataset'
+          )
+          existing = [
+              event.content for event in discussion.events
+              if getattr(event, 'type', None) == 'comment'
+          ]
+          if response in existing:
+              print('already present')
+          else:
+              api.comment_discussion(
+                  repo_id, discussion_num, response, repo_type='dataset'
+              )
+              print(
+                  'published: '
+                  'https://huggingface.co/datasets/ZexueHe/memoryarena/discussions/5'
+              )
