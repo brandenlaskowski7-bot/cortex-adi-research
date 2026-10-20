@@ -1,20 +1,29 @@
 ---
-title: Cortex Governed Memory Challenge
-emoji: 🧭
+title: ADI Governed Memory Lab
+emoji: 🧠
 colorFrom: green
 colorTo: blue
 sdk: static
 app_file: index.html
 pinned: false
 license: cc-by-4.0
-short_description: Six synthetic memory experiments with decisions and receipts
+short_description: ADI-inspired synthetic memory decisions with receipts
 ---
 
-# Cortex Governed Memory Challenge
+# ADI Governed Memory Lab
 
-This **free Static Space** introduces six governed-memory experiments and embeds or links to the interactive Gradio client at **https://challenge.aiadvantage.shop/demo/**. Hugging Face serves these static public-safe files; the existing owner-operated Mac hosts the resource-limited public client and the separate isolated synthetic challenge. No paid Hugging Face compute, GPU, API inference, or subscription is used.
+ADI asks a practical question: **who or what has authority to decide?** This free, synthetic lab makes one side of that question visible in memory systems. Run six fixed experiments and observe deterministic decisions about eligibility, time, scope, conflict, provenance, replacement, and cleanup—each with an inspectable receipt.
 
-The Space contains no kernel source, production memory, deployment internals, credentials, or evidence ledger. The interactive client uses only the documented fixed HTTPS synthetic API. Session credentials remain privately in the demo server's memory, separated per visitor; the static page never receives them.
+The interactive lab is at **https://challenge.aiadvantage.shop/demo/**. Hugging Face serves these public-safe guide files; the existing owner-operated environment hosts the resource-limited synthetic client. No paid Hugging Face compute, GPU, API inference, or subscription is used.
+
+This is not Cortex itself. The Space contains no kernel source, production memory, deployment internals, credentials, or private evidence ledger. It demonstrates ADI-inspired governed-memory behavior using fixed symbolic data; it does not expose the private continuity substrate behind the work.
+
+## What you can learn here
+
+- A fact can be accepted but later become ineligible because time, scope, provenance, or replacement rules change.
+- A correct result is sometimes **HOLD**, **DENY**, **HISTORICAL**, or **UNRESOLVED** rather than a retrieval.
+- A receipt preserves what the service decided at the time of the operation; it is a trace record, not a later re-evaluation.
+- The scenarios are bounded demonstrations, not claims of general-purpose memory, real-world truth verification, or an independent security audit.
 
 ## Sessions and limits
 
