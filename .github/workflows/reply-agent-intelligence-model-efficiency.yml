@@ -1,0 +1,61 @@
+name: Reply to agent-intelligence model efficiency discussion
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reply-once:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'huggingface_hub>=0.30,<1'
+      - name: Publish the approved response once
+        shell: python
+        run: |
+          import os
+          from huggingface_hub import HfApi
+
+          repo_id = 'huggingface/HuggingDiscussions'
+          discussion_num = 89
+          response = '''Really enjoying this thread—especially the refusal to turn a run into one score wearing a fake moustache.
+
+          Your capability/violation split makes me wonder whether there is a third question worth recording: was the state the agent relied on still eligible to influence the run?
+
+          For Tapoo, a deliberately nasty test might give the agent a map observation that was valid when it arrived, then make it stale, superseded, or contradicted by a newer observation. The resulting plan could look strategically sound while its premise has quietly expired. That is not quite a planning failure or a formatting failure; it is a state-eligibility failure.
+
+          This connects to the broader architecture I describe in my public paper, [Artificial Deterministic Intelligence: Probabilistic Reasoning, Deterministic Authority](https://doi.org/10.5281/zenodo.23265200): the model is not the entire unit of intelligence. Deterministic authority and governed state shape what the model is actually being asked to do.
+
+          That also matters for model efficiency. In controlled synthetic work, I have found that a smaller model does not have to reconstruct the whole world on every turn when relevant state is assembled, scoped, and checked outside the model. That does not make a smaller model secretly a larger one—sadly, nobody gets a free parameter upgrade—but it does change the job we are asking it to repeat.
+
+          So I would be curious whether Tapoo could distinguish:
+          - a model that made a poor plan;
+          - a model that made a good plan from ineligible state; and
+          - a model that recognized the state was no longer trustworthy and stopped or re-checked.
+
+          Would that be useful as a separate "eligible evidence" dimension, or does it overlap with one of your existing violation categories?'''
+          api = HfApi(token=os.environ['HF_TOKEN'])
+          discussion = api.get_discussion_details(
+              repo_id, discussion_num, repo_type='space'
+          )
+          existing = [
+              event.content for event in discussion.events
+              if getattr(event, 'type', None) == 'comment'
+          ]
+          if response in existing:
+              print('already present')
+          else:
+              api.comment_discussion(
+                  repo_id, discussion_num, response, repo_type='space'
+              )
+              print(
+                  'published: '
+                  'https://huggingface.co/spaces/huggingface/HuggingDiscussions/discussions/89'
+              )
