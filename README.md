@@ -17,9 +17,15 @@ ADI proposes that probabilistic inference supplies bounded proposals while exter
 
 The PDF is byte-identical to the corrected file on the existing Zenodo record, SHA-256 `42cf234ca3fb7aa792437e29e1fddcf9c8c3a0a0f9e5b957c5ab1e78d93dbfe5`. Its drafting-time declaration that no DOI was claimed, and its legacy PDF subject/keywords, predate publication. The DOI and release status above supersede those editorial remnants. We preserve the deposited v1.0 bytes; this repository does not silently replace the archival object or create a new DOI.
 
-## Weekly series
+## Research papers
 
-ADI is the umbrella paper. One supporting paper is planned per week, subject to evidence and owner release review. [Release schedule](RELEASE_SCHEDULE.md) records the planned order and current states. Supporting papers are being prepared privately and are **not released** here. A target week does not waive an evidence gap.
+This public repository now provides the release home for the first three papers in the ADI research series. The private preparation repository, source code, raw trial material, and unpublished papers remain separate.
+
+- [Paper 1 — Artificial Deterministic Intelligence](paper/README.md): published v1.0 PDF and Zenodo record.
+- [Paper 2 — Externalized Intelligence and Model Substitution](papers/paper-2/README.md): public-safe web edition with a bounded evidence summary.
+- [Paper 3 — Deterministic Worker Construction Before Inference](papers/paper-3/README.md): public release record and archival DOI.
+
+[Release schedule](RELEASE_SCHEDULE.md) records the series state. A released paper does not waive the evidence or disclosure review required for later papers.
 
 ## Examine and challenge the claims
 
