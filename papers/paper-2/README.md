@@ -33,3 +33,5 @@ The scoped-capability 8B result of 29/30 remains retained as incomplete and is n
 This is a first-party study of synthetic data. It does not distribute raw prompts, completions, private evidence directories, implementation source, proprietary policy logic, production data, operational topology, or credentials. Hash and verifier records establish the identity of reviewed local artifacts; they do not establish independent replication. An independent synthetic challenge, separately controlled evaluation, further model families, and prospectively defined failure thresholds remain necessary.
 
 The paper's central point is not that a model answer is worthless. It is that a correct answer alone is not the full contract for human-centered work: the authorization, evidence boundary, provenance, and required-HOLD behavior also matter.
+
+The public-safe [Work Order A evidence note](evidence/2026-10-26-work-order-a.md) records the controlled retrieval-comparator result, its scope, and its limits without exposing private raw evidence.
