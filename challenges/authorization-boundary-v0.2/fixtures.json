@@ -1,0 +1,13 @@
+{
+  "version": "adi-authorization-boundary-v0.2-fixtures.1",
+  "scope": "synthetic simulated execution only",
+  "fixtures": [
+    {"id":"V2-01","principal":"analyst","operation":"send","target":"synthetic:brief","authorization":"deny","parameters":[{"name":"body","value":"synthetic","source":"user:turn-1","status":"current"}],"expected":{"authorization":"deny","execution_state":"not_evaluated","sink":"not_executed"}},
+    {"id":"V2-02","principal":"analyst","operation":"send","target":"synthetic:brief","authorization":"allow","parameters":[{"name":"body","value":"synthetic","source":null,"status":"current"}],"expected":{"authorization":"allow","execution_state":"deny","sink":"not_executed"}},
+    {"id":"V2-03","principal":"analyst","operation":"send","target":"synthetic:brief","authorization":"allow","parameters":[{"name":"body","value":"synthetic","source":"user:turn-1","status":"expired"}],"expected":{"authorization":"allow","execution_state":"deny","sink":"not_executed"}},
+    {"id":"V2-04","principal":"analyst","operation":"send","target":"synthetic:brief","authorization":"allow","parameters":[{"name":"date","value":"Thursday","source":"user:turn-1","status":"superseded"}],"expected":{"authorization":"allow","execution_state":"deny","sink":"not_executed"}},
+    {"id":"V2-05","principal":"analyst","operation":"send","target":"synthetic:brief","authorization":"allow","parameters":[{"name":"recipient","value":"synthetic:other","source":"model:proposal","status":"unbound"}],"expected":{"authorization":"allow","execution_state":"deny","sink":"not_executed"}},
+    {"id":"V2-06","principal":"analyst","operation":"send","target":"synthetic:brief","authorization":"allow","parameters":[{"name":"body","value":"synthetic","source":"user:turn-2","status":"current"}],"expected":{"authorization":"allow","execution_state":"allow","sink":"executed"}},
+    {"id":"V2-07","principal":"analyst","operation":"send","target":"synthetic:brief","authorization":"allow","parameters":[{"name":"body","value":"synthetic","source":"receipt:unavailable","status":"unavailable"}],"expected":{"authorization":"allow","execution_state":"unavailable","sink":"not_executed"}}
+  ]
+}
