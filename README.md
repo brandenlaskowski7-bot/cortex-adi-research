@@ -19,11 +19,12 @@ The PDF is byte-identical to the corrected file on the existing Zenodo record, S
 
 ## Research papers
 
-This public repository now provides the release home for the first three papers in the ADI research series. The private preparation repository, source code, raw trial material, and unpublished papers remain separate.
+This public repository provides the release home for the ADI research series. Paper 4 has a public-safe index, but its manuscript has not yet been submitted to Zenodo. The private preparation repository, source code, raw trial material, and unpublished papers remain separate.
 
 - [Paper 1 — Artificial Deterministic Intelligence](paper/README.md): published v1.0 PDF and Zenodo record.
 - [Paper 2 — Externalized Intelligence and Model Substitution](papers/paper-2/README.md): public-safe web edition with a bounded evidence summary.
-- [Paper 3 — Deterministic Worker Construction Before Inference](papers/paper-3/README.md): public release record and archival DOI.
+- [Paper 3 — public release index](papers/paper-3/README.md): submitted Paper 3 release and DOI.
+- [Paper 4 — Deterministic Worker Construction Before Inference](papers/paper-4/README.md): unpublished manuscript; DOI not yet assigned.
 
 [Release schedule](RELEASE_SCHEDULE.md) records the series state. A released paper does not waive the evidence or disclosure review required for later papers.
 
