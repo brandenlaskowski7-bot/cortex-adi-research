@@ -1,20 +1,21 @@
 # Weekly research release schedule
 
-Updated 25 October 2026. Week 0 is the ADI umbrella publication. Subsequent weeks are a planned sequence, not guaranteed release dates. One finished supporting paper per week is the intended cadence. If a paper is held, move an evidence-ready paper forward or leave that week without a release; do not weaken its claims gate.
+Updated 30 October 2026. The earlier Week 0 label was an indexing error. Paper numbers below reflect the order in which the papers were produced and released or prepared. Dates are publication states, not promises. If a paper is held, move an evidence-ready paper forward or leave that release slot empty; do not weaken its claims gate.
 
-| Week | Paper | Current state |
+| Paper | Research item | Current state |
 | --- | --- | --- |
-| 0 | Artificial Deterministic Intelligence | PUBLISHED v1.0, 9 October 2026 |
-| 1 | Externalized Intelligence and Model Substitution | RELEASED — public-safe web edition |
-| 2 | Deterministic Worker Construction Before Inference | PUBLISHED — Zenodo v0.9 |
-| 3 | Governed Shared Memory for Multi-Agent Systems | DRAFT — NOT RELEASED |
-| 4 | Model-Independent Artificial Workers | HELD — NOT RELEASED |
-| 5 | Temporal and Authoritative AI Memory | HELD — NOT RELEASED |
-| 6 | Behavioral Governance of Artificial Workers | HELD — NOT RELEASED |
-| 7 | Governed Persistent Student Memory for Educational AI | HELD — NOT RELEASED |
-| 8 | Evidence-Calibrated Computational Persona | HELD — NOT RELEASED |
-| 9 | Persistent Artificial Identity Across Model Generations | HELD — NOT RELEASED |
-| 10 | Persistent Artificial Identity in Robotic Embodiment | HELD — NOT RELEASED |
+| 1 | Artificial Deterministic Intelligence | PUBLISHED v1.0, 9 October 2026 |
+| 2 | Externalized Intelligence and Model Substitution | RELEASED — public-safe web edition |
+| 3 | Paper 3 public release record | SUBMITTED — DOI 10.5281/zenodo.23603637 |
+| 4 | Deterministic Worker Construction Before Inference | PREPARED MANUSCRIPT — NOT SUBMITTED; DOI pending |
+| 5 | Governed Shared Memory for Multi-Agent Systems | DRAFT — NOT RELEASED |
+| 6 | Model-Independent Artificial Workers | HELD — NOT RELEASED |
+| 7 | Temporal and Authoritative AI Memory | HELD — NOT RELEASED |
+| 8 | Behavioral Governance of Artificial Workers | HELD — NOT RELEASED |
+| 9 | Governed Persistent Student Memory for Educational AI | HELD — NOT RELEASED |
+| 10 | Evidence-Calibrated Computational Persona | HELD — NOT RELEASED |
+| 11 | Persistent Artificial Identity Across Model Generations | HELD — NOT RELEASED |
+| 12 | Persistent Artificial Identity in Robotic Embodiment | HELD — NOT RELEASED |
 
 Later supervisory/repair research remains outside this scheduled series pending dedicated evidence review.
 
@@ -22,7 +23,7 @@ Later supervisory/repair research remains outside this scheduled series pending 
 
 Monday–Wednesday: evidence reconciliation, drafting, technical criticism, and formatting. Thursday: exact-artifact owner approval, metadata, licensing, and disclosure review. Friday: publish an approved paper and its version record. Testing and outreach can continue throughout the program; outreach is a separate action.
 
-Readiness progresses through RESEARCH, DRAFT, EVIDENCE REVIEW, FINAL REVIEW, READY TO RELEASE, and PUBLISHED. HELD records unresolved evidence or review dependencies. Each future release needs its own PDF, citation/version metadata, bounded claims and limitations, approved evidence summary, and disclosure review. The umbrella DOIs do not identify unpublished supporting papers.
+Readiness progresses through RESEARCH, DRAFT, EVIDENCE REVIEW, FINAL REVIEW, READY TO RELEASE, and PUBLISHED. HELD records unresolved evidence or review dependencies. Each future release needs its own PDF, citation/version metadata, bounded claims and limitations, approved evidence summary, and disclosure review. The Paper 1–3 DOIs do not identify the unpublished Paper 4 manuscript.
 
 New evidence updates later papers or explicitly versioned corrections. It does not silently revise a frozen result or erase a failed attempt.
 
