@@ -1,0 +1,24 @@
+name: ADI adversarial fixture
+
+on:
+  push:
+    paths:
+      - "huggingface/adversarial-fixture-v1/**"
+      - ".github/workflows/adi-adversarial-fixture.yml"
+  pull_request:
+    paths:
+      - "huggingface/adversarial-fixture-v1/**"
+      - ".github/workflows/adi-adversarial-fixture.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  fixture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node huggingface/adversarial-fixture-v1/run.js
