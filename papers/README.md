@@ -7,6 +7,6 @@ This directory is the public-safe release index for the ADI research series. It 
 | 1 | [Artificial Deterministic Intelligence](../paper/README.md) | Zenodo v1.0, DOI [10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200) |
 | 2 | [Externalized Intelligence and Model Substitution](paper-2/README.md) | Public-safe web edition |
 | 3 | [Paper 3 public release index](paper-3/README.md) | DOI [10.5281/zenodo.23603637](https://doi.org/10.5281/zenodo.23603637) |
-| 4 | [Deterministic Worker Construction Before Inference](paper-4/README.md) | Manuscript prepared; DOI not yet assigned |
+| 4 | [Behavioral Governance of Artificial Workers](paper-4/README.md) | Public preprint, DOI [10.5281/zenodo.23887999](https://doi.org/10.5281/zenodo.23887999) |
 
-Paper 4 is not yet a Zenodo submission. Its manuscript and evidence companion are kept separate from the submitted Paper 3 release.
+Paper 4 is a public preprint. Its archival record is the Zenodo DOI above; private implementation and raw evidence remain outside this public repository.
