@@ -21,6 +21,8 @@ configs:
 
 **Prepared for a later mirror. Not published on Hugging Face.**
 
+For the separately scoped developer-facing Space preparation, see [`space-demo/`](space-demo/). It is a public-safe thin Gradio client of the documented synthetic API, not a Cortex deployment. The current authenticated Hugging Face connection has no repository-write scope, so no Space has been created or published.
+
 Twelve synthetic behavioral fixtures, with JSONL fields `id`, `version`, `synthetic`, and `steps_json` (JSON-encoded operation list). The [GitHub challenge directory](https://github.com/brandenlaskowski7-bot/cortex-adi-research/tree/release/governed-memory-challenge-v0.1/challenges/governed-memory) holds the canonical fixtures, contract, schema, scoring, and client.
 
 No weights, private memory, implementation, internal policies, production credentials, or execution service are included. These are symbolic protocol checks, not natural-language quality data, training examples, independently replicated results, or proof of general safety. Every identifier, value, and provenance reference is artificial.
