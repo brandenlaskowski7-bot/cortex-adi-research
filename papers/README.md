@@ -8,5 +8,6 @@ This directory is the public-safe release index for the ADI research series. It 
 | 2 | [Externalized Intelligence and Model Substitution](paper-2/README.md) | Public-safe web edition |
 | 3 | [Paper 3 public release index](paper-3/README.md) | DOI [10.5281/zenodo.23603637](https://doi.org/10.5281/zenodo.23603637) |
 | 4 | [Behavioral Governance of Artificial Workers](paper-4/README.md) | Public preprint, DOI [10.5281/zenodo.23887999](https://doi.org/10.5281/zenodo.23887999) |
+| 5 | [Where Does AI Continuity Live?](paper-5/README.md) | Preprint candidate in evidence review; not released; no DOI |
 
 Paper 4 is a public preprint. Its archival record is the Zenodo DOI above; private implementation and raw evidence remain outside this public repository.
