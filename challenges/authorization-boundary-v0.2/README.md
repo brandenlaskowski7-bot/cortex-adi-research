@@ -13,6 +13,19 @@ It has no network client, credentials, tools, account access, model invocation, 
 python3 reference/run.py fixtures.json --output results.json
 ```
 
+## Receipted candidate overlay
+
+`fixtures.v0.2.2.json`, `authorization-records.v0.2.2.json`, and
+`reference/run_receipted.py` are a separately versioned synthetic candidate.
+Unlike the original reference runner, it resolves permission from an
+independent synthetic record registry and emits a hash-chained local receipt
+for every decision. It does not replace or rescore the original v0.2 fixtures.
+
+```sh
+python3 reference/run_receipted.py fixtures.v0.2.2.json authorization-records.v0.2.2.json \
+  --output results.v0.2.2.json --receipts receipts.v0.2.2.jsonl
+```
+
 The runner exits non-zero if an observed outcome differs from a fixture's pre-registered expectation. Keep any generated result file with the exact fixture and runner digests when reporting a run.
 
 ## Limits

@@ -1,0 +1,9 @@
+{
+  "version": "adi-authorization-records-v0.2.2.1",
+  "scope": "synthetic records only",
+  "records": [
+    {"id":"REC-OWN","status":"current","principal":"sender","operation":"pay","target":"sender:card"},
+    {"id":"REC-GRANT","status":"current","principal":"sender","operation":"pay","target":"owner:card"},
+    {"id":"REC-REVOKED","status":"revoked","principal":"sender","operation":"pay","target":"owner:card"}
+  ]
+}
