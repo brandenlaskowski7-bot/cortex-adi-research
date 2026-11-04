@@ -25,6 +25,7 @@ This public repository provides the release home for the ADI research series. Pu
 - [Paper 2 — Externalized Intelligence and Model Substitution](papers/paper-2/README.md): public-safe web edition with a bounded evidence summary.
 - [Paper 3 — public release index](papers/paper-3/README.md): submitted Paper 3 release and DOI.
 - [Paper 4 — Behavioral Governance of Artificial Workers](papers/paper-4/README.md): public preprint, DOI [10.5281/zenodo.23887999](https://doi.org/10.5281/zenodo.23887999).
+- [Paper 5 — Where Does AI Continuity Live?](papers/paper-5/README.md): preprint candidate testing governed continuity through model, client, platform, and runtime replacement; evidence review, not released, no DOI.
 
 [Release schedule](RELEASE_SCHEDULE.md) records the series state. A released paper does not waive the evidence or disclosure review required for later papers.
 
