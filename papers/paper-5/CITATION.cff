@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If this preprint candidate is released, cite the assigned version record. Until then, cite the repository branch and commit."
+title: "Where Does AI Continuity Live? A Controlled Replacement Test of Governed Memory Across Models, Clients, Platforms, and Runtime Restarts"
+authors:
+  - family-names: "Laskowski"
+    given-names: "Branden"
+    affiliation: "Cortex Agentics Global"
+version: "0.9-preprint-candidate"
+type: article
+license: CC-BY-4.0
+keywords:
+  - Artificial Deterministic Intelligence
+  - governed memory
+  - continuity
+  - model substitution
+  - provenance
+  - deterministic authority
+references:
+  - type: article
+    title: "Artificial Deterministic Intelligence: Probabilistic Reasoning, Deterministic Authority"
+    authors:
+      - family-names: "Laskowski"
+        given-names: "Branden"
+    doi: "10.5281/zenodo.23265200"
+    year: 2026
