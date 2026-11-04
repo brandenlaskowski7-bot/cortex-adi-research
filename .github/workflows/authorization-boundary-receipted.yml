@@ -1,0 +1,41 @@
+name: Receipted authorization-boundary candidate
+
+on:
+  push:
+    paths:
+      - "challenges/authorization-boundary-v0.2/**"
+      - ".github/workflows/authorization-boundary-receipted.yml"
+  pull_request:
+    paths:
+      - "challenges/authorization-boundary-v0.2/**"
+      - ".github/workflows/authorization-boundary-receipted.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  receipted-fixtures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run independently recorded synthetic fixtures
+        working-directory: challenges/authorization-boundary-v0.2
+        run: >-
+          python3 reference/run_receipted.py fixtures.v0.2.2.json
+          authorization-records.v0.2.2.json --output results.v0.2.2.json
+          --receipts receipts.v0.2.2.jsonl
+      - name: Verify result count and receipt chain
+        working-directory: challenges/authorization-boundary-v0.2
+        shell: python
+        run: |
+          import hashlib, json, pathlib
+          result = json.loads(pathlib.Path("results.v0.2.2.json").read_text())
+          assert result["status"] == "passed"
+          assert len(result["results"]) == 21
+          previous = "sha256:genesis"
+          for line in pathlib.Path("receipts.v0.2.2.jsonl").read_text().splitlines():
+              receipt = json.loads(line)
+              assert receipt["previous_receipt"] == previous
+              receipt_id = receipt.pop("receipt_id")
+              assert receipt_id == "sha256:" + hashlib.sha256(json.dumps(receipt, sort_keys=True).encode()).hexdigest()
+              previous = receipt_id
