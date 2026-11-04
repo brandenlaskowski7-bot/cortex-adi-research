@@ -35,3 +35,8 @@ This is a first-party study of synthetic data. It does not distribute raw prompt
 The paper's central point is not that a model answer is worthless. It is that a correct answer alone is not the full contract for human-centered work: the authorization, evidence boundary, provenance, and required-HOLD behavior also matter.
 
 The public-safe [Work Order A evidence note](evidence/2026-10-26-work-order-a.md) records the controlled retrieval-comparator result, its scope, and its limits without exposing private raw evidence.
+
+
+## W6 constrained-output checkpoint
+
+A [public-safe checkpoint note](evidence/2026-11-03-w6-constrained-output-checkpoint.md) records a Windows comparison of 4B scoped context with a 12B full reprompt after correcting an output-format confound. Both conditions accepted 38/40 trials and preserved provenance and boundaries in 40/40; the scoped condition used 91.41% fewer input tokens. The planned extension was incomplete, so the note makes no general substitution claim and excludes timing results affected by host contention.
