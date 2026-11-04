@@ -1,6 +1,6 @@
 # Weekly research release schedule
 
-Updated 2 November 2026. Paper numbers reflect the order in which the papers were produced and released or prepared. Dates are publication states, not promises. If a paper is held, move an evidence-ready paper forward or leave that release slot empty; do not weaken its claims gate.
+Updated 4 November 2026. Paper numbers reflect the order in which the papers were produced and released or prepared. Dates are publication states, not promises. If a paper is held, move an evidence-ready paper forward or leave that release slot empty; do not weaken its claims gate.
 
 | Paper | Research item | Current state |
 | --- | --- | --- |
@@ -8,7 +8,7 @@ Updated 2 November 2026. Paper numbers reflect the order in which the papers wer
 | 2 | Externalized Intelligence and Model Substitution | RELEASED — public-safe web edition |
 | 3 | Deterministic Worker Construction Before Inference | PUBLISHED — DOI [10.5281/zenodo.23603637](https://doi.org/10.5281/zenodo.23603637) |
 | 4 | Behavioral Governance of Artificial Workers: Evaluating Completed Work Under Declared Authority and Behavioral Requirements | PUBLISHED — DOI [10.5281/zenodo.23887999](https://doi.org/10.5281/zenodo.23887999) |
-| 5 | Governed Shared Memory for Multi-Agent Systems | DRAFT — NOT RELEASED |
+| 5 | Where Does AI Continuity Live? A Controlled Replacement Test of Governed Memory | EVIDENCE REVIEW — NOT RELEASED |
 | 6 | Model-Independent Artificial Workers | HELD — NOT RELEASED |
 | 7 | Temporal and Authoritative AI Memory | HELD — NOT RELEASED |
 | 8 | Reserved for a future research item | HELD — NOT RELEASED |
