@@ -4,7 +4,8 @@
 
 **Author:** Branden Laskowski  
 **Canonical external preprint:** [Zenodo record 23990079](https://doi.org/10.5281/zenodo.23990079)  
-**DOI supplied in the author's public publication notice:** `10.5281/zenodo.23990079`  
+**Zenodo-verified DOI:** `10.5281/zenodo.23990079`  
+**Publication date:** 2026-11-05 · **Version:** 1.0 · **License:** CC BY 4.0 · **Status:** published open-access preprint  
 **Publication notice:** [Paper Five — The Continuity Substrate (5 November 2026)](https://dev.to/branden_laskowski_092fb49/paper-5-what-survives-when-the-model-client-and-machine-change-cej)
 
 This is the **Paper Five** record in the ADI research series. It introduces the Cortex Continuum Substrate as the persistent governed continuity boundary external to model inference: memory continuity, authorization scope, provenance, and auditability do not depend on the lifetime or identity of any particular AI model or client.
@@ -13,7 +14,14 @@ The author's public release notice reports controlled first-party synthetic expe
 
 ### Source-of-truth and copy status
 
-The DOI above is the release cited in the author's public announcement. The Zenodo record and its attached PDF could not be retrieved through the current connection, so this GitHub entry is a **linked bibliographic record, not a byte-for-byte copy of the deposited preprint**. Do not substitute the previous unapproved GitHub candidate PDF or label it as the Zenodo release. The full PDF should only be mirrored after download and checksum verification from the canonical Zenodo record.
+Zenodo's official record API confirms DOI, title, author, publication date, published status, version, license, and the two exact archived files below. **The file bytes have not been transferred to GitHub.** The browser and remote-computer connections currently cannot retrieve the binary attachments. This remains a linked bibliographic record, not a byte-for-byte mirror. Never substitute the older GitHub candidate or claim checksum verification until the downloaded bytes match the recorded MD5 digests.
+
+| Zenodo deposited attachment | Size (bytes) | Official MD5 checksum | Download |
+| --- | ---: | --- | --- |
+| `ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf` | 66,573 | `1e80b833810a0c02405b9ce00c19d9f2` | [Original PDF](https://zenodo.org/api/records/23990079/files/ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf/content) |
+| `ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip` | 212,508 | `f16936b143bfd92086f27edf00e37529` | [Original evidence ZIP](https://zenodo.org/api/records/23990079/files/ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip/content) |
+
+Canonical source of record: [Zenodo API metadata](https://zenodo.org/api/records/23990079). The concept DOI is `10.5281/zenodo.23990078`; cite version-specific `10.5281/zenodo.23990079` for this release.
 
 ### Research sequence
 
