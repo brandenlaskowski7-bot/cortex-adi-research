@@ -1,0 +1,32 @@
+{
+  "title": "Where Does AI Continuity Live? A Controlled Replacement Test of Governed Memory Across Models, Clients, Platforms, and Runtime Restarts",
+  "author": {
+    "name": "Branden Laskowski",
+    "affiliation": "Cortex Agentics Global"
+  },
+  "series": "ADI Research Series",
+  "paper_number": 6,
+  "version": "0.9-renumbered-draft",
+  "date_prepared": "2026-11-04",
+  "type": "preprint candidate",
+  "status": "unreleased draft; renamed from former Paper Five branch",
+  "license": "CC-BY-4.0 for released public research materials",
+  "doi": null,
+  "related_identifier": {
+    "relation": "isSupplementTo",
+    "title": "Artificial Deterministic Intelligence: Probabilistic Reasoning, Deterministic Authority",
+    "doi": "10.5281/zenodo.23265200"
+  },
+  "keywords": [
+    "Artificial Deterministic Intelligence",
+    "ADI",
+    "governed memory",
+    "continuity",
+    "model substitution",
+    "provenance",
+    "deterministic authority",
+    "Cortex Continuum"
+  ],
+  "evidence_scope": "First-party synthetic evidence with retained negative and infrastructure outcomes; independent replication not completed.",
+  "release_note": "Renumbered as Paper Six after the publication of The Continuity Substrate (Paper Five), DOI 10.5281/zenodo.23990079. The evidence remains first-party synthetic; this document is not a released preprint."
+}

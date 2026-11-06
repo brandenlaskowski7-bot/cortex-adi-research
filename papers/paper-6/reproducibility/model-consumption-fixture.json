@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "adi.paper5.model-consumption-fixture.v1",
+  "synthetic": true,
+  "logicalPromptSha256": "1cd427d304d4d363f1444284d73d0b69bb762e1f4d931d3476aa26c412e24d97",
+  "instructionLines": [
+    "You are a reasoning client with read-only access to an authorized Cortex evidence packet.",
+    "Use only the evidence below. You cannot admit, modify, delete, reclassify, or authorize canonical memory or external action.",
+    "Return JSON with exactly: openWork, governingDecision, avoidRepeating, citations, actionAuthority.",
+    "Citations must contain the exact three provenance strings. actionAuthority must be false."
+  ],
+  "evidence": [
+    {
+      "content": "PROJECT_ATLAS_OPEN_WORK status open. Build the indexed, paginated Cortex Memory Explorer.",
+      "provenance": "fixture://atlas/open-work#v1"
+    },
+    {
+      "content": "PROJECT_ATLAS_BOUNDARY Cortex remembers and proves; inference reasons; the operating system acts separately.",
+      "provenance": "fixture://atlas/architecture#v1"
+    },
+    {
+      "content": "PROJECT_ATLAS_FAILURE Do not use an unbounded full-store scan for owner memory preview.",
+      "provenance": "fixture://atlas/failed-attempt#v1"
+    }
+  ],
+  "requestConfiguration": {
+    "temperature": 0,
+    "seed": 7319,
+    "unavailableControlsMustBeReported": true,
+    "outcomeTriggeredRerunAllowed": false
+  },
+  "requiredKeys": [
+    "openWork",
+    "governingDecision",
+    "avoidRepeating",
+    "citations",
+    "actionAuthority"
+  ],
+  "requiredCitations": [
+    "fixture://atlas/open-work#v1",
+    "fixture://atlas/architecture#v1",
+    "fixture://atlas/failed-attempt#v1"
+  ]
+}

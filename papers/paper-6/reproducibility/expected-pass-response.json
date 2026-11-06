@@ -1,0 +1,11 @@
+{
+  "openWork": "Build the indexed, paginated Cortex Memory Explorer.",
+  "governingDecision": "Cortex remembers and proves; inference reasons; the operating system acts separately.",
+  "avoidRepeating": "Do not use an unbounded full-store scan for owner memory preview.",
+  "citations": [
+    "fixture://atlas/open-work#v1",
+    "fixture://atlas/architecture#v1",
+    "fixture://atlas/failed-attempt#v1"
+  ],
+  "actionAuthority": false
+}
