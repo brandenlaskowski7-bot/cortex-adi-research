@@ -14,12 +14,12 @@ The author's public release notice reports controlled first-party synthetic expe
 
 ### Source-of-truth and copy status
 
-Zenodo's official record API confirms DOI, title, author, publication date, published status, version, license, and the two exact archived files below. **The file bytes have not been transferred to GitHub.** The browser and remote-computer connections currently cannot retrieve the binary attachments. This remains a linked bibliographic record, not a byte-for-byte mirror. Never substitute the older GitHub candidate or claim checksum verification until the downloaded bytes match the recorded MD5 digests.
+Zenodo's official record API confirms DOI, title, author, publication date, published status, version, license, and the two exact archived files below. On 8 November 2026, both attachments were retrieved from their direct Zenodo URLs, verified against the recorded byte sizes and MD5 checksums, and copied here without modification. Zenodo remains the canonical archival source; the GitHub files are byte-identical convenience mirrors. Never substitute the older GitHub candidate for this release.
 
-| Zenodo deposited attachment | Size (bytes) | Official MD5 checksum | Download |
-| --- | ---: | --- | --- |
-| `ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf` | 66,573 | `1e80b833810a0c02405b9ce00c19d9f2` | [Original PDF](https://zenodo.org/api/records/23990079/files/ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf/content) |
-| `ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip` | 212,508 | `f16936b143bfd92086f27edf00e37529` | [Original evidence ZIP](https://zenodo.org/api/records/23990079/files/ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip/content) |
+| Zenodo deposited attachment | Size (bytes) | Official MD5 checksum | Authoritative download | Verified GitHub mirror |
+| --- | ---: | --- | --- | --- |
+| `ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf` | 66,573 | `1e80b833810a0c02405b9ce00c19d9f2` | [Original PDF](https://zenodo.org/api/records/23990079/files/ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf/content) | [Mirrored PDF](ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf) |
+| `ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip` | 212,508 | `f16936b143bfd92086f27edf00e37529` | [Original evidence ZIP](https://zenodo.org/api/records/23990079/files/ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip/content) | [Mirrored evidence ZIP](ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip) |
 
 Canonical source of record: [Zenodo API metadata](https://zenodo.org/api/records/23990079). The concept DOI is `10.5281/zenodo.23990078`; cite version-specific `10.5281/zenodo.23990079` for this release.
 
