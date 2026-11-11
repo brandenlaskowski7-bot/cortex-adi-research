@@ -1,6 +1,6 @@
 # Weekly research release schedule
 
-Updated 8 November 2026. Paper numbers reflect the order in which the papers were produced and released or prepared. Dates are publication states, not promises. If a paper is held, move an evidence-ready paper forward or leave that release slot empty; do not weaken its claims gate.
+Updated 11 November 2026. Paper numbers reflect the order in which the papers were produced and released or prepared. Dates are publication states, not promises. If a paper is held, move an evidence-ready paper forward or leave that release slot empty; do not weaken its claims gate.
 
 | Paper | Research item | Current state |
 | --- | --- | --- |
@@ -9,7 +9,7 @@ Updated 8 November 2026. Paper numbers reflect the order in which the papers wer
 | 3 | Deterministic Worker Construction Before Inference | PUBLISHED — DOI [10.5281/zenodo.23603637](https://doi.org/10.5281/zenodo.23603637) |
 | 4 | Behavioral Governance of Artificial Workers: Evaluating Completed Work Under Declared Authority and Behavioral Requirements | PUBLISHED — DOI [10.5281/zenodo.23887999](https://doi.org/10.5281/zenodo.23887999) |
 | 5 | The Continuity Substrate | PUBLISHED v1.0, 5 November 2026 — DOI [10.5281/zenodo.23990079](https://doi.org/10.5281/zenodo.23990079); Zenodo PDF and evidence ZIP mirrored after byte-size and MD5 verification |
-| 6 | Where Does AI Continuity Live? A Controlled Replacement Test of Governed Memory | **UNRELEASED** renumbered draft from former Paper Five branch; no DOI; scoped shared-memory extension pending |
+| 6 | Where Does AI Continuity Live? A Controlled Replacement Test of Governed Memory | **UNRELEASED** draft; no DOI. Post-freeze synthetic adapter-level shared-memory test passed in four policy overlays; live inference qualification and owner review remain pending |
 | 7 | Temporal and Authoritative AI Memory | HELD — NOT RELEASED |
 | 8 | Reserved for a future research item | HELD — NOT RELEASED |
 | 9 | Governed Persistent Student Memory for Educational AI | HELD — NOT RELEASED |
