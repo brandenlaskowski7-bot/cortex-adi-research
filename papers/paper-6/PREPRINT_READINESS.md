@@ -4,7 +4,7 @@ This document was preserved and renumbered from the earlier Paper Five candidate
 
 # Paper 6 Preprint Readiness Record
 
-Status: preprint candidate prepared for owner review; not released, deposited, or assigned a DOI.
+Status: updated preprint candidate prepared for owner review; not released, deposited, or assigned a DOI. The 11 November 2026 shared-memory adapter result is first-party, synthetic, post-freeze, and uses mocked inference transport.
 
 ## Scientific package
 
@@ -13,6 +13,7 @@ Status: preprint candidate prepared for owner review; not released, deposited, o
 - [x] Continuity invariance separated from model comprehension
 - [x] Original confirmatory and post-freeze evidence separated
 - [x] Negative, partial, collision, and infrastructure outcomes retained
+- [x] Post-freeze shared-memory adapter evidence and its live-model limitation recorded
 - [x] Limitations and non-claims stated
 - [x] ADI lineage, version DOI, and Paper 2 relationship credited
 - [x] Competing-interest, ethics/privacy, availability, funding, and license declarations included
