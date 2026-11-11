@@ -19,6 +19,10 @@ The current record supports this bounded statement:
 
 > In controlled first-party synthetic tests, Cortex Continuum preserved the tested operational continuity state across named model, client, machine, operating-system, and runtime replacements while canonical authority remained outside model inference.
 
+A post-freeze extension adds bounded first-party evidence for a different claim:
+
+> In four declared synthetic policy overlays, two separately authorized adapter clients used one deterministic record store, retrieved an explicitly shared canary with consistent provenance, and were denied access to each other's private canaries; live inference was not invoked.
+
 The record does not establish universal model compatibility, complete hosted-provider portability, production readiness, security certification, or independent replication.
 
 ## Public verification package
@@ -27,10 +31,11 @@ The record does not establish universal model compatibility, complete hosted-pro
 - [Manuscript](MANUSCRIPT.md)
 - [Public evidence summary](PUBLIC_EVIDENCE_SUMMARY.md)
 - [Cortex Continuum Benchmark v1](BENCHMARK.md)
+- [Shared-substrate adapter evidence record](SHARED_SUBSTRATE_ADAPTER_EVIDENCE.md)
 - [Preprint readiness record](PREPRINT_READINESS.md)
 - [Deposit metadata](METADATA.json)
 - [Citation metadata](CITATION.cff)
-- [Public artifact hashes](SHA256SUMS)
+- Artifact checksum manifest: pending finalized preprint packaging; no Paper Six PDF or release manifest is published.
 - [Model-consumption fixture](reproducibility/model-consumption-fixture.json)
 - [Reference scorer](reproducibility/score-model-response.mjs)
 - [Expected passing response](reproducibility/expected-pass-response.json)
@@ -46,4 +51,4 @@ This branch contains research prose, synthetic fixtures, a public scorer, and bo
 
 ## Relationship to Paper Five
 
-[Paper Five — *The Continuity Substrate*](../paper-5/README.md) introduces the substrate. This Paper Six candidate contains the controlled model/client/runtime replacement and continuity benchmark, and may be extended to explicitly test scoped shared access by multiple models and agents. The existing measurements do **not** constitute a completed multi-agent shared-memory study. The source branch is `adi/paper-5-continuity-benchmark`; the old candidate PDF and its stale checksums remain there for audit, not publication under Paper Six.
+[Paper Five — *The Continuity Substrate*](../paper-5/README.md) introduces the substrate. This Paper Six draft contains the model/client/runtime replacement study and a separately labeled post-freeze synthetic shared-memory adapter test. The extension is not a real-model interoperability result and is not part of Paper Five's archived Zenodo release. The source branch is `adi/paper-5-continuity-benchmark`; the old candidate PDF and its stale checksums remain there for audit, not publication under Paper Six.

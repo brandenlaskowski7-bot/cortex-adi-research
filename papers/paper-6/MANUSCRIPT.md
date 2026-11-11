@@ -1,4 +1,4 @@
-> **Editorial status:** This is a renumbered, **unreleased Paper Six draft** retained from the former Paper Five candidate. The public Paper Five is *The Continuity Substrate* (DOI 10.5281/zenodo.23990079). No new shared-memory results or new DOI are claimed here.
+> **Editorial status:** This is an unreleased Paper Six draft, updated with a post-freeze, first-party synthetic shared-memory adapter experiment. The public Paper Five is *The Continuity Substrate* (DOI 10.5281/zenodo.23990079). No DOI or live-model interoperability result is claimed.
 
 # Where Does AI Continuity Live?
 
@@ -20,6 +20,8 @@ We answer with a controlled replacement test derived from Artificial Determinist
 The tested substrate preserved its deterministic contract in 12/12 frozen fixtures, 23/23 unchanged kernel tests, and 13/13 security-boundary tests. In the core cross-client challenge, all three governed records and 3/3 provenance pointers survived encrypted restart, a different read-only client recovered them, zero cross-scope leaks were observed, and the audit chain verified. Three separately recorded restart repetitions produced the same continuity result. A separately implemented first-party black-box client passed 10/10 contract checks; a bounded 50-client run completed 900/900 staged retrieval operations and 50/50 post-restart recoveries; and a 25-case adversarial suite recorded zero unauthorized effects.
 
 Model outputs varied while governed state did not. Qwen 3 8B and 14B passed the complete read-only consumption contract; smaller Qwen models produced semantic or exact-citation failures. Gemma 3 12B, Gemma 3 4B, and Llama 3.2 3B on a second machine preserved exact citations and acknowledged no action authority, but did not pass every semantic criterion. A fresh Codex observation passed the complete contract without controlled inference parameters. An MLX trial failed exact schema and citation requirements, and hosted API and llama.cpp attempts ended without scoreable model responses. Failures were retained rather than converted into successes.
+
+A separate post-freeze synthetic integration extension tested two independently scoped adapter clients against one shared record ledger under departmental, government, hospital, and banking policy overlays. All four profiles passed, including shared-record provenance, cross-scope denials, concurrent updates, grant revocation, and recall after reopening the policy, ledger, and payload files in a separate Node process. The repository's local inference adapter contract ran with deterministic mock transport responses for `qwen3:4b` and `qwen3.5:35b`; neither model was actually invoked. This supports a bounded adapter-level shared-memory result, not live model interoperability.
 
 These results support a bounded answer: in the tested system, operational continuity resided in the governed substrate rather than in any single model session. The experiment does not show that every model understands the same memory equally well; it shows why model comprehension and memory authority must be different variables. This is the central strength of ADI demonstrated at the memory layer: probabilistic reasoning may change or fail while deterministic authority, provenance, and continuity remain stable. Cortex Continuum Benchmark v1 publishes the falsification contract for external evaluation. Production readiness, security certification, universal provider portability, and independent replication are not established.
 
@@ -241,6 +243,12 @@ The capacity protocol staged 5, 10, 25, and 50 simultaneous named clients for te
 
 The hosted OpenAI API attempt returned HTTP 429 for exhausted account quota before a model response. The llama.cpp attempts failed at the runtime/reporting boundary without a scoreable response. Neither is reported as a model outcome. The MLX path reached generation; its final record is a partial adjudication because a scoring-harness type error occurred after JSON parsing and before the raw response was copied into the result artifact. The traceback proves that citation entries were dictionaries rather than the required strings, which is sufficient to establish failure of the exact schema and exact-citation criteria without a model rerun.
 
+### 4.10 Post-freeze shared-memory adapter extension
+
+This exploratory extension was added after the original study freeze and is reported separately from the confirmatory model-consumption results. It used two clients bound to distinct worker identities, grants, and private scopes over one deterministic record ledger, with an explicitly shared synthetic record. The workload was repeated under departmental, government, hospital, and banking policy overlays.
+
+Both clients used the repository's `createLocalInferenceAdapter` contract, configured with `qwen3:4b` and `qwen3.5:35b`. The Ollama transport was replaced by deterministic synthetic responses; no model weights were loaded and no inference request was sent. After concurrent updates, a child Node process reopened the policy, signed record ledger, and disk-backed synthetic payload vault to verify post-process-restart recall and scope enforcement. Exact run identity and limits are recorded in [Shared-Substrate Adapter Evidence](SHARED_SUBSTRATE_ADAPTER_EVIDENCE.md). This extension does not alter or pool with the earlier frozen model-comprehension scores.
+
 ## 5. Results
 
 ### 5.1 Deterministic substrate
@@ -341,6 +349,21 @@ The full deterministic arm produced zero safeguard violations under the construc
 | No admission boundary | 2 |
 | Retrieval-only storage | 5 |
 
+### 5.9 Post-freeze shared-memory adapter extension
+
+The full repository test suite passed 209/209 tests. Both Paper Six benchmark scenarios passed. The new adapter scenario passed in all four declared overlays; each profile retained five synthetic records and twelve audit operations.
+
+| Overlay | Result | Durable records | Audit operations | Adapter calls (A/B) |
+|---|---:|---:|---:|---:|
+| Departmental / commercial | Pass | 5 | 12 | 2 / 2 |
+| Government | Pass | 5 | 12 | 2 / 2 |
+| Hospital / healthcare | Pass | 5 | 12 | 2 / 2 |
+| Banking | Pass | 5 | 12 | 2 / 2 |
+
+The authorized shared record returned the same digest and provenance reference to both clients. Each client recalled its own private canary; both directions of cross-scope probing returned no records and did not invoke an adapter. Two authorized updates were submitted concurrently; an append-sequence conflict was retried once when observed. A separate Node process then reopened the persisted policy, record ledger, and synthetic payload files. It recovered each client's own private records and the shared record, preserved shared provenance, and denied an opposite-scope probe. A request after grant removal was also denied.
+
+This is a post-freeze first-party synthetic adapter-level integration result. The test invokes the real adapter contract but injects deterministic mocked transport responses; it does not invoke Qwen 3 4B or Qwen 3.5 35B. The result supports one bounded statement about two separately authorized clients using one deterministic substrate. It does not demonstrate that real inference models exchanged or continued one another's work. The source code is held in a private product repository, limiting public reproduction.
+
 ## 6. Discussion
 
 ### 6.1 The experiment identifies the continuity carrier
@@ -379,6 +402,12 @@ Cortex Continuum Benchmark v1 turns the paper’s evidence contract into a repea
 
 The benchmark is not a certification mark and should not be reduced to a single percentage. A system can pass deterministic scope enforcement while a particular model fails semantic fidelity, or execute through a new runtime while failing citation format. Separate track reporting preserves those distinctions and allows a buyer to evaluate the capability relevant to its intended deployment.
 
+### 6.9 Scoped shared-memory adapter extension
+
+The extension addresses a different question from the original replacement study. The original work asks whether continuity remains outside a model when components are replaced. The new test asks whether two separately authorized adapters can use a common substrate while private scopes stay isolated. Its four-profile result is encouraging because the same synthetic behavior held across departmental, government, hospital, and banking policy overlays, including explicit sharing and revocation.
+
+The inference boundary remains decisive. The adapter identifiers name two supported model configurations, but deterministic mocked transport produced the responses. The observed pass is therefore evidence about request construction, substrate authorization, provenance, persistence, and the adapter contract; it is not evidence about how two real models reason over a handoff. The result makes live-model interoperability a specific next experiment instead of an implied conclusion.
+
 ## 7. Limitations
 
 1. The study is first-party and has not been independently replicated.
@@ -393,6 +422,9 @@ The benchmark is not a certification mark and should not be reduced to a single 
 10. The 25-case adversarial result is first-party and bounded. Passing it does not constitute a security certification, safety guarantee, or proof that undocumented deployment paths cannot bypass the boundary.
 11. The Codex result is observational because seed, temperature, and model build were unavailable. The hosted API and llama.cpp attempts produced no scoreable model responses.
 12. The MLX result has incomplete criterion-level reporting because the scorer failed after JSON parsing; only the exact-schema and citation failures are conclusively adjudicated.
+13. The shared-memory extension is post-freeze, first-party, synthetic, and limited to four declared policy overlays. Its inference transport is mocked, so real-model interoperability is not tested.
+14. The restart test crosses a Node process boundary on one host filesystem. It does not test container or machine failure, distributed revocation propagation, or multi-process concurrent writes.
+15. The executable extension is in a private product repository; public readers cannot independently inspect or execute that source from this research repository.
 
 ## 8. Reproducibility and Evidence
 
@@ -410,13 +442,15 @@ This paper asked where operational AI continuity lives when the model and its su
 
 Model behavior varied. Two larger Qwen 3 sizes passed the complete read-only task; smaller and cross-family models produced semantic, schema, or citation failures; the fresh Codex observation passed without controlled inference parameters; and the alternate llama.cpp and hosted API paths produced no scoreable responses. None of these outcomes transferred canonical authority to a model or changed the governed records.
 
+A separate post-freeze extension also passed a synthetic shared-memory adapter test across four policy overlays, with two separately scoped clients, matching shared-record provenance, denied private-scope probes, concurrent updates, grant removal, and child-process recovery. Because transport responses were mocked, that extension does not qualify live model interoperability.
+
 The result supports a bounded ADI proposition: the reasoning layer can be replaced without making it the carrier or authority of operational continuity. That is the strength of ADI shown here. It converts model independence from a design aspiration into a falsifiable separation between variable inference and invariant governed state. The evidence is sufficient to describe the tested capability as demonstrated under the named controlled conditions. The next evidentiary step is independent replication and a prospectively controlled hosted-provider study, not an unqualified commercial claim of universal or production-proven portability.
 
 ## Declarations
 
 ### Data and code availability
 
-The public Paper 6 package contains the manuscript, public evidence summary, benchmark protocol, exact synthetic model-consumption fixture, expected passing response, and reference scorer. The existing Cortex Governed Memory Challenge contains the public symbolic contract, fixtures, schema, scoring rules, reference client, API description, examples, and lifecycle limits. Private implementation source, raw private evidence, operational topology, production data, and credentials are not distributed. This boundary permits public black-box falsification but prevents independent reconstruction of the proprietary kernel.
+The public Paper 6 package contains the manuscript, public evidence summary, benchmark protocol, exact synthetic model-consumption fixture, expected passing response, and reference scorer. A supplemental shared-substrate adapter evidence record identifies the post-freeze CI run and its limits. The executable test source is in a private product repository and is not publicly reproducible from this package. The existing Cortex Governed Memory Challenge contains the public symbolic contract, fixtures, schema, scoring rules, reference client, API description, examples, and lifecycle limits. Private implementation source, raw private evidence, operational topology, production data, and credentials are not distributed. This boundary permits public black-box falsification but prevents independent reconstruction of the proprietary kernel.
 
 ### Ethics and privacy
 
@@ -471,6 +505,8 @@ The public research manuscript and released companion materials are prepared for
 | Zero cross-scope leakage | Observed in the bounded challenge and repetitions; not a universal guarantee |
 | External MCP-style grant enforcement | Supported by named local tests and one 10/10 separately implemented first-party black-box client |
 | Model consumption across sizes | Supported for 8B and 14B complete passes; mixed overall |
+| Scoped shared memory across two adapter clients | Supported for the bounded synthetic integration in four declared overlays; mock transport only |
+| Live inference-model handoff across adapters | NOT_TESTED |
 | No model action authority | All four returned false; architectural enforcement remains external |
 | Second-machine/OS/family execution | Demonstrated for three post-freeze Dell trials across Gemma 3 and Llama 3.2 |
 | Successful cross-family semantic portability | NOT_ESTABLISHED; no Dell model passed every criterion |

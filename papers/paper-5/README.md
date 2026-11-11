@@ -26,6 +26,6 @@ Canonical source of record: [Zenodo API metadata](https://zenodo.org/api/records
 ### Research sequence
 
 - **Paper Five:** The Continuity Substrate — foundational substrate paper, published Zenodo DOI above.
-- **Paper Six:** [Where Does AI Continuity Live?](../paper-6/README.md) — earlier model/client/runtime replacement manuscript preserved as an **unreleased**, renumbered draft. Scoped shared memory across models/agents is a logical next experimental extension; no results for that extension are claimed yet.
+- **Paper Six:** [Where Does AI Continuity Live?](../paper-6/README.md) — **unreleased** draft, now including a post-freeze first-party synthetic adapter-level shared-memory test. The test uses mock inference transport and does not change Paper Five's published Zenodo files or establish live model interoperability.
 
 **Public disclosure rule:** Discuss the architecture as the **Cortex Continuum Substrate** only; no proprietary implementation internals are included here.
