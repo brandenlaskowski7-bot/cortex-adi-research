@@ -41,9 +41,15 @@ All reported records are synthetic and first-party. Original confirmatory eviden
 | llama.cpp attempts | Infrastructure failure | No scoreable response |
 | Hosted API attempt | Infrastructure failure | HTTP 429 before inference; no provider result |
 
+## Post-freeze scoped shared-memory adapter extension
+
+On 11 November 2026, the Paper Six benchmark passed in four synthetic policy overlays: departmental/commercial, government, hospital/healthcare, and banking. Two separately authorized adapter clients used one deterministic record store. The run verified authorized private recall, explicitly shared-record handoff with matching digest/provenance, both directions of cross-scope denial, concurrent authorized updates, grant removal, and post-process-restart retrieval from the persisted policy, ledger, and synthetic payload vault.
+
+Each overlay recorded five durable synthetic records and twelve audit operations. The full GitHub Actions suite reported 209/209 passing tests. The adapter contract used configured identifiers `qwen3:4b` and `qwen3.5:35b` with deterministic mock Ollama transport responses; no actual model inference occurred. The executable source is in a private product repository, so this remains first-party evidence without public source-level replication.
+
 ## Commercially supportable language
 
-The evidence supports saying that, under controlled first-party synthetic tests, Cortex Continuum preserved the tested operational continuity state across named model, client, environment, and runtime replacements while canonical authority remained outside model inference.
+The evidence supports a bounded statement that first-party synthetic tests preserved the tested operational continuity state across named replacements, and that two separately scoped adapter clients shared an explicitly granted record over one deterministic store in four declared policy overlays. The latter result used deterministic mock inference responses; it is adapter-level evidence, not live model interoperability.
 
 The evidence does not support saying that every model passes the contract, every provider is compatible, the system is production-proven, the work has been independently validated, or the tests constitute a security certification.
 
