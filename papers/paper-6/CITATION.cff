@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "This is an unpublished Paper Six draft. Cite the repository commit until a separate DOI exists."
+message: "This is an unpublished Paper Six draft with a post-freeze synthetic adapter-level shared-memory result; live model interoperability is not established. Cite the repository commit until a separate DOI exists."
 title: "Where Does AI Continuity Live? A Controlled Replacement Test of Governed Memory Across Models, Clients, Platforms, and Runtime Restarts"
 authors:
   - family-names: "Laskowski"
     given-names: "Branden"
     affiliation: "Cortex Agentics Global"
-version: "0.9-renumbered-draft"
+version: "0.10-shared-memory-evidence-draft"
 type: article
 license: CC-BY-4.0
 keywords:
