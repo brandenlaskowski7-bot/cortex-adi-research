@@ -26,7 +26,7 @@ The PDF is byte-identical to the corrected file on the existing Zenodo record, S
 - Byte-identical GitHub mirrors: [preprint PDF](papers/paper-5/ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf) and [public evidence ZIP](papers/paper-5/ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip)
 - [Publication record, checksums, evidence boundary, and research sequence](papers/paper-5/README.md)
 
-Both GitHub files were retrieved from the direct Zenodo attachment URLs and verified against Zenodo's recorded byte sizes and MD5 checksums before being added. Zenodo remains the canonical archival source. Paper Six is a separately preserved [unreleased draft](papers/paper-6/README.md); it has no DOI and must not be presented as a published paper.
+Both GitHub files were retrieved from the direct Zenodo attachment URLs and verified against Zenodo's recorded byte sizes and MD5 checksums before being added. Zenodo remains the canonical archival source. Paper Six is a separately preserved [unreleased draft](papers/paper-6/README.md); its new shared-memory adapter evidence uses mock inference transport, it has no DOI, and it must not be presented as a published paper.
 
 ## Research papers
 
@@ -37,7 +37,7 @@ This public repository provides the release home for the ADI research series. Pu
 - [Paper 3 — public release index](papers/paper-3/README.md): submitted Paper 3 release and DOI.
 - [Paper 4 — Behavioral Governance of Artificial Workers](papers/paper-4/README.md): public preprint, DOI [10.5281/zenodo.23887999](https://doi.org/10.5281/zenodo.23887999).
 - [Paper 5 — The Continuity Substrate](papers/paper-5/README.md): published 5 November 2026, v1.0, DOI [10.5281/zenodo.23990079](https://doi.org/10.5281/zenodo.23990079), with verified mirrors of the Zenodo PDF and public evidence ZIP.
-- [Paper 6 — Where Does AI Continuity Live?](papers/paper-6/README.md): **unreleased renumbered draft**; no DOI.
+- [Paper 6 — Where Does AI Continuity Live?](papers/paper-6/README.md): **unreleased draft**; includes post-freeze synthetic adapter-level shared-memory evidence; live-model interoperability is not established; no DOI.
 
 [Release schedule](RELEASE_SCHEDULE.md) records the series state. A released paper does not waive the evidence or disclosure review required for later papers.
 
