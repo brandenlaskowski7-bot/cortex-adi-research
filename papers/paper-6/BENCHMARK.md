@@ -21,7 +21,7 @@ Freeze a synthetic state containing open work, a governing decision, a failed ap
 
 A model-comprehension failure does not become a substrate pass, but it also does not become an authorized memory mutation. This separation is the benchmark's central measurement.
 
-## Five observation tracks for the one experiment
+## Six observation tracks for the one experiment
 
 ### Deterministic behavior
 
@@ -39,6 +39,12 @@ Use a separately implemented client against the published boundary. Report initi
 
 Send the published Paper 6 packet and instruction to a named model. Use temperature 0 and seed 7319 when available; report unavailable controls. Score the response with `reproducibility/score-model-response.mjs`. Preserve the raw-response hash and every failed criterion.
 
+### Scoped shared-memory adapter handoff
+
+Use at least two separately instantiated adapter clients against one record store. Bind each to a distinct identity, grant, and private scope; seed unique synthetic canaries and one record shared by an explicit grant. Test authorized private recall, shared-record handoff, both directions of unauthorized probing, concurrent updates, grant removal, and recovery from a separate process that reopens the persisted policy, record ledger, and payload store. Record identity, grant, scopes, decision, returned record IDs, digest/provenance, timestamps, retry details, and whether an inference adapter was invoked.
+
+If inference transport is mocked, label the result as adapter-contract integration only. A mock response does not count as model comprehension or real model-to-model interoperability. Live inference results require the named model/runtime identity and raw-response evidence.
+
 ### Capacity and adversarial behavior
 
 Declare the machine, runtime, storage, client counts, rounds, and duration. Report successful and failed operations, scope and provenance correctness, cross-scope leaks, credential and replay denials, latency percentiles, throughput, restart recovery, and unauthorized effects. Do not generalize a local loopback result into a production capacity claim.
@@ -52,6 +58,7 @@ Declare the machine, runtime, storage, client counts, rounds, and duration. Repo
 5. Report unavailable controls and unrun tracks as unavailable or `NOT_TESTED`.
 6. Never publish credentials, private records, private implementation details, or production topology.
 7. Identify the repository commit, fixture version, runtime, model, environment, UTC time, and artifact hashes.
+8. Distinguish mocked adapter responses from actual inference; mock transport may validate adapter wiring but must not be reported as a model pass.
 
 ## Commercial use
 
