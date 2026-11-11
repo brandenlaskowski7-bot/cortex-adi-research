@@ -2,6 +2,8 @@
 
 This directory is the public-safe release index for the ADI research series. It distinguishes published preprints from unreleased research drafts. It does not contain private implementation source, production records, credentials, or proprietary internals.
 
+See the [Public Research Ledger](RESEARCH_LEDGER.md) for the current paper-by-paper release status, canonical DOI/version, public evidence boundary, and unreleased-material notice.
+
 | Paper | Title | Public record |
 | --- | --- | --- |
 | 1 | [Artificial Deterministic Intelligence](../paper/README.md) | Zenodo v1.0, DOI [10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200) |
