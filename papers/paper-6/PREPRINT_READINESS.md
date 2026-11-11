@@ -28,7 +28,7 @@ Status: updated preprint candidate prepared for owner review; not released, depo
 - [x] Frozen claim matrix
 - [x] Cortex Continuum Benchmark v1
 - [x] Independent replication report template
-- [x] Public artifact hash manifest
+- [ ] Final public artifact hash manifest (generate with the approved rendered preprint package)
 
 ## Disclosure review
 
