@@ -6,7 +6,7 @@
   },
   "series": "ADI Research Series",
   "paper_number": 6,
-  "version": "0.9-renumbered-draft",
+  "version": "0.10-shared-memory-evidence-draft",
   "date_prepared": "2026-11-04",
   "type": "preprint candidate",
   "status": "unreleased draft; renamed from former Paper Five branch",
@@ -27,6 +27,22 @@
     "deterministic authority",
     "Cortex Continuum"
   ],
-  "evidence_scope": "First-party synthetic evidence with retained negative and infrastructure outcomes; independent replication not completed.",
-  "release_note": "Renumbered as Paper Six after the publication of The Continuity Substrate (Paper Five), DOI 10.5281/zenodo.23990079. The evidence remains first-party synthetic; this document is not a released preprint."
+  "evidence_scope": "First-party synthetic evidence with retained negative and infrastructure outcomes; independent replication not completed. A post-freeze shared-memory adapter integration passed in four declared policy overlays using mocked inference transport; live model interoperability remains untested.",
+  "release_note": "Renumbered as Paper Six after publication of The Continuity Substrate (Paper Five), DOI 10.5281/zenodo.23990079. Updated 11 November 2026 with first-party synthetic shared-memory adapter evidence; the adapter test uses mocked inference transport. The manuscript remains unreleased, has no DOI, and is not a live-model interoperability result.",
+  "last_evidence_update": "2026-11-11",
+  "evidence_updates": [
+    {
+      "date": "2026-11-11",
+      "type": "post-freeze synthetic shared-memory adapter integration",
+      "source_prs": [
+        27,
+        28
+      ],
+      "merged_commit": "3d2e4a587365ee90067b4b46544066ded7e6bf80",
+      "tested_revision": "3e2bf51fb583b65960cd2dec09857ee0569f0882",
+      "github_actions_run": 43115644413,
+      "result": "209/209 full-suite tests passed; adapter scenario passed in 4 declared policy overlays",
+      "inference": "Mock Ollama transport only; no model weights loaded and no live inference"
+    }
+  ]
 }
