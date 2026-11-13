@@ -418,7 +418,7 @@ Prior systems offer important subsets of the problem: hierarchical context manag
 
 ### 6.7 Product implication
 
-The appropriate category is not simply “vector memory” or “agent memory.” The tested object is a governed continuity substrate: a system beneath models and clients that supplies authorized state while withholding canonical authority from inference. The evidence supports describing this capability as demonstrated under controlled first-party synthetic tests across named models, clients, environments, and restarts. It does not support an unqualified claim of universal portability, production proof, independent validation, or compatibility with every model and provider.
+The tested object is a governed continuity substrate: a system beneath models and clients that supplies authorized state while withholding canonical authority from inference. First-party evidence includes controlled synthetic tests across named models, clients, and restarts, plus the separate Mac-to-Dell owner-source portability and two-record cross-model parity run. The evidence does not support an unqualified claim of universal portability, production proof, independent validation, or compatibility with every model and provider.
 
 ### 6.8 Benchmark and commercial evaluation
 
@@ -430,7 +430,7 @@ The benchmark is not a certification mark and should not be reduced to a single 
 
 The extension addresses a different question from the original replacement study. The original work asks whether continuity remains outside a model when components are replaced. The new test asks whether two separately authorized adapters can use a common substrate while private scopes stay isolated. Its four-profile result is encouraging because the same synthetic behavior held across departmental, government, hospital, and banking policy overlays, including explicit sharing and revocation.
 
-The inference boundary remains decisive. The adapter identifiers name two supported model configurations, but deterministic mocked transport produced the responses. The observed pass is therefore evidence about request construction, substrate authorization, provenance, persistence, and the adapter contract; it is not evidence about how two real models reason over a handoff. The result makes live-model interoperability a specific next experiment instead of an implied conclusion.
+The inference boundary remains decisive. The four-profile shared-memory adapter test used deterministic mocked transport and therefore provides evidence about request construction, substrate authorization, provenance, persistence, and the adapter contract, but not model reasoning. Separately, the 12 November Mac-to-Dell run used two actual local Ollama models and verified parity for the same two selected governed records after Dell import and restart checks. It demonstrates bounded cross-computer, cross-model recovery for those excerpts; it does not establish direct model-to-model communication, model access to all 98 records, universal provider portability, or multi-agent performance in production.
 
 ## 7. Limitations
 
@@ -446,12 +446,12 @@ The inference boundary remains decisive. The adapter identifiers name two suppor
 10. The 25-case adversarial result is first-party and bounded. Passing it does not constitute a security certification, safety guarantee, or proof that undocumented deployment paths cannot bypass the boundary.
 11. The Codex result is observational because seed, temperature, and model build were unavailable. The hosted API and llama.cpp attempts produced no scoreable model responses.
 12. The MLX result has incomplete criterion-level reporting because the scorer failed after JSON parsing; only the exact-schema and citation failures are conclusively adjudicated.
-13. The shared-memory extension is post-freeze, first-party, synthetic, and limited to four declared policy overlays. Its inference transport is mocked, so that experiment itself does not test real-model interoperability.
-16. The 12 November Mac-to-Dell parity result is first-party and bounded to two local model identities, two hash-bound record excerpts, and the verifier's normalized factual criteria. It is not independent organizational replication.
-17. Although 98 transported records passed the Dell portability process, the models were given matching excerpts from only two records. This does not show that either model consumed all 98 records.
-18. The run verifies a sequential portability and parity path, not two live agents concurrently accessing one continuously shared substrate. It does not establish distributed concurrent-write behavior, general multi-user isolation under live inference, or production readiness.
-14. The restart test crosses a Node process boundary on one host filesystem. It does not test container or machine failure, distributed revocation propagation, or multi-process concurrent writes.
-15. The executable extension is in a private product repository; public readers cannot independently inspect or execute that source from this research repository.
+13. The four-overlay shared-memory adapter extension is post-freeze, first-party, synthetic, and limited to four declared policy overlays. Its inference transport is mocked; that experiment itself does not test real-model interoperability.
+14. The 12 November Mac-to-Dell parity result is first-party and bounded to two local model identities, two hash-bound record excerpts, and the verifier's normalized factual criteria. It is not independent organizational replication.
+15. Although 98 transported records passed the Dell portability process, the models were given matching excerpts from only two records. This does not show that either model consumed all 98 records.
+16. The run verifies a sequential portability and parity path, not two live agents concurrently accessing one continuously shared substrate. It does not establish distributed concurrent-write behavior, general multi-user isolation under live inference, or production readiness.
+17. The restart test crosses a Node process boundary on one host filesystem. It does not test container or machine failure, distributed revocation propagation, or multi-process concurrent writes.
+18. The executable extension is in a private product repository; public readers cannot independently inspect or execute that source from this research repository.
 
 ## 8. Reproducibility and Evidence
 
@@ -481,7 +481,7 @@ The public Paper 6 package contains the manuscript, public evidence summary, ben
 
 ### Ethics and privacy
 
-The reported study used synthetic records and did not involve human participants, medical data, customer data, or intentionally collected personal data.
+The benchmark fixtures and four-overlay adapter records were synthetic. The separate 12 November portability test used governed owner-source records. The reported research did not use customer or regulated production data; it did not recruit human participants.
 
 ### Competing interests
 
@@ -533,10 +533,11 @@ The public research manuscript and released companion materials are prepared for
 | External MCP-style grant enforcement | Supported by named local tests and one 10/10 separately implemented first-party black-box client |
 | Model consumption across sizes | Supported for 8B and 14B complete passes; mixed overall |
 | Scoped shared memory across two adapter clients | Supported for the bounded synthetic integration in four declared overlays; mock transport only |
-| Live inference-model handoff across adapters | NOT_TESTED |
+| Live local inference across computers | Supported for the 12 November Mac-to-Dell run: two distinct local models returned matching verified results for two hash-bound governed-record excerpts; this was not a direct model-to-model call |
 | No model action authority | All four returned false; architectural enforcement remains external |
-| Second-machine/OS/family execution | Demonstrated for three post-freeze Dell trials across Gemma 3 and Llama 3.2 |
-| Successful cross-family semantic portability | NOT_ESTABLISHED; no Dell model passed every criterion |
+| Second-machine/OS/family execution | Demonstrated in the three post-freeze Dell comprehension trials and the separate Mac-to-Dell governed portability/parity run |
+| Cross-family comprehension on the frozen five-criterion task | NOT_ESTABLISHED; none of the three Dell comprehension trials passed every criterion |
+| Cross-computer parity on selected governed records | VERIFIED for two selected records and two distinct local models; not evidence that either model read all 98 transported records |
 | Second local inference runtime | MLX execution demonstrated; complete semantic/schema pass NOT_ESTABLISHED |
 | Fresh hosted-client consumption | One Codex observational pass; controlled provider portability NOT_ESTABLISHED |
 | Controlled hosted-provider portability | NOT_ESTABLISHED; API attempt ended before inference |
