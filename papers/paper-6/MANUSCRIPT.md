@@ -364,7 +364,7 @@ The authorized shared record returned the same digest and provenance reference t
 
 This is a post-freeze first-party synthetic adapter-level integration result. The test invokes the real adapter contract but injects deterministic mocked transport responses; it does not invoke Qwen 3 4B or Qwen 3.5 35B. The result supports one bounded statement about two separately authorized clients using one deterministic substrate. It does not demonstrate that real inference models exchanged or continued one another's work. The source code is held in a private product repository, limiting public reproduction.
 
-### 5.9 Verified Mac-to-Dell owner-source parity (12 November 2026)
+### 5.10 Verified Mac-to-Dell owner-source parity (12 November 2026)
 
 This post-freeze, first-party portability experiment used the governed owner-source corpus rather than the paper's three-record synthetic continuity fixture. A Dell portability process admitted 98 transported governed records and completed authorized recall, post-restart recovery, encrypted-storage plaintext-absence, and audit checks. For the model challenge, each computer's local model received matching, hash-bound excerpts from only two of those 98 records:
 
@@ -435,7 +435,7 @@ The inference boundary remains decisive. The adapter identifiers name two suppor
 ## 7. Limitations
 
 1. The study is first-party and has not been independently replicated.
-2. All records were synthetic; no live customer data or live production store was used.
+2. The primary paper fixtures and 11 November shared-memory overlay records were synthetic. The 12 November portability challenge used governed owner-source records, not the paper's synthetic fixture. The result does not establish production use or customer-data handling.
 3. The preregistered confirmatory model tests ran on one local machine and one model family; all cross-family and alternate-runtime results were post-freeze extensions.
 4. The earlier post-freeze Dell replacement trials used the same local-runtime product and a three-record synthetic packet; none of the three model trials passed every semantic criterion. The separate 12 November portability run used a different owner-source corpus and challenge and is not an independent replication.
 5. The model task was small and exact-match scoring is intentionally strict.
