@@ -1,4 +1,4 @@
-> **Editorial status:** This is an unreleased Paper Six draft, updated with a post-freeze, first-party synthetic shared-memory adapter experiment. The public Paper Five is *The Continuity Substrate* (DOI 10.5281/zenodo.23990079). No DOI or live-model interoperability result is claimed.
+> **Editorial status:** Unreleased Paper Six draft. This revision adds a verified first-party Mac-to-Dell live-model parity observation dated 12 November 2026 alongside the earlier synthetic shared-memory adapter result. Paper Six has no DOI. The public Paper Five is *The Continuity Substrate* (DOI 10.5281/zenodo.23990079).
 
 # Where Does AI Continuity Live?
 
@@ -21,7 +21,7 @@ The tested substrate preserved its deterministic contract in 12/12 frozen fixtur
 
 Model outputs varied while governed state did not. Qwen 3 8B and 14B passed the complete read-only consumption contract; smaller Qwen models produced semantic or exact-citation failures. Gemma 3 12B, Gemma 3 4B, and Llama 3.2 3B on a second machine preserved exact citations and acknowledged no action authority, but did not pass every semantic criterion. A fresh Codex observation passed the complete contract without controlled inference parameters. An MLX trial failed exact schema and citation requirements, and hosted API and llama.cpp attempts ended without scoreable model responses. Failures were retained rather than converted into successes.
 
-A separate post-freeze synthetic integration extension tested two independently scoped adapter clients against one shared record ledger under departmental, government, hospital, and banking policy overlays. All four profiles passed, including shared-record provenance, cross-scope denials, concurrent updates, grant revocation, and recall after reopening the policy, ledger, and payload files in a separate Node process. The repository's local inference adapter contract ran with deterministic mock transport responses for `qwen3:4b` and `qwen3.5:35b`; neither model was actually invoked. This supports a bounded adapter-level shared-memory result, not live model interoperability.
+A separate post-freeze synthetic integration extension tested two independently scoped adapter clients against one shared record ledger under departmental, government, hospital, and banking policy overlays. All four profiles passed, including shared-record provenance, cross-scope denials, concurrent updates, grant revocation, and recall after reopening the policy, ledger, and payload files in a separate Node process. The repository's local inference adapter contract ran with deterministic mock transport responses for `qwen3:4b` and `qwen3.5:35b`; neither model was actually invoked. This supports a bounded adapter-level shared-memory result, not live model interoperability. A distinct 12 November first-party portability experiment then ran real local inference on two machines: `qwen3.5:35b` on the Mac and `gemma3:12b` on the Dell independently processed matching, hash-bound excerpts from the same two of 98 governed owner-source records. An independent verifier returned `VERIFIED` for identical context and challenge hashes, selected records, and normalized factual results. The Dell portability process separately verified the 98-record admission, authorized recall, post-restart recovery, encrypted-store plaintext absence, and audit checks. This is bounded cross-machine, cross-model continuity evidence; it does not show that either model read all 98 records or that two live agents concurrently accessed one continuously shared substrate.
 
 These results support a bounded answer: in the tested system, operational continuity resided in the governed substrate rather than in any single model session. The experiment does not show that every model understands the same memory equally well; it shows why model comprehension and memory authority must be different variables. This is the central strength of ADI demonstrated at the memory layer: probabilistic reasoning may change or fail while deterministic authority, provenance, and continuity remain stable. Cortex Continuum Benchmark v1 publishes the falsification contract for external evaluation. Production readiness, security certification, universal provider portability, and independent replication are not established.
 
@@ -364,6 +364,30 @@ The authorized shared record returned the same digest and provenance reference t
 
 This is a post-freeze first-party synthetic adapter-level integration result. The test invokes the real adapter contract but injects deterministic mocked transport responses; it does not invoke Qwen 3 4B or Qwen 3.5 35B. The result supports one bounded statement about two separately authorized clients using one deterministic substrate. It does not demonstrate that real inference models exchanged or continued one another's work. The source code is held in a private product repository, limiting public reproduction.
 
+### 5.10 Verified Mac-to-Dell owner-source parity (12 November 2026)
+
+This post-freeze, first-party portability experiment used the governed owner-source corpus rather than the paper's three-record synthetic continuity fixture. A Dell portability process admitted 98 transported governed records and completed authorized recall, post-restart recovery, encrypted-storage plaintext-absence, and audit checks. For the model challenge, each computer's local model received matching, hash-bound excerpts from only two of those 98 records:
+
+| Computer | Local model | Model digest |
+|---|---|---|
+| Mac | `qwen3.5:35b` | `26025611beeb3fe9e4850b1fdae686bebba7cdfa7f13ddb04955f19872ee022a` |
+| Dell | `gemma3:12b` | `f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a` |
+
+The independent verifier returned `VERIFIED`. Both responses passed schema and individual-result checks; model identities were distinct; the context hash (`sha256:c373b08be8a60665523e1799eb7cbbc3d8f547c493d7ed0adb4e4d70ab146bc7`) and challenge hash (`sha256:1d2b3491837f2786941abcd43f849ebe40f47b3eb8c3272ea853f19dd7c3972c`) matched; and the selected records and normalized factual results matched. The normalized response hash was `sha256:2c4bd2b11417d919a4cd8ca9cb65604034f52b597b6d37a4730e99b9f10364de`.
+
+Retained artifact hashes: Mac result `sha256:6412f1b3d2f9c9fd5f4b65b70defc4b1c37efec5d79790cbd07a4fd209c824fb`; Dell result `sha256:bb6f5ae523e8ad1fae3105bc34d023be84fdc3f60551ccb34dcdecbbb7da835a`; verifier report `sha256:fac7440312d85cd48856964307ebd84eb3dbe29c137ac8bc13f69e4b667a1c1c`. The encrypted transport bundle and Dell execution package are not in Git; their hashes and the full record are linked in the [HOPE evidence report](https://github.com/brandenlaskowski7-bot/hope-governed-workforce-platform/blob/main/evidence/cortex-owner-source-portability/2026-11-12-cross-model-parity/README.md).
+
+This result newly supports bounded cross-machine, cross-model parity for the two challenged excerpts under the recorded verifier. It also shows the 98-record governed portability workflow passed its separately listed admission, recall, restart, encrypted-storage, and audit checks. It does not show model ingestion of all 98 records, concurrent live access to one continuously shared substrate, full-machine migration, transfer of credentials, multi-user isolation under concurrent live inference, or production readiness. Dell telemetry reported approximately 33.7 seconds model load, 99.2 seconds prompt evaluation, and 102.0 seconds generation; correctness is demonstrated for this challenge, not acceptable commercial latency.
+
+### Evidence strata and interpretation
+
+| Evidence stratum | What it establishes | What it does not establish |
+|---|---|---|
+| October Mac model-substitution trials and Paper Six synthetic model-consumption trials | Actual model responses on bounded synthetic tasks; mixed pass/fail outcomes retained | Owner-source portability or continuity over a 98-record corpus |
+| November 11 shared-memory adapter CI | Two scoped adapter clients and four synthetic policy overlays passed with deterministic mocked inference responses | Live model interoperability |
+| November 12 Mac-to-Dell parity | Two real local models on different computers matched normalized facts from the same two governed record excerpts; independent verifier passed | Either model read all 98 records; simultaneous agents shared a live substrate |
+| Dell 98-record portability checks | Governed transport admission, authorized recall, restart recovery, encrypted-storage, and audit checks passed | Model consumption of the full corpus or general production security |
+
 ## 6. Discussion
 
 ### 6.1 The experiment identifies the continuity carrier
@@ -382,7 +406,7 @@ The 4B result demonstrates a specific failure mode: semantically correct prose c
 
 ### 6.4 “Cross-model” requires qualifiers
 
-The preregistered confirmatory set tested four model sizes in one family and one local runtime environment. It supports complete cross-size consumption for the two passing Qwen 3 models, not a universal cross-model claim. The post-freeze Dell extension added a second machine, operating system, and two additional model families, but none of the three Dell trials passed every semantic criterion. The MLX trial established execution through a second local runtime but failed schema and citation requirements. The separately implemented black-box client passed its frozen contract, and the Codex observation passed all five answer criteria without controlled inference parameters. These results demonstrate bounded cross-environment and cross-client execution with mixed model outcomes, not universal cross-model or cross-provider semantic portability.
+The preregistered confirmatory set tested four model sizes in one family and one local runtime environment. It supports complete cross-size consumption for the two passing Qwen 3 models, not a universal cross-model claim. The earlier post-freeze Dell replacement trials used a three-record synthetic packet; none of the three model trials passed every semantic criterion. A separate 12 November owner-source challenge later passed for two records across Mac and Dell. The MLX trial established execution through a second local runtime but failed schema and citation requirements. The separately implemented black-box client passed its frozen contract, and the Codex observation passed all five answer criteria without controlled inference parameters. The owner-source challenge adds bounded cross-machine, cross-model parity for its two excerpts, while the earlier semantic failures remain part of the evidence. Together these results do not establish universal cross-model or cross-provider semantic portability.
 
 ### 6.5 What the result contributes to ADI
 
@@ -411,9 +435,9 @@ The inference boundary remains decisive. The adapter identifiers name two suppor
 ## 7. Limitations
 
 1. The study is first-party and has not been independently replicated.
-2. All records were synthetic; no live customer data or live production store was used.
+2. The primary paper fixtures and 11 November shared-memory overlay records were synthetic. The 12 November portability challenge used governed owner-source records, not the paper's synthetic fixture. The result does not establish production use or customer-data handling.
 3. The preregistered confirmatory model tests ran on one local machine and one model family; all cross-family and alternate-runtime results were post-freeze extensions.
-4. The Dell extension used the same local-runtime product on a second machine, and none of its three model trials passed every semantic criterion; it was not an independent replication.
+4. The earlier post-freeze Dell replacement trials used the same local-runtime product and a three-record synthetic packet; none of the three model trials passed every semantic criterion. The separate 12 November portability run used a different owner-source corpus and challenge and is not an independent replication.
 5. The model task was small and exact-match scoring is intentionally strict.
 6. The lexical semantic scorer does not measure general answer quality.
 7. The MCP-style and black-box-client tests evaluate the repository’s public boundary, not a heterogeneous multi-vendor deployment or independent organizational implementation.
@@ -422,7 +446,10 @@ The inference boundary remains decisive. The adapter identifiers name two suppor
 10. The 25-case adversarial result is first-party and bounded. Passing it does not constitute a security certification, safety guarantee, or proof that undocumented deployment paths cannot bypass the boundary.
 11. The Codex result is observational because seed, temperature, and model build were unavailable. The hosted API and llama.cpp attempts produced no scoreable model responses.
 12. The MLX result has incomplete criterion-level reporting because the scorer failed after JSON parsing; only the exact-schema and citation failures are conclusively adjudicated.
-13. The shared-memory extension is post-freeze, first-party, synthetic, and limited to four declared policy overlays. Its inference transport is mocked, so real-model interoperability is not tested.
+13. The shared-memory extension is post-freeze, first-party, synthetic, and limited to four declared policy overlays. Its inference transport is mocked, so that experiment itself does not test real-model interoperability.
+16. The 12 November Mac-to-Dell parity result is first-party and bounded to two local model identities, two hash-bound record excerpts, and the verifier's normalized factual criteria. It is not independent organizational replication.
+17. Although 98 transported records passed the Dell portability process, the models were given matching excerpts from only two records. This does not show that either model consumed all 98 records.
+18. The run verifies a sequential portability and parity path, not two live agents concurrently accessing one continuously shared substrate. It does not establish distributed concurrent-write behavior, general multi-user isolation under live inference, or production readiness.
 14. The restart test crosses a Node process boundary on one host filesystem. It does not test container or machine failure, distributed revocation propagation, or multi-process concurrent writes.
 15. The executable extension is in a private product repository; public readers cannot independently inspect or execute that source from this research repository.
 
@@ -442,9 +469,9 @@ This paper asked where operational AI continuity lives when the model and its su
 
 Model behavior varied. Two larger Qwen 3 sizes passed the complete read-only task; smaller and cross-family models produced semantic, schema, or citation failures; the fresh Codex observation passed without controlled inference parameters; and the alternate llama.cpp and hosted API paths produced no scoreable responses. None of these outcomes transferred canonical authority to a model or changed the governed records.
 
-A separate post-freeze extension also passed a synthetic shared-memory adapter test across four policy overlays, with two separately scoped clients, matching shared-record provenance, denied private-scope probes, concurrent updates, grant removal, and child-process recovery. Because transport responses were mocked, that extension does not qualify live model interoperability.
+A separate post-freeze extension also passed a synthetic shared-memory adapter test across four policy overlays, with two separately scoped clients, matching shared-record provenance, denied private-scope probes, concurrent updates, grant removal, and child-process recovery. Because transport responses were mocked, that extension does not qualify live model interoperability. The later 12 November experiment separately supplies first-party live-inference evidence: Qwen 3.5 35B on the Mac and Gemma 3 12B on the Dell returned matching normalized factual results from the same two of 98 governed owner-source records, and the independent verifier returned `VERIFIED` against matching context/challenge hashes and selected-record bindings. The Dell process separately verified admission and authorized recall of all 98 transported records, post-restart recovery, encrypted-store plaintext absence, and audit checks. This was not a concurrent shared-substrate test; neither model was given all 98 records.
 
-The result supports a bounded ADI proposition: the reasoning layer can be replaced without making it the carrier or authority of operational continuity. That is the strength of ADI shown here. It converts model independence from a design aspiration into a falsifiable separation between variable inference and invariant governed state. The evidence is sufficient to describe the tested capability as demonstrated under the named controlled conditions. The next evidentiary step is independent replication and a prospectively controlled hosted-provider study, not an unqualified commercial claim of universal or production-proven portability.
+The result supports a bounded ADI proposition: the reasoning layer can be replaced without making it the carrier or authority of operational continuity. That is the strength of ADI shown here. It converts model independence from a design aspiration into a falsifiable separation between variable inference and invariant governed state. The evidence is sufficient to describe the tested capability as demonstrated under the named controlled conditions. The next evidentiary steps are independent replication, repeated prospectively controlled cross-machine challenges, a concurrent multi-user live-substrate test, and broader model/provider evaluation. The current evidence does not support an unqualified claim of universal or production-proven portability.
 
 ## Declarations
 

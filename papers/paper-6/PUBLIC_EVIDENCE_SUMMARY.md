@@ -8,7 +8,7 @@ Paper 6 tests this as a controlled replacement problem derived from Artificial D
 
 ## Study boundary
 
-All reported records are synthetic and first-party. Original confirmatory evidence and post-freeze expansion evidence remain separate. Infrastructure failures, negative model outcomes, the restart-directory collision, and the MLX scoring-harness failure remain in the record.
+Evidence strata remain separate. The earlier Paper Six fixtures and model-consumption tasks are synthetic and first-party; the 11 November shared-memory adapter test is synthetic and used mocked inference transport. The 12 November owner-source portability run used governed owner-source records and actual local inference on two machines. Infrastructure failures, negative model outcomes, the restart-directory collision, and the MLX scoring-harness failure remain in the record.
 
 ## Original study
 
@@ -56,3 +56,32 @@ The evidence does not support saying that every model passes the contract, every
 ## Independent testing path
 
 An outside reviewer can run the existing Cortex Governed Memory Challenge when its status document marks an endpoint available and authorized. The reviewer can also run the Paper 6 model-consumption fixture through any chosen model or runtime, score the response with the public reference scorer, and publish the model identity, exposed parameters, raw-response hash, criterion results, and sanitized challenge receipts. That outside run would add independent evidence; the protocol by itself does not.
+
+
+## 12 November 2026: Mac-to-Dell owner-source parity
+
+Evidence report: [HOPE repository verified report](https://github.com/brandenlaskowski7-bot/hope-governed-workforce-platform/blob/main/evidence/cortex-owner-source-portability/2026-11-12-cross-model-parity/README.md).
+
+| Evidence item | Verified record | Bounded interpretation |
+|---|---|---|
+| Mac local inference | `qwen3.5:35b`; model digest `26025611beeb3fe9e4850b1fdae686bebba7cdfa7f13ddb04955f19872ee022a` | Real model response on Mac |
+| Dell local inference | `gemma3:12b`; model digest `f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a` | Real model response on Dell |
+| Challenge context | `sha256:c373b08be8a60665523e1799eb7cbbc3d8f547c493d7ed0adb4e4d70ab146bc7` | Identical hash-bound excerpts from two of 98 governed owner-source records |
+| Challenge | `sha256:1d2b3491837f2786941abcd43f849ebe40f47b3eb8c3272ea853f19dd7c3972c` | Same challenge supplied to both models |
+| Normalized responses | `sha256:2c4bd2b11417d919a4cd8ca9cb65604034f52b597b6d37a4730e99b9f10364de` | Identical normalized factual results |
+| Independent verification | `VERIFIED`; both individual outcomes passed, models distinct, selected records and normalized results equal | Supports bounded parity for this challenge |
+| Dell portability checks | 98 records admitted; authorized recall and post-restart recovery; encrypted-store plaintext-absence and audit checks passed | Corpus-level portability checks; models did not receive all 98 records |
+| Retained result files | Mac `sha256:6412f1b3d2f9c9fd5f4b65b70defc4b1c37efec5d79790cbd07a4fd209c824fb`; Dell `sha256:bb6f5ae523e8ad1fae3105bc34d023be84fdc3f60551ccb34dcdecbbb7da835a`; verifier `sha256:fac7440312d85cd48856964307ebd84eb3dbe29c137ac8bc13f69e4b667a1c1c` | Verifier inputs are content-bound |
+
+The encrypted transport bundle hash is `sha256:c0ecd4fe53ac32f66df01ce111924ed6c2d295df1e7bdfc5dc862ef2ed3fa97c`; the Dell execution package hash is `sha256:2d3940dbf51d0675c1993cd19306c7d9ee07147be5bf795dee4c07b771e44918`. These artifacts are excluded from Git as stated by the evidence owner. Dell telemetry: approximately 33.7 seconds model load, 99.2 seconds prompt evaluation, and 102.0 seconds generation; the result demonstrates correctness, not commercially acceptable latency.
+
+**Newly supported:** bounded live-inference, cross-machine and cross-model parity for the two challenged excerpts; separately, governed portability checks for the 98-record corpus.
+
+**Already established by earlier evidence:** model outputs can vary or fail on small synthetic tasks without changing canonical governed state; the synthetic adapter test passed four policy overlays using mocked transport responses; earlier Mac model-substitution trials produced mixed acceptance rates and preserved negative findings.
+
+**Still unestablished:** concurrent live agents on one continuously shared substrate; either model reading all 98 records; general multi-user isolation under live inference; universal model/provider compatibility; independent organizational replication; production readiness or commercial latency.
+
+
+## Claim boundaries
+
+This owner-source experiment is not the 11 November synthetic shared-memory adapter test, and it is not the October model-substitution series. Do not pool their counts. The result does not erase the earlier Gemma 12B synthetic-task semantic failure: the task, input records, and scorer differ. Full-machine migration, credential transfer, concurrent live sharing, and model consumption of all 98 records were not demonstrated.
