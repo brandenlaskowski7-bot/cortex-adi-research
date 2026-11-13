@@ -49,7 +49,7 @@ Each overlay recorded five durable synthetic records and twelve audit operations
 
 ## Commercially supportable language
 
-The evidence supports a bounded statement that first-party synthetic tests preserved the tested operational continuity state across named replacements, and that two separately scoped adapter clients shared an explicitly granted record over one deterministic store in four declared policy overlays. The latter result used deterministic mock inference responses; it is adapter-level evidence, not live model interoperability.
+The evidence supports two distinct bounded statements. First, first-party synthetic tests preserved the tested continuity state across named replacements, and two separately scoped adapter clients shared an explicitly granted record over one deterministic store in four declared policy overlays using mocked inference transport. Second, the 12 November 2026 first-party Mac-to-Dell run used actual local inference from Qwen 3.5 35B and Gemma 3 12B; an independent verifier confirmed matching results for the same two hash-bound owner-source excerpts. The Dell separately passed governed import, recall, restart, encrypted-storage, and audit checks for the 98-record transfer. This supports bounded cross-computer, cross-model parity for the challenged excerpts, not direct model-to-model communication or model reading of all 98 records.
 
 The evidence does not support saying that every model passes the contract, every provider is compatible, the system is production-proven, the work has been independently validated, or the tests constitute a security certification.
 
