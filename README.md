@@ -26,7 +26,7 @@ The PDF is byte-identical to the corrected file on the existing Zenodo record, S
 - Byte-identical GitHub mirrors: [preprint PDF](papers/paper-5/ADI_Paper_5_The_Continuity_Substrate_Preprint.pdf) and [public evidence ZIP](papers/paper-5/ADI_Paper_5_The_Continuity_Substrate_Public_Evidence.zip)
 - [Publication record, checksums, evidence boundary, and research sequence](papers/paper-5/README.md)
 
-Both GitHub files were retrieved from the direct Zenodo attachment URLs and verified against Zenodo's recorded byte sizes and MD5 checksums before being added. Zenodo remains the canonical archival source. Paper Six is a separately preserved [unreleased draft](papers/paper-6/README.md); its new shared-memory adapter evidence uses mock inference transport, it has no DOI, and it must not be presented as a published paper.
+Both GitHub files were retrieved from the direct Zenodo attachment URLs and verified against Zenodo's recorded byte sizes and MD5 checksums before being added. Zenodo remains the canonical archival source. Paper Six is a separately preserved [unreleased draft](papers/paper-6/README.md); its 11 November shared-memory adapter evidence uses mock inference transport, while a separate 12 November first-party Mac-to-Dell challenge verified matching results from two governed record excerpts using real local inference. Paper Six remains an unreleased draft with no DOI and must not be presented as a published paper.
 
 ## Research papers
 
