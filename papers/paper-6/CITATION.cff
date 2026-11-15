@@ -1,18 +1,19 @@
 cff-version: 1.2.0
 message: "This is an unpublished Paper Six draft. Cite the repository commit until a separate DOI exists."
-title: "Where Does AI Continuity Live? A Controlled Replacement Test of Governed Memory Across Models, Clients, Platforms, and Runtime Restarts"
+title: "Model-Independent Scoped Memory: A Controlled Study of Institutional Scope Memory Across Models, Machines, and Authenticated Clients"
 authors:
   - family-names: "Laskowski"
     given-names: "Branden"
     affiliation: "Cortex Agentics Global"
-version: "0.9-renumbered-draft"
+version: "0.10-evidence-reconciliation-draft"
 type: article
 license: CC-BY-4.0
 keywords:
   - Artificial Deterministic Intelligence
-  - governed memory
-  - continuity
-  - model substitution
+  - institutional scope memory
+  - model independence
+  - provenance
+  - access control
   - provenance
   - deterministic authority
 references:

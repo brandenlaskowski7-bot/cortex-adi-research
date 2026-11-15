@@ -1,10 +1,10 @@
-# Paper 6 Public Evidence Summary
+# Paper 6 Public Evidence Summary — Model-Independent Scoped Memory
 
 ## Central question
 
-> When the model, client, machine, or runtime changes, can one governed memory substrate preserve the exact continuity of work without transferring authority over memory to the replacement model?
+> Can organizations retain governed institutional memory across changing models, machines, and clients while preserving the scope boundaries that keep models from becoming the authority over the records they use?
 
-Paper 6 tests this as a controlled replacement problem derived from Artificial Deterministic Intelligence (ADI). The continuity state is held fixed outside inference; the model, client, platform, or runtime condition changes; continuity invariance and model comprehension are scored separately.
+Paper 6 tests this as a model-independence and scoped-institutional-memory problem derived from Artificial Deterministic Intelligence (ADI). The record state and access boundary remain external to inference; model, client, machine, or runtime conditions may change.
 
 ## Study boundary
 
@@ -40,6 +40,16 @@ All reported records are synthetic and first-party. Original confirmatory eviden
 | MLX Qwen 2.5 1.5B | Overall fail, partial record | Second local runtime executed; exact schema and citations failed |
 | llama.cpp attempts | Infrastructure failure | No scoreable response |
 | Hosted API attempt | Infrastructure failure | HTTP 429 before inference; no provider result |
+
+## Reconciled evidence added 15 November 2026
+
+| Evidence | Result | Bound |
+|---|---:|---|
+| Mac Qwen 35B to Dell Gemma 12B handoff | Pass | One first-party synthetic encrypted-store handoff; governed record identity, history, provenance, and selected model consumption retained |
+| Cross-model parity | Verified | Same two selected governed excerpts, same context/challenge hashes, same normalized result; not all 98 records were given to either model |
+| Authenticated scoped-client scale | 1,000/1,000 admission and expected-only recall | Live local Docker HTTP/MCP service; cross-scope withheld, invalid credential and replay denied; no model inference in this scale trial |
+| Historical kernel pressure baseline | 100 / 1,000 / 10,000 record datasets | Local in-memory historical kernel benchmark; not durable-production or model-provider evidence |
+| Historical governed queue baseline | 100 / 1,000 / 10,000 configured datasets | Deterministic local queue scheduling and recovery; explicitly excludes real workers, tools, connectors, models, and external effects |
 
 ## Commercially supportable language
 

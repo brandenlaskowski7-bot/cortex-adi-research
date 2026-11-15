@@ -1,23 +1,23 @@
 # ADI Research Series Paper 6
 
-## Where Does AI Continuity Live?
+## Model-Independent Scoped Memory
 
-### A Controlled Replacement Test of Governed Memory
+### A controlled study of institutional scope memory across models, machines, and authenticated clients
 
 Branden Laskowski · Cortex Agentics Global  
 Unreleased research draft · evidence review
 
 Paper 6 begins with one scientific question:
 
-> When the model, client, machine, or runtime changes, can one governed memory substrate preserve the exact continuity of work without transferring authority over memory to the replacement model?
+> Can organizations retain governed institutional memory across changing models, machines, and clients while preserving the scope boundaries that keep models from becoming the authority over the records they use?
 
-The paper answers with one controlled replacement test. It freezes a continuity state and its governing contract, replaces the reasoning and access components around it, and measures whether the state, exact provenance, scope, lifecycle, and receipts remain invariant with zero unauthorized effects. Model comprehension is scored separately.
+The paper compiles separate first-party synthetic evidence tracks: model and machine handoff, hash-bound cross-model parity, authenticated scoped-client recall, and historical kernel/queue pressure baselines. Each track has its own claim boundary; no composite score is used.
 
 This is an empirical extension of Branden Laskowski's Artificial Deterministic Intelligence (ADI) research program. ADI supplies the theory—probabilistic reasoning, deterministic authority—and Cortex Continuum is the evaluated memory substrate. Cite the ADI umbrella paper through its version DOI: [10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200).
 
 The current record supports this bounded statement:
 
-> In controlled first-party synthetic tests, Cortex Continuum preserved the tested operational continuity state across named model, client, machine, operating-system, and runtime replacements while canonical authority remained outside model inference.
+> In controlled first-party synthetic tests, named models and authenticated clients consumed governed, scope-limited record context while canonical record authority remained outside model inference.
 
 The record does not establish universal model compatibility, complete hosted-provider portability, production readiness, security certification, or independent replication.
 
@@ -26,6 +26,7 @@ The record does not establish universal model compatibility, complete hosted-pro
 - Rendered preprint: **not yet generated or approved as Paper Six**
 - [Manuscript](MANUSCRIPT.md)
 - [Public evidence summary](PUBLIC_EVIDENCE_SUMMARY.md)
+- [Evidence reconciliation — 15 November 2026](EVIDENCE_RECONCILIATION_20261115.md)
 - [Cortex Continuum Benchmark v1](BENCHMARK.md)
 - [Preprint readiness record](PREPRINT_READINESS.md)
 - [Deposit metadata](METADATA.json)
@@ -46,4 +47,4 @@ This branch contains research prose, synthetic fixtures, a public scorer, and bo
 
 ## Relationship to Paper Five
 
-[Paper Five — *The Continuity Substrate*](../paper-5/README.md) introduces the substrate. This Paper Six candidate contains the controlled model/client/runtime replacement and continuity benchmark, and may be extended to explicitly test scoped shared access by multiple models and agents. The existing measurements do **not** constitute a completed multi-agent shared-memory study. The source branch is `adi/paper-5-continuity-benchmark`; the old candidate PDF and its stale checksums remain there for audit, not publication under Paper Six.
+[Paper Five — *The Continuity Substrate*](../paper-5/README.md) introduces the substrate. Paper Six evaluates the narrower question of whether the institutional memory and its scopes remain independent of a particular model. The 1,000-client trial is logical authenticated-client scope evidence, not a claim of 1,000 simultaneous model inferences or a completed multi-agent model study.

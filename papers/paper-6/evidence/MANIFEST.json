@@ -1,0 +1,31 @@
+{
+  "schema_version": "adi.paper6.evidence-manifest.v1",
+  "classification": "first_party_synthetic_controlled",
+  "disclosure": "Raw receipts, implementation details, credentials, personal records, and customer records are excluded.",
+  "cross_machine_handoff_2026_11_07": {
+    "scope": "Named Mac Qwen 35B to Dell Gemma 12B synthetic handoff",
+    "mac_model_extraction_receipt_sha256": "9e54cfea7fc1be9882d3211a877ae118ae7a27d484eecf774170bb68d6fb3033",
+    "dell_import_results_sha256": "499fc6c116f75f5969e0f2503c3b561565351fb881890ec263aaa0343f29ad2f",
+    "dell_model_consumption_receipt_sha256": "390322a5a308e7cef646f9c4adce2b5248419a3f6d15a3e1f846582e7c7c76e6"
+  },
+  "cross_model_parity_2026_11_12": {
+    "scope": "Named Qwen 35B and Gemma 12B parity over two selected synthetic record excerpts",
+    "verification_receipt_sha256": "fac7440312d85cd48856964307ebd84eb3dbe29c137ac8bc13f69e4b667a1c1c",
+    "context_sha256": "c373b08be8a60665523e1799eb7cbbc3d8f547c493d7ed0adb4e4d70ab146bc7"
+  },
+  "scoped_client_scale_2026_11_15": {
+    "scope": "1,000 authenticated logical external clients against a live local Docker service; no model inference",
+    "private_execution_receipt_sha256": "abc6319b0c9cfe78d66c74eba77ce9ca85e4515e9cb3433fd66f7bee88198aab",
+    "runner_source_sha256": "03775a0bad69ec4572b110ce6ffc348ee41ec1c1c70eb75a28e794668c8707f7",
+    "container_image_digest": "sha256:ccab2f7b66d41b1baff3e488605cb5a7e4d7b9daab8a854739e04027ae3fda7f"
+  },
+  "historical_kernel_pressure_2026_07": {
+    "scope": "Historical local in-memory benchmark at source checkpoint ec5f356; 100, 1,000, and 10,000 synthetic-record datasets; no model/provider calls",
+    "benchmark_json_sha256": "db94c0f3125b6f9b48073ecff9ee097482b7fa06c753af6a7079119eb2d9db5b"
+  },
+  "historical_governed_queue_2026_07": {
+    "scope": "Historical deterministic local queue benchmark; excludes worker, model, tool, connector, and external-effect execution",
+    "benchmark_json_sha256": "912a8c4fbf89aa6681081b4f847ce0fef81aa08b34f6925b06284c5e41189de4",
+    "benchmark_manifest_sha256": "f3f6d54d6eff6a82bebcfbf1816596ba3c95ccb08449a7e3335df97fc14f58f8"
+  }
+}
