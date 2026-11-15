@@ -1,0 +1,25 @@
+{
+  "schema_version": "adi.first_party_evidence_manifest.v1",
+  "title": "External Client Scale Evidence — 15 November 2026",
+  "classification": "first_party_synthetic_local",
+  "result": "pass",
+  "claim_boundary": "Admission, scoped recall, and listed access-control probes for 1,000 authenticated external clients against a local shared-memory service. Not independent replication, production proof, security certification, or model-inference capacity evidence.",
+  "final_run": {
+    "authenticated_external_clients": 1000,
+    "records_admitted": 1000,
+    "scoped_recalls_expected_only": 1000,
+    "recall_wall_duration_ms": 1158.134,
+    "recall_p50_ms": 1129.756,
+    "recall_p95_ms": 1145.829,
+    "recall_p99_ms": 1146.946,
+    "cross_scope_probe": "withheld",
+    "invalid_credential_probe": "denied",
+    "replay_probe": "denied"
+  },
+  "integrity": {
+    "private_execution_receipt_sha256": "abc6319b0c9cfe78d66c74eba77ce9ca85e4515e9cb3433fd66f7bee88198aab",
+    "runner_source_sha256": "03775a0bad69ec4572b110ce6ffc348ee41ec1c1c70eb75a28e794668c8707f7",
+    "container_image_digest": "sha256:ccab2f7b66d41b1baff3e488605cb5a7e4d7b9daab8a854739e04027ae3fda7f"
+  },
+  "redaction": "Raw execution receipt, credentials, client secrets, personal or customer records, and implementation-level architecture are not included."
+}
