@@ -18,6 +18,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.platypus import (
     BaseDocTemplate,
+    CondPageBreak,
     Frame,
     KeepTogether,
     PageBreak,
@@ -32,7 +33,9 @@ from reportlab.platypus import (
 
 PAPER_ROOT = Path(__file__).resolve().parents[1]
 SOURCE = PAPER_ROOT / "MANUSCRIPT.md"
-DEFAULT_OUTPUT = PAPER_ROOT.parents[1] / "output" / "pdf" / "paper-6-review-edition.pdf"
+DEFAULT_OUTPUT = (
+    PAPER_ROOT.parents[1] / "output" / "pdf" / "the-future-of-ai-and-institutional-memory-paper-six.pdf"
+)
 
 NAVY = colors.HexColor("#17324D")
 BLUE = colors.HexColor("#2E6F9E")
@@ -81,7 +84,9 @@ def inline_markup(text: str) -> str:
     text = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", text)
     text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<i>\1</i>", text)
     for i, (label, url) in enumerate(links):
-        replacement = f'<link href="{html.escape(url)}" color="#2E6F9E">{html.escape(label)}</link>'
+        replacement = html.escape(label)
+        if url.startswith(("https://", "http://")):
+            replacement = f'<link href="{html.escape(url)}" color="#2E6F9E">{replacement}</link>'
         text = text.replace(f"@@LINK{i}@@", replacement)
     return text
 
@@ -222,8 +227,13 @@ def table_flowable(lines: list[str], st: dict) -> Table:
         while len(row) < columns:
             row.append(Paragraph("", st["small"]))
     width = 468
-    if columns == 2:
+    header = lines[0].strip().strip("|").split("|")
+    if columns == 2 and header[0].strip() == "SHA-256":
+        col_widths = [width * 0.55, width * 0.45]
+    elif columns == 2:
         col_widths = [width * 0.38, width * 0.62]
+    elif columns == 4 and header[0].strip() == "ID":
+        col_widths = [width * fraction for fraction in (0.11, 0.30, 0.23, 0.36)]
     elif columns == 3:
         col_widths = [width * 0.29, width * 0.17, width * 0.54]
     else:
@@ -266,7 +276,11 @@ def parse_body(lines: list[str], st: dict) -> list:
             story.append(Spacer(1, 7))
             table_lines = []
 
-    for raw in lines:
+    skip = 0
+    for index, raw in enumerate(lines):
+        if skip:
+            skip -= 1
+            continue
         line = raw.rstrip("\n")
         if line.startswith("```"):
             flush_paragraph()
@@ -299,13 +313,18 @@ def parse_body(lines: list[str], st: dict) -> list:
         if line.startswith("## "):
             flush_paragraph()
             heading = line[3:].strip()
-            if heading.startswith("Appendix") or heading in {"References", "Declarations"}:
+            if heading.startswith("Appendix"):
                 story.append(PageBreak())
             story.append(Paragraph(inline_markup(heading), st["h2"]))
             continue
-        if line.startswith("### "):
+        if line.startswith(("### ", "#### ")):
             flush_paragraph()
-            story.append(Paragraph(inline_markup(line[4:].strip()), st["h3"]))
+            next_line = next((part for part in lines[index + 1:] if part.strip()), "")
+            heading_style = st["h3"]
+            if next_line.startswith("|"):
+                story.append(CondPageBreak(84))
+                heading_style = ParagraphStyle("TableHeading", parent=heading_style, keepWithNext=False)
+            story.append(Paragraph(inline_markup(line.split(" ", 1)[1]), heading_style))
             continue
         if line.startswith("> "):
             flush_paragraph()
@@ -318,13 +337,13 @@ def parse_body(lines: list[str], st: dict) -> list:
         numbered = re.match(r"^(\d+)\.\s+(.*)", line)
         if numbered:
             flush_paragraph()
-            story.append(Paragraph(f"{numbered.group(1)}. " + inline_markup(numbered.group(2)), st["bullet"]))
-            continue
-        if line.strip() in {"\\[", "\\]"}:
-            flush_paragraph()
-            continue
-        if line.strip().startswith("\\") or re.fullmatch(r"[A-Za-z].*=.*", line.strip()):
-            paragraph.append(line)
+            body = [numbered.group(2)]
+            for part in lines[index + 1 :]:
+                if not part.startswith("   ") or not part.strip():
+                    break
+                body.append(part.strip())
+            skip = len(body) - 1
+            story.append(Paragraph(f"{numbered.group(1)}. " + inline_markup(" ".join(body)), st["bullet"]))
             continue
         if line.startswith("*Figure "):
             flush_paragraph()
@@ -373,6 +392,24 @@ def build(source: Path, output: Path) -> None:
         Paragraph("Abstract", st["h2"]),
     ]
     story.extend(parse_body(lines[abstract_index + 1 :], st))
+    appendices = (
+        ("B. Evidence Reconciliation", "EVIDENCE_RECONCILIATION_20261115.md"),
+        ("C. Evidence Catalog", "EVIDENCE_CATALOG_20261115.md"),
+        ("D. External Reproducibility Protocol", "REPRODUCIBILITY_PROTOCOL.md"),
+    )
+    for heading, name in appendices:
+        appendix_lines = (source.parent / name).read_text(encoding="utf-8").splitlines()
+        body = ["#" + line if line.startswith(("## ", "### ")) else line
+                for line in appendix_lines[1:]]
+        story.extend(parse_body([f"## Appendix {heading}", *body], st))
+
+    checksums = (source.parent / "SHA256SUMS").read_text(encoding="utf-8").splitlines()
+    rows = ["## Appendix E. Companion Artifact Checksums", "| SHA-256 | Companion artifact |",
+            "| --- | --- |"]
+    for line in checksums:
+        digest, name = line.split(maxsplit=1)
+        rows.append(f"| `{digest}` | `{name}` |")
+    story.extend(parse_body(rows, st))
     output.parent.mkdir(parents=True, exist_ok=True)
     doc = PreprintDocTemplate(
         str(output),

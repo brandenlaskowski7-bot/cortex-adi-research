@@ -23,6 +23,10 @@ This is the ADI claim under test: model capability and model authority are separ
 
 The record does not establish universal model compatibility, complete hosted-provider portability, production readiness, security certification, or independent replication.
 
+The revised manuscript documents the original Mac-to-Dell update and
+handoff, reports the new fixed-fixture and authenticated-recall inference
+runs, and specifies the proposed correction-through-handoff test in Section 6.
+
 ## Public verification package
 
 - [Print-ready external-review edition](../../output/pdf/the-future-of-ai-and-institutional-memory-paper-six.pdf): generated locally; not released, deposited, or assigned a DOI
@@ -36,11 +40,14 @@ The record does not establish universal model compatibility, complete hosted-pro
 - [Public artifact hashes](SHA256SUMS)
 - [External reproducibility protocol](REPRODUCIBILITY_PROTOCOL.md)
 - [Model-consumption fixture](reproducibility/model-consumption-fixture.json)
+- [Fixed-fixture inference results](evidence/MODEL_CONSUMPTION_20261115.json)
+- [Authenticated-recall inference results](evidence/SCOPED_RECALL_INFERENCE_20261115.json)
 - [Reference scorer](reproducibility/score-model-response.mjs)
 - [Expected passing response](reproducibility/expected-pass-response.json)
+- [Scorer schema compatibility note](SCHEMA_COMPATIBILITY.md)
 - [Cortex Governed Memory Challenge](../../challenges/governed-memory/README.md)
 
-The existing challenge supplies the symbolic governed-memory contract, 12 synthetic fixtures, schema, scoring rules, reference client, API, examples, and lifecycle limits. The Paper 6 companion fixture supplies the separate read-only model-consumption contract. Reviewers can test both layers without access to the proprietary kernel.
+The existing challenge supplies the symbolic governed-memory contract, 12 synthetic fixtures, schema, scoring rules, reference client, API, examples, and lifecycle limits. The Paper 6 companion fixture supplies the separate read-only model-consumption contract. Reviewers can test both layers without access to the proprietary kernel. The current public scorer is Paper 6 v2: malformed captured model JSON is a `FAIL` with its raw hash retained; an unreadable response or invalid fixture is an `INFRASTRUCTURE_FAIL`.
 
 Live endpoint availability is controlled by the challenge status document. If an authorized endpoint is unavailable, a new live result is `NOT_TESTED`; historical results must not be presented as a new run.
 

@@ -51,7 +51,8 @@ All reported records are synthetic and first-party. Original confirmatory eviden
 |---|---:|---|
 | Mac Qwen 35B to Dell Gemma 12B handoff | Pass | One first-party synthetic encrypted-store handoff; governed record identity, history, provenance, and selected model consumption retained |
 | Cross-model parity | Verified | Same two selected governed excerpts, same context/challenge hashes, same normalized result; not all 98 records were given to either model |
-| Authenticated scoped-client scale | Privileged synthetic admission; 1,000/1,000 authenticated expected-only recalls | Live local Docker HTTP/MCP service; one designated cross-scope probe was withheld, one invalid-credential probe and one replay probe were denied; no model inference in this scale trial |
+| Follow-up model consumption | Both local models generated responses on the fixed fixture and on five authenticated scope-local recalls | Qwen 3.5 35B passed the six fixture criteria and all five recall tasks. Qwen 3 4B missed exact fixture citations and failed the required schema on the recall tasks. |
+| Authenticated scoped-client scale | Privileged synthetic admission; 1,000/1,000 authenticated expected-only recalls | Live local Docker HTTP/MCP service; one designated cross-scope probe was withheld, one invalid-credential probe and one replay probe were denied; P6-M06 subsequently tested local inference on five freshly recalled records from the same corpus |
 | Historical kernel pressure baseline | 100 / 1,000 / 10,000 record datasets | Local in-memory historical kernel benchmark; not durable-production or model-provider evidence |
 | Historical governed queue baseline | 100 / 1,000 / 10,000 configured datasets | Deterministic local queue scheduling and recovery; explicitly excludes real workers, tools, connectors, models, and external effects |
 
@@ -65,6 +66,10 @@ partial, and infrastructure results alongside passes.
 The evidence supports saying that, under controlled first-party synthetic tests, Cortex Continuum preserved the tested operational continuity state across named model, client, environment, and runtime replacements while canonical authority remained outside model inference.
 
 The evidence does not support saying that every model passes the contract, every provider is compatible, the system is production-proven, the work has been independently validated, or the tests constitute a security certification.
+
+The fixed model-fixture content checks are lexical checks, not a general measure
+of semantic comprehension. A future semantic study requires a prospectively
+frozen rubric and counterexamples; the historical criteria are retained.
 
 It does support investigating the ADI proposition that model replacement need not transfer record authority or erase institutional continuity.
 

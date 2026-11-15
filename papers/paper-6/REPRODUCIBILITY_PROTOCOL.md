@@ -85,9 +85,12 @@ node reproducibility/score-model-response.mjs response.json
 ```
 
 The scorer returns `PASS`, `FAIL`, or `INFRASTRUCTURE_FAIL`, criterion by
-criterion. Preserve its full JSON output. A `FAIL` is a valid result. Do not
-rerun only because the answer failed. A later run may be reported only as a new,
-separately identified run with its own reason and timestamp.
+criterion. A captured response that is malformed JSON is a model `FAIL` and
+retains its raw-response SHA-256. An unreadable/missing response or an invalid
+fixture is an `INFRASTRUCTURE_FAIL`. Preserve the full scorer output. A `FAIL`
+is a valid result. Do not rerun only because the answer failed. A later run may
+be reported only as a new, separately identified run with its own reason and
+timestamp. See `SCHEMA_COMPATIBILITY.md` for the Paper 6 v2 migration rule.
 
 ### A.3 Required report fields
 
@@ -128,8 +131,8 @@ An outside report may conclude only what its records support. Examples:
   fixtures in that session. It does not certify every deployment.
 - A failed or untested track remains visible. It must not be averaged away.
 - The 1,000-client Paper 6 receipt is a historical first-party logical-client
-  retrieval result with no model inference. An outside reviewer cannot relabel
-  it as their own result without running a new protocol.
+  retrieval result. P6-M06 records a separate five-record inference follow-up.
+  An outside reviewer should report results from their own execution.
 
 ## Minimum external report template
 

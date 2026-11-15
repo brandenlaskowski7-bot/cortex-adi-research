@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "adi.paper6.model-consumption-fixture.v1",
+  "schemaVersion": "adi.paper6.model-consumption-fixture.v2",
   "synthetic": true,
   "logicalPromptSha256": "1cd427d304d4d363f1444284d73d0b69bb762e1f4d931d3476aa26c412e24d97",
   "instructionLines": [

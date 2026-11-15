@@ -14,14 +14,14 @@ This is an ADI hypothesis in an institutional-memory setting. ADI separates prob
 
 | ID | Evidence | Result | Proper claim boundary |
 | --- | --- | --- | --- |
-| P6-01 | Mac-to-Dell synthetic cross-model handoff, 7 Nov | Pass | Named Mac Qwen 35B and Dell Gemma 12B environments completed one controlled handoff. This is not universal provider compatibility. |
-| P6-02 | Cross-model parity, 12 Nov | Verified | Both named models received the same hash-bound context formed from two selected records and produced the same normalized result. The Dell package separately checked 98 synthetic record admission/recall/restart, but neither model consumed all 98. |
-| P6-03 | Scoped-client scale, 15 Nov | Pass after retained setup failure | A privileged synthetic admission channel seeded the scope-local records; 1,000 authenticated logical external clients then recalled their expected records through a live local HTTP/MCP service. One designated foreign-scope probe was withheld; one invalid-credential probe and one replay probe were denied. This is not 1,000 model inferences or exhaustive cross-client adversarial coverage. |
-| P6-04 | Historical kernel pressure baseline | Pass | Immutable local benchmark at source commit `ec5f356` measured 100, 1,000, and 10,000 synthetic-record datasets. It used local in-memory verification persistence and no model/provider calls. |
-| P6-05 | Historical governed-queue baseline | Pass | Local deterministic queue benchmark configured 100, 1,000, and 10,000 datasets and tested admission, limits, backpressure, lineage, and restart recovery. It explicitly stopped before worker/model/tool/connector execution. |
-| P6-06 | Continuity invariance, 6 Nov | Pass | One bounded synthetic record lifecycle preserved identity, history, provenance, scope isolation, revocation and retirement across two encrypted restarts while denying two consumer mutation attempts. |
-| P6-07 | Institutional pressure, 6 Nov | Pass | Local synthetic studies exercised 250 named clients, 1,200 read-only principals, and deterministic lifecycle classification of 1,000,000 dated records. These are bounded local protocols, not production capacity claims. |
-| P6-08 | Governance adversarial history | Mixed, retained | An 11 Sep 25-attack run failed (18 pass, one failure, six inconclusive, one unauthorized effect); a separately receipted 4 Nov rerun passed 25/25 with zero unauthorized effects. Neither is a security certification. |
+| P6-M01 | Mac-to-Dell synthetic cross-model handoff, 7 Nov | Pass | Named Mac Qwen 35B and Dell Gemma 12B environments completed one controlled handoff. This is not universal provider compatibility. |
+| P6-M02 | Cross-model parity, 12 Nov | Verified | Both named models received the same hash-bound context formed from two selected records and produced the same normalized result. The Dell package separately checked 98 synthetic record admission/recall/restart, but neither model consumed all 98. |
+| P6-S03 / P6-A03 | Scoped-client scale, 15 Nov | Pass after retained setup failure | A privileged synthetic admission channel seeded the scope-local records; 1,000 authenticated logical external clients then recalled their expected records through a live local HTTP/MCP service. One designated foreign-scope probe was withheld; one invalid-credential probe and one replay probe were denied. This measures authenticated recall. P6-M06 reports model inference on a five-record sample from the same workload. |
+| P6-H01 | Historical kernel pressure baseline | Pass | Immutable local benchmark at source commit `ec5f356` measured 100, 1,000, and 10,000 synthetic-record datasets. It used local in-memory verification persistence and no model/provider calls. |
+| P6-H02 | Historical governed-queue baseline | Pass | Local deterministic queue benchmark configured 100, 1,000, and 10,000 datasets and tested admission, limits, backpressure, lineage, and restart recovery. It explicitly stopped before worker/model/tool/connector execution. |
+| P6-C01 | Continuity invariance, 6 Nov | Pass | One bounded synthetic record lifecycle preserved identity, history, provenance, scope isolation, revocation and retirement across two encrypted restarts while denying two consumer mutation attempts. |
+| P6-C02 / P6-S01 / P6-S02 | Institutional pressure, 6 Nov | Pass | Local synthetic studies exercised 250 named clients, 1,200 read-only principals, and deterministic lifecycle classification of 1,000,000 dated records. These are bounded local protocols, not production capacity claims. |
+| P6-A01 / P6-A02 | Governance adversarial history | Mixed, retained | An 11 Sep 25-attack run failed (18 pass, one failure, six inconclusive, one unauthorized effect); a separately receipted 4 Nov rerun passed 25/25 with zero unauthorized effects. Neither is a security certification. |
 
 ## Historical pressure records
 
@@ -55,6 +55,11 @@ source hash. It is ordered from record continuity through pressure, model use,
 adversarial results and historical baselines. The catalog’s machine-readable
 counterpart is `evidence/CATALOG.json`.
 
-## Remaining gap
+## Follow-up and proposed study
 
-The strongest next Paper 6 study is prospectively specified mixed-model continuity: an evidence-backed correction may update governed state; conflicting or unsupported model output must remain non-authoritative; a different model must retrieve the correctly resolved state with released-context and receipt hashes retained. That would test model independence and record integrity together without making model output itself authoritative.
+P6-M05 reports new inference on the fixed three-record fixture. P6-M06
+reports new inference on five records freshly retrieved by authenticated
+clients from the original scale corpus. Section 6 of the manuscript specifies
+the prospective extension to the 7 November handoff. It introduces a
+competing proposal, decision-history reconstruction, and a revocation check
+within the same sequence.

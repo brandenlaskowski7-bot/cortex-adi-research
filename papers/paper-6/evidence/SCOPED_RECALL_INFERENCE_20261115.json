@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "adi.paper6.scoped-recall-inference.v1",
+  "startUtc": "2026-11-15T18:41:43.838Z",
+  "priorScaleReceiptSha256": "abc6319b0c9cfe78d66c74eba77ce9ca85e4515e9cb3433fd66f7bee88198aab",
+  "sampleIndices": [
+    1,
+    250,
+    500,
+    750,
+    1000
+  ],
+  "sampling": "Fixed positions spanning the 1,000-grant registry, selected before retrieval.",
+  "runtimeVersion": "0.40.15",
+  "models": {
+    "qwen3:4b": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "qwen3.5:35b": "26025611beeb3fe9e4850b1fdae686bebba7cdfa7f13ddb04955f19872ee022a"
+  },
+  "settings": {
+    "temperature": 0,
+    "seed": 7319,
+    "num_ctx": 4096,
+    "num_predict": 256,
+    "think": false,
+    "method": "chat",
+    "format": "json"
+  },
+  "checks": "Exactly one expected record and its exact source; exact integer fact number and exact cited source in model JSON.",
+  "recalls": [
+    {
+      "sampleIndex": 1,
+      "recordCount": 1,
+      "recordMatches": true,
+      "sourceMatches": true,
+      "releasedPacketSha256": "f58246075a524bfc3ab5425f0440f51fd74d27b682622f44a5dffb67fa032370"
+    },
+    {
+      "sampleIndex": 250,
+      "recordCount": 1,
+      "recordMatches": true,
+      "sourceMatches": true,
+      "releasedPacketSha256": "1002418d9439df7bdb1c30399185db6c39dd354d47ed70022499b679486a62f0"
+    },
+    {
+      "sampleIndex": 500,
+      "recordCount": 1,
+      "recordMatches": true,
+      "sourceMatches": true,
+      "releasedPacketSha256": "53bb03ea77d78c18f08819656a4af2fc411fc9030f16a96d799d5197417f6dc0"
+    },
+    {
+      "sampleIndex": 750,
+      "recordCount": 1,
+      "recordMatches": true,
+      "sourceMatches": true,
+      "releasedPacketSha256": "d751b1b9f56c93a262c1daa7c2b9590254a8ebe58c3e79ad53fa0d17c441bec0"
+    },
+    {
+      "sampleIndex": 1000,
+      "recordCount": 1,
+      "recordMatches": true,
+      "sourceMatches": true,
+      "releasedPacketSha256": "7eeb42e8719faaad3ab7507ef783f5cbef2515efcba5597da0fe907370f191ad"
+    }
+  ],
+  "inferences": [
+    {
+      "sampleIndex": 1,
+      "model": "qwen3:4b",
+      "promptSha256": "45d9db56d0bbd4633cc6b83d5976b90fb0a020517ba50f3891c5299312b7acf7",
+      "startUtc": "2026-11-15T18:41:44.018Z",
+      "rawResponseSha256": "82c8b1926d8aad247c94216269a326e04a0a1b0b10a8097ffbdf321abb6466bc",
+      "generatedTokens": 85,
+      "promptTokens": 160,
+      "doneReason": "stop",
+      "exactSchema": false,
+      "factMatches": false,
+      "citationMatches": false,
+      "disposition": "FAIL",
+      "endUtc": "2026-11-15T18:41:45.342Z"
+    },
+    {
+      "sampleIndex": 250,
+      "model": "qwen3:4b",
+      "promptSha256": "76697f8340559a5b738f4904074a0f9ec03e40c8b56b2a20e2052619bc1c0eed",
+      "startUtc": "2026-11-15T18:41:45.342Z",
+      "rawResponseSha256": "d1607547c1f3a01a9872f219b2af324ca7a42f7766b21dbd07e7240ddcdc5cf7",
+      "generatedTokens": 126,
+      "promptTokens": 164,
+      "doneReason": "stop",
+      "exactSchema": false,
+      "factMatches": false,
+      "citationMatches": false,
+      "disposition": "FAIL",
+      "endUtc": "2026-11-15T18:41:47.101Z"
+    },
+    {
+      "sampleIndex": 500,
+      "model": "qwen3:4b",
+      "promptSha256": "1f36fefaa32436ec9eeabff091e86b911cd49d93c9b2d5ffc6729d02d8686e8a",
+      "startUtc": "2026-11-15T18:41:47.101Z",
+      "rawResponseSha256": "9a373b29023f578c74c44ce398b7722836f1d568cebbcef71af61b286fcd4266",
+      "generatedTokens": 126,
+      "promptTokens": 164,
+      "doneReason": "stop",
+      "exactSchema": false,
+      "factMatches": false,
+      "citationMatches": false,
+      "disposition": "FAIL",
+      "endUtc": "2026-11-15T18:41:48.867Z"
+    },
+    {
+      "sampleIndex": 750,
+      "model": "qwen3:4b",
+      "promptSha256": "d37e4a723c94a79c52990efd2570b4a3137f246846f7e4862025eec717fdb378",
+      "startUtc": "2026-11-15T18:41:48.867Z",
+      "rawResponseSha256": "d17ce6053dd4868854eb10ee64f6546cb63f9cfc7db11e6183832dab821c0625",
+      "generatedTokens": 126,
+      "promptTokens": 164,
+      "doneReason": "stop",
+      "exactSchema": false,
+      "factMatches": false,
+      "citationMatches": false,
+      "disposition": "FAIL",
+      "endUtc": "2026-11-15T18:41:50.808Z"
+    },
+    {
+      "sampleIndex": 1000,
+      "model": "qwen3:4b",
+      "promptSha256": "d33fe62aa107823441dccbb8b957f242f2ca26a297de1b60ebdf0e733bfe4746",
+      "startUtc": "2026-11-15T18:41:50.808Z",
+      "rawResponseSha256": "540a3beb99be729c83097552ae4d1ab2a7a73ac529f584ad081b06a88edc1b73",
+      "generatedTokens": 128,
+      "promptTokens": 166,
+      "doneReason": "stop",
+      "exactSchema": false,
+      "factMatches": false,
+      "citationMatches": false,
+      "disposition": "FAIL",
+      "endUtc": "2026-11-15T18:41:52.602Z"
+    },
+    {
+      "sampleIndex": 1,
+      "model": "qwen3.5:35b",
+      "promptSha256": "45d9db56d0bbd4633cc6b83d5976b90fb0a020517ba50f3891c5299312b7acf7",
+      "startUtc": "2026-11-15T18:41:52.602Z",
+      "rawResponseSha256": "21b7ff36b3dfd809ec8b2da3e5061e157157bddc5d1222df7034c19a2d584dbc",
+      "generatedTokens": 69,
+      "promptTokens": 163,
+      "doneReason": "stop",
+      "exactSchema": true,
+      "factMatches": true,
+      "citationMatches": true,
+      "disposition": "PASS",
+      "endUtc": "2026-11-15T18:42:13.664Z"
+    },
+    {
+      "sampleIndex": 250,
+      "model": "qwen3.5:35b",
+      "promptSha256": "76697f8340559a5b738f4904074a0f9ec03e40c8b56b2a20e2052619bc1c0eed",
+      "startUtc": "2026-11-15T18:42:13.664Z",
+      "rawResponseSha256": "4ae1ed14ccf45db48a4b0290e5b3d650f05304057a07284b3ac7a120c485778d",
+      "generatedTokens": 73,
+      "promptTokens": 167,
+      "doneReason": "stop",
+      "exactSchema": true,
+      "factMatches": true,
+      "citationMatches": true,
+      "disposition": "PASS",
+      "endUtc": "2026-11-15T18:42:14.979Z"
+    },
+    {
+      "sampleIndex": 500,
+      "model": "qwen3.5:35b",
+      "promptSha256": "1f36fefaa32436ec9eeabff091e86b911cd49d93c9b2d5ffc6729d02d8686e8a",
+      "startUtc": "2026-11-15T18:42:14.979Z",
+      "rawResponseSha256": "7d263609138e6a6559d0d7b2267c9fc0d796576abcdce166f69931e2b7ca409e",
+      "generatedTokens": 73,
+      "promptTokens": 167,
+      "doneReason": "stop",
+      "exactSchema": true,
+      "factMatches": true,
+      "citationMatches": true,
+      "disposition": "PASS",
+      "endUtc": "2026-11-15T18:42:16.310Z"
+    },
+    {
+      "sampleIndex": 750,
+      "model": "qwen3.5:35b",
+      "promptSha256": "d37e4a723c94a79c52990efd2570b4a3137f246846f7e4862025eec717fdb378",
+      "startUtc": "2026-11-15T18:42:16.310Z",
+      "rawResponseSha256": "21a3750578ae8ba8b73eefcdc8fea18d9a061c187a28d19104a0fd98b3544f43",
+      "generatedTokens": 73,
+      "promptTokens": 167,
+      "doneReason": "stop",
+      "exactSchema": true,
+      "factMatches": true,
+      "citationMatches": true,
+      "disposition": "PASS",
+      "endUtc": "2026-11-15T18:42:17.629Z"
+    },
+    {
+      "sampleIndex": 1000,
+      "model": "qwen3.5:35b",
+      "promptSha256": "d33fe62aa107823441dccbb8b957f242f2ca26a297de1b60ebdf0e733bfe4746",
+      "startUtc": "2026-11-15T18:42:17.629Z",
+      "rawResponseSha256": "18cccea1d893126db4a5236c736091c857448ad0534299f2e9be460d3f74420b",
+      "generatedTokens": 75,
+      "promptTokens": 169,
+      "doneReason": "stop",
+      "exactSchema": true,
+      "factMatches": true,
+      "citationMatches": true,
+      "disposition": "PASS",
+      "endUtc": "2026-11-15T18:42:18.990Z"
+    }
+  ],
+  "endUtc": "2026-11-15T18:42:18.990Z"
+}

@@ -37,7 +37,7 @@ Use a separately implemented client against the published boundary. Report initi
 
 ### Model consumption
 
-Send the published Paper 6 packet and instruction to a named model. Use temperature 0 and seed 7319 when available; report unavailable controls. Score the response with `reproducibility/score-model-response.mjs`. Preserve the raw-response hash and every failed criterion.
+Send the published Paper 6 packet and instruction to a named model. Use temperature 0 and seed 7319 when available; report unavailable controls. Score the response with `reproducibility/score-model-response.mjs`. Preserve the raw-response hash and every failed criterion. A captured malformed response is a model `FAIL`; a missing/unreadable response or invalid fixture is an `INFRASTRUCTURE_FAIL`.
 
 ### Capacity and adversarial behavior
 
