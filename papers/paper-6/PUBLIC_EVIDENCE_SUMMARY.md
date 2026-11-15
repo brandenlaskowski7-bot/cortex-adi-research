@@ -1,10 +1,12 @@
-# Paper 6 Public Evidence Summary — Model-Independent Scoped Memory
+# Paper 6 Public Evidence Summary — The Future of AI and Institutional Memory
+
+## Model-Independent Scoped Memory
 
 ## Central question
 
-> Can organizations retain governed institutional memory across changing models, machines, and clients while preserving the scope boundaries that keep models from becoming the authority over the records they use?
+> How can organizations and institutions preserve, govern, and use digital records as durable memory across changing AI systems?
 
-Paper 6 tests this as a model-independence and scoped-institutional-memory problem derived from Artificial Deterministic Intelligence (ADI). The record state and access boundary remain external to inference; model, client, machine, or runtime conditions may change.
+Paper 6 tests model-independent scoped memory as an architectural answer to this institutional-memory question. The record state and access boundary remain external to inference; model, client, machine, or runtime conditions may change.
 
 ## Study boundary
 

@@ -1,17 +1,17 @@
 # ADI Research Series Paper 6
 
-## Model-Independent Scoped Memory
+## The Future of AI and Institutional Memory
 
-### A controlled study of institutional scope memory across models, machines, and authenticated clients
+### Model-Independent Scoped Memory
 
 Branden Laskowski · Cortex Agentics Global  
 Unreleased research draft · evidence review
 
 Paper 6 begins with one scientific question:
 
-> Can organizations retain governed institutional memory across changing models, machines, and clients while preserving the scope boundaries that keep models from becoming the authority over the records they use?
+> How can organizations and institutions preserve, govern, and use digital records as durable memory across changing AI systems?
 
-The paper compiles separate first-party synthetic evidence tracks: model and machine handoff, hash-bound cross-model parity, authenticated scoped-client recall, and historical kernel/queue pressure baselines. Each track has its own claim boundary; no composite score is used.
+The paper proposes model-independent scoped memory as an architectural answer: durable institutional records and their access boundaries remain outside inference, while models and clients receive only authorized working views. It compiles separate first-party synthetic evidence tracks: model and machine handoff, hash-bound cross-model parity, authenticated scoped-client recall, and historical kernel/queue pressure baselines. Each track has its own claim boundary; no composite score is used.
 
 This is an empirical extension of Branden Laskowski's Artificial Deterministic Intelligence (ADI) research program. ADI supplies the theory—probabilistic reasoning, deterministic authority—and Cortex Continuum is the evaluated memory substrate. Cite the ADI umbrella paper through its version DOI: [10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200).
 

@@ -1,4 +1,4 @@
-> **Editorial status:** This pre-reconciliation continuity draft is preserved for provenance. Paper Six is now titled **Model-Independent Scoped Memory**. Its current evidence synthesis is [EVIDENCE_RECONCILIATION_20261115.md](EVIDENCE_RECONCILIATION_20261115.md); a full manuscript rewrite remains an owner-review task. The public Paper Five is *The Continuity Substrate* (DOI 10.5281/zenodo.23990079). No new DOI is claimed here.
+> **Editorial status:** This pre-reconciliation continuity draft is preserved for provenance. Paper Six is now titled **The Future of AI and Institutional Memory**, with the subtitle **Model-Independent Scoped Memory**. Its current evidence synthesis is [EVIDENCE_RECONCILIATION_20261115.md](EVIDENCE_RECONCILIATION_20261115.md); a full manuscript rewrite remains an owner-review task. The public Paper Five is *The Continuity Substrate* (DOI 10.5281/zenodo.23990079). No new DOI is claimed here.
 
 # Where Does AI Continuity Live?
 

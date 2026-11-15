@@ -1,8 +1,12 @@
-# Paper 6 evidence reconciliation — 15 November 2026
+# The Future of AI and Institutional Memory
+
+## Model-Independent Scoped Memory
+
+### Paper 6 evidence reconciliation — 15 November 2026
 
 ## Corrected identity
 
-Paper 6 is **Model-Independent Scoped Memory**. It studies whether institutional records and their access scopes can remain independent of any particular model, client, machine, or runtime. The model may consume a released working view; it is not the authority that directly changes the underlying record base.
+Paper 6 asks how organizations and institutions can preserve, govern, and use digital records as durable memory across changing AI systems. **Model-Independent Scoped Memory** is the paper's proposed architectural answer: institutional records and their access scopes remain independent of any particular model, client, machine, or runtime. The model may consume a released working view; it is not the authority that directly changes the underlying record base.
 
 ## Evidence ledger
 

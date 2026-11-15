@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "This is an unpublished Paper Six draft. Cite the repository commit until a separate DOI exists."
-title: "Model-Independent Scoped Memory: A Controlled Study of Institutional Scope Memory Across Models, Machines, and Authenticated Clients"
+title: "The Future of AI and Institutional Memory: Model-Independent Scoped Memory"
 authors:
   - family-names: "Laskowski"
     given-names: "Branden"
@@ -10,7 +10,8 @@ type: article
 license: CC-BY-4.0
 keywords:
   - Artificial Deterministic Intelligence
-  - institutional scope memory
+  - institutional memory
+  - digital records
   - model independence
   - provenance
   - access control
