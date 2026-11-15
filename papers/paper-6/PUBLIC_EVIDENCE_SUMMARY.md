@@ -36,7 +36,7 @@ All reported records are synthetic and first-party. Original confirmatory eviden
 | Restart-directory collision | Infrastructure failure | Excluded from counted repetitions; unchanged sequential runs followed |
 | Simultaneous-client capacity stages | 900/900 operations | Local loopback stages at 5, 10, 25, and 50 named clients |
 | Restart recovery at 50 clients | 50/50 operations | One local synthetic run |
-| Governance-adversarial suite | 25/25 pass | Zero unauthorized effects; not a security certification |
+| Governance-adversarial suite | Later rerun: 25/25 pass | The 4 Nov rerun recorded zero unauthorized effects. The catalog also retains an earlier 11 Sep run with 18/25 pass, one failure, six inconclusive results, and one unauthorized effect; neither result is a security certification. |
 | Dell Gemma 3 12B | 4/5 criteria | Governing-decision failure |
 | Dell Gemma 3 4B | 4/5 criteria | Governing-decision failure |
 | Dell Llama 3.2 3B | 2/5 criteria | Exact citations and no-authority only |
@@ -54,6 +54,11 @@ All reported records are synthetic and first-party. Original confirmatory eviden
 | Authenticated scoped-client scale | Privileged synthetic admission; 1,000/1,000 authenticated expected-only recalls | Live local Docker HTTP/MCP service; one designated cross-scope probe was withheld, one invalid-credential probe and one replay probe were denied; no model inference in this scale trial |
 | Historical kernel pressure baseline | 100 / 1,000 / 10,000 record datasets | Local in-memory historical kernel benchmark; not durable-production or model-provider evidence |
 | Historical governed queue baseline | 100 / 1,000 / 10,000 configured datasets | Deterministic local queue scheduling and recovery; explicitly excludes real workers, tools, connectors, models, and external effects |
+
+The [evidence catalog](EVIDENCE_CATALOG_20261115.md) now links the chain from
+record lifecycle through scope pressure, model substitution, adversarial
+history, and historical baselines. It deliberately retains non-pass,
+partial, and infrastructure results alongside passes.
 
 ## Commercially supportable language
 

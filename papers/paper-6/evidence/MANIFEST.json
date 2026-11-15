@@ -2,6 +2,10 @@
   "schema_version": "adi.paper6.evidence-manifest.v1",
   "classification": "first_party_synthetic_controlled",
   "disclosure": "Raw receipts, implementation details, credentials, personal records, and customer records are excluded.",
+  "catalog_2026_11_15": {
+    "scope": "First-party synthetic evidence index from record continuity through lifecycle, scope pressure, model substitution, adversarial history and historical baselines",
+    "path": "papers/paper-6/evidence/CATALOG.json"
+  },
   "cross_machine_handoff_2026_11_07": {
     "scope": "Named Mac Qwen 35B to Dell Gemma 12B synthetic handoff",
     "mac_model_extraction_receipt_sha256": "9e54cfea7fc1be9882d3211a877ae118ae7a27d484eecf774170bb68d6fb3033",

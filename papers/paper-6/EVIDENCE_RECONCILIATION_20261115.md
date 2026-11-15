@@ -19,6 +19,9 @@ This is an ADI hypothesis in an institutional-memory setting. ADI separates prob
 | P6-03 | Scoped-client scale, 15 Nov | Pass after retained setup failure | A privileged synthetic admission channel seeded the scope-local records; 1,000 authenticated logical external clients then recalled their expected records through a live local HTTP/MCP service. One designated foreign-scope probe was withheld; one invalid-credential probe and one replay probe were denied. This is not 1,000 model inferences or exhaustive cross-client adversarial coverage. |
 | P6-04 | Historical kernel pressure baseline | Pass | Immutable local benchmark at source commit `ec5f356` measured 100, 1,000, and 10,000 synthetic-record datasets. It used local in-memory verification persistence and no model/provider calls. |
 | P6-05 | Historical governed-queue baseline | Pass | Local deterministic queue benchmark configured 100, 1,000, and 10,000 datasets and tested admission, limits, backpressure, lineage, and restart recovery. It explicitly stopped before worker/model/tool/connector execution. |
+| P6-06 | Continuity invariance, 6 Nov | Pass | One bounded synthetic record lifecycle preserved identity, history, provenance, scope isolation, revocation and retirement across two encrypted restarts while denying two consumer mutation attempts. |
+| P6-07 | Institutional pressure, 6 Nov | Pass | Local synthetic studies exercised 250 named clients, 1,200 read-only principals, and deterministic lifecycle classification of 1,000,000 dated records. These are bounded local protocols, not production capacity claims. |
+| P6-08 | Governance adversarial history | Mixed, retained | An 11 Sep 25-attack run failed (18 pass, one failure, six inconclusive, one unauthorized effect); a separately receipted 4 Nov rerun passed 25/25 with zero unauthorized effects. Neither is a security certification. |
 
 ## Historical pressure records
 
@@ -43,6 +46,14 @@ The execution receipt does not itself bind an image digest or runner-source revi
 | 15 Nov private scale receipt | `abc6319b0c9cfe78d66c74eba77ce9ca85e4515e9cb3433fd66f7bee88198aab` |
 
 Raw receipts and kernel implementation are not published here. They contain non-public implementation and client-boundary detail. No personal or customer records are included in this reconciliation.
+
+## Complete retained-evidence map
+
+[EVIDENCE_CATALOG_20261115.md](EVIDENCE_CATALOG_20261115.md) connects each
+included result to its evidence class, bounded conclusion, excluded claim, and
+source hash. It is ordered from record continuity through pressure, model use,
+adversarial results and historical baselines. The catalog’s machine-readable
+counterpart is `evidence/CATALOG.json`.
 
 ## Remaining gap
 
