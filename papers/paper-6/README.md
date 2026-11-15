@@ -9,15 +9,17 @@ Unreleased research draft · evidence review
 
 Paper 6 begins with one scientific question:
 
-> How can organizations and institutions preserve, govern, and use digital records as durable memory across changing AI systems?
+> How can organizations and institutions use deterministic systems outside AI models to continuously absorb, preserve, organize, contextualize, govern, protect, verify, update, and retrieve digital records as durable memory—while allowing changing AI systems to use the information without altering its source, scope, history, or authority?
 
-The paper proposes model-independent scoped memory as an architectural answer: durable institutional records and their access boundaries remain outside inference, while models and clients receive only authorized working views. It compiles separate first-party synthetic evidence tracks: model and machine handoff, hash-bound cross-model parity, authenticated scoped-client recall, and historical kernel/queue pressure baselines. Each track has its own claim boundary; no composite score is used.
+The paper proposes model-independent scoped memory as an architectural answer: deterministic systems outside the model receive, organize, connect records to their evidence and history, govern correction and lifecycle, protect scope, and release authorized working views. Models and clients may use those views but do not directly alter the source, scope, history, or authority of the records. It compiles separate first-party synthetic evidence tracks: model and machine handoff, hash-bound cross-model parity, authenticated scoped-client recall, and historical kernel/queue pressure baselines. Each track has its own claim boundary; no composite score is used.
 
-This is an empirical extension of Branden Laskowski's Artificial Deterministic Intelligence (ADI) research program. ADI supplies the theory—probabilistic reasoning, deterministic authority—and Cortex Continuum is the evaluated memory substrate. Cite the ADI umbrella paper through its version DOI: [10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200).
+This is an empirical extension of Branden Laskowski's Artificial Deterministic Intelligence (ADI) research program. ADI supplies the governing theory: models may perform bounded probabilistic reasoning, while deterministic systems outside the model govern identity, authority, record admission, scope, correction, lifecycle, verification, and release. Cortex Continuum is the evaluated memory substrate. Cite the ADI umbrella paper through its version DOI: [10.5281/zenodo.23265200](https://doi.org/10.5281/zenodo.23265200).
 
 The current record supports this bounded statement:
 
 > In controlled first-party synthetic tests, named models and authenticated clients consumed governed, scope-limited record context while canonical record authority remained outside model inference.
+
+This is the ADI claim under test: model capability and model authority are separate variables. A model may be useful, wrong, replaced, or unavailable without becoming the controller of institutional memory.
 
 The record does not establish universal model compatibility, complete hosted-provider portability, production readiness, security certification, or independent replication.
 

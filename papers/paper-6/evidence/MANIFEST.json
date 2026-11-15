@@ -14,10 +14,11 @@
     "context_sha256": "c373b08be8a60665523e1799eb7cbbc3d8f547c493d7ed0adb4e4d70ab146bc7"
   },
   "scoped_client_scale_2026_11_15": {
-    "scope": "1,000 authenticated logical external clients against a live local Docker service; no model inference",
+    "scope": "Privileged synthetic admission followed by 1,000 authenticated logical external-client recalls against a live local Docker service; one cross-scope, one invalid-credential, and one replay probe; no model inference",
+    "retained_nonpass_attempt_receipt_sha256": "7d5a1ca283b9744f743a2a26f92219c1cc2040140e9ca98809755eced977a441",
     "private_execution_receipt_sha256": "abc6319b0c9cfe78d66c74eba77ce9ca85e4515e9cb3433fd66f7bee88198aab",
-    "runner_source_sha256": "03775a0bad69ec4572b110ce6ffc348ee41ec1c1c70eb75a28e794668c8707f7",
-    "container_image_digest": "sha256:ccab2f7b66d41b1baff3e488605cb5a7e4d7b9daab8a854739e04027ae3fda7f"
+    "runner_source_sha256_at_audit": "03775a0bad69ec4572b110ce6ffc348ee41ec1c1c70eb75a28e794668c8707f7",
+    "reported_container_image_digest_pending_execution_binding_verification": "sha256:ccab2f7b66d41b1baff3e488605cb5a7e4d7b9daab8a854739e04027ae3fda7f"
   },
   "historical_kernel_pressure_2026_07": {
     "scope": "Historical local in-memory benchmark at source checkpoint ec5f356; 100, 1,000, and 10,000 synthetic-record datasets; no model/provider calls",

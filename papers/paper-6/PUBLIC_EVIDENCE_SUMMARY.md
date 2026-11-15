@@ -4,9 +4,11 @@
 
 ## Central question
 
-> How can organizations and institutions preserve, govern, and use digital records as durable memory across changing AI systems?
+> How can organizations and institutions use deterministic systems outside AI models to continuously absorb, preserve, organize, contextualize, govern, protect, verify, update, and retrieve digital records as durable memory—while allowing changing AI systems to use the information without altering its source, scope, history, or authority?
 
 Paper 6 tests model-independent scoped memory as an architectural answer to this institutional-memory question. The record state and access boundary remain external to inference; model, client, machine, or runtime conditions may change.
+
+ADI provides the scientific framing. Probabilistic inference may generate a useful proposal, but deterministic systems external to the model govern whether a record is admitted, what scope may retrieve it, what correction is current, and what evidence remains linked to it. This paper evaluates that separation at the institutional-memory boundary.
 
 ## Study boundary
 
@@ -49,7 +51,7 @@ All reported records are synthetic and first-party. Original confirmatory eviden
 |---|---:|---|
 | Mac Qwen 35B to Dell Gemma 12B handoff | Pass | One first-party synthetic encrypted-store handoff; governed record identity, history, provenance, and selected model consumption retained |
 | Cross-model parity | Verified | Same two selected governed excerpts, same context/challenge hashes, same normalized result; not all 98 records were given to either model |
-| Authenticated scoped-client scale | 1,000/1,000 admission and expected-only recall | Live local Docker HTTP/MCP service; cross-scope withheld, invalid credential and replay denied; no model inference in this scale trial |
+| Authenticated scoped-client scale | Privileged synthetic admission; 1,000/1,000 authenticated expected-only recalls | Live local Docker HTTP/MCP service; one designated cross-scope probe was withheld, one invalid-credential probe and one replay probe were denied; no model inference in this scale trial |
 | Historical kernel pressure baseline | 100 / 1,000 / 10,000 record datasets | Local in-memory historical kernel benchmark; not durable-production or model-provider evidence |
 | Historical governed queue baseline | 100 / 1,000 / 10,000 configured datasets | Deterministic local queue scheduling and recovery; explicitly excludes real workers, tools, connectors, models, and external effects |
 
@@ -58,6 +60,8 @@ All reported records are synthetic and first-party. Original confirmatory eviden
 The evidence supports saying that, under controlled first-party synthetic tests, Cortex Continuum preserved the tested operational continuity state across named model, client, environment, and runtime replacements while canonical authority remained outside model inference.
 
 The evidence does not support saying that every model passes the contract, every provider is compatible, the system is production-proven, the work has been independently validated, or the tests constitute a security certification.
+
+It does support investigating the ADI proposition that model replacement need not transfer record authority or erase institutional continuity.
 
 ## Independent testing path
 

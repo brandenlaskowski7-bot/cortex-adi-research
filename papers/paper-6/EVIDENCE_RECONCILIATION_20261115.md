@@ -6,7 +6,9 @@
 
 ## Corrected identity
 
-Paper 6 asks how organizations and institutions can preserve, govern, and use digital records as durable memory across changing AI systems. **Model-Independent Scoped Memory** is the paper's proposed architectural answer: institutional records and their access scopes remain independent of any particular model, client, machine, or runtime. The model may consume a released working view; it is not the authority that directly changes the underlying record base.
+Paper 6 asks how organizations and institutions can use deterministic systems outside AI models to continuously absorb, preserve, organize, contextualize, govern, protect, verify, update, and retrieve digital records as durable memory—while allowing changing AI systems to use the information without altering its source, scope, history, or authority. **Model-Independent Scoped Memory** is the paper's proposed architectural answer: institutional records and their access scopes remain independent of any particular model, client, machine, or runtime. The model may consume a released working view; it is not the authority that directly changes the underlying record base.
+
+This is an ADI hypothesis in an institutional-memory setting. ADI separates probabilistic reasoning from deterministic authority: a model can propose or consume information, but deterministic systems outside the model govern identity, record admission, scope, provenance, correction, lifecycle, verification, and release. The evidence below tests parts of that separation; it does not claim that any finite test proves universal model safety.
 
 ## Evidence ledger
 
@@ -14,7 +16,7 @@ Paper 6 asks how organizations and institutions can preserve, govern, and use di
 | --- | --- | --- | --- |
 | P6-01 | Mac-to-Dell synthetic cross-model handoff, 7 Nov | Pass | Named Mac Qwen 35B and Dell Gemma 12B environments completed one controlled handoff. This is not universal provider compatibility. |
 | P6-02 | Cross-model parity, 12 Nov | Verified | Both named models received the same hash-bound context formed from two selected records and produced the same normalized result. The Dell package separately checked 98 synthetic record admission/recall/restart, but neither model consumed all 98. |
-| P6-03 | Scoped-client scale, 15 Nov | Pass | 1,000 authenticated logical clients admitted and recalled their expected synthetic scoped records through a live local HTTP/MCP service. Foreign scope was withheld; invalid credential and replay were denied. This is not 1,000 model inferences. |
+| P6-03 | Scoped-client scale, 15 Nov | Pass after retained setup failure | A privileged synthetic admission channel seeded the scope-local records; 1,000 authenticated logical external clients then recalled their expected records through a live local HTTP/MCP service. One designated foreign-scope probe was withheld; one invalid-credential probe and one replay probe were denied. This is not 1,000 model inferences or exhaustive cross-client adversarial coverage. |
 | P6-04 | Historical kernel pressure baseline | Pass | Immutable local benchmark at source commit `ec5f356` measured 100, 1,000, and 10,000 synthetic-record datasets. It used local in-memory verification persistence and no model/provider calls. |
 | P6-05 | Historical governed-queue baseline | Pass | Local deterministic queue benchmark configured 100, 1,000, and 10,000 datasets and tested admission, limits, backpressure, lineage, and restart recovery. It explicitly stopped before worker/model/tool/connector execution. |
 
@@ -23,6 +25,12 @@ Paper 6 asks how organizations and institutions can preserve, govern, and use di
 The private Children’s First worktree preserved the historical kernel source checkpoint and raw benchmark JSON. Its 10,000-record local in-memory dataset reported 716.231 records/second, end-to-end p95 3.705 ms, and retrieval p95 2.474 ms. These figures characterize that historical local benchmark only; they are not durable-storage, network, cloud-model, or production latency claims.
 
 The distinct queue benchmark reported deterministic local queue behavior under declared concurrency levels and persistence backends. It must not be merged into the memory-kernel throughput claim because it measures scheduling and proposal-only completion, not model work or record interpretation.
+
+## Retained 1,000-client execution history
+
+The first 1,000-client attempt recorded 999 successful synthetic admissions and 999 expected-only recalls. It is retained as a non-pass because one separately configured client shared an existing scope and the runner used an incorrect scope-seat mapping for that client. The runner was corrected and the complete protocol was repeated. The corrected run recorded privileged synthetic admission followed by 1,000 authenticated expected-only recalls. The corrected receipt contains one designated cross-scope negative probe, one invalid-credential probe, and one replay probe; it must not be read as exhaustive pairwise adversarial testing.
+
+The execution receipt does not itself bind an image digest or runner-source revision to the run. Those identifiers are reported environment and artifact references pending a separate execution-binding verification.
 
 ## Evidence integrity identifiers
 
