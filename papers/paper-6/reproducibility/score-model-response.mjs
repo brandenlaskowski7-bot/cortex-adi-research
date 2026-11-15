@@ -61,7 +61,7 @@ const criteria = {
 const passed = Object.values(criteria).every(Boolean)
 const rawResponse = await readFile(resolve(responsePath), 'utf8')
 const result = {
-  schemaVersion: 'adi.paper5.model-consumption-score.v1',
+  schemaVersion: 'adi.paper6.model-consumption-score.v1',
   disposition: passed ? 'PASS' : 'FAIL',
   logicalPromptSha256,
   rawResponseSha256: createHash('sha256').update(rawResponse).digest('hex'),

@@ -30,9 +30,9 @@ from reportlab.platypus import (
 )
 
 
-ROOT = Path(__file__).resolve().parent
-SOURCE = ROOT / "MANUSCRIPT.md"
-DEFAULT_OUTPUT = ROOT.parents[1] / "output" / "pdf" / "paper-6-preprint-candidate.pdf"
+PAPER_ROOT = Path(__file__).resolve().parents[1]
+SOURCE = PAPER_ROOT / "MANUSCRIPT.md"
+DEFAULT_OUTPUT = PAPER_ROOT.parents[1] / "output" / "pdf" / "paper-6-review-edition.pdf"
 
 NAVY = colors.HexColor("#17324D")
 BLUE = colors.HexColor("#2E6F9E")
@@ -104,10 +104,10 @@ class PreprintDocTemplate(BaseDocTemplate):
 
     def _decorate(self, canvas, doc):
         canvas.saveState()
-        canvas.setTitle("Where Does AI Continuity Live?")
+        canvas.setTitle("The Future of AI and Institutional Memory")
         canvas.setAuthor("Branden Laskowski")
-        canvas.setSubject("ADI Research Series Paper 6 - preprint candidate")
-        canvas.setKeywords("Artificial Deterministic Intelligence, ADI, governed memory, continuity, model substitution")
+        canvas.setSubject("Model-Independent Scoped Memory - ADI Research Series Paper 6")
+        canvas.setKeywords("Artificial Deterministic Intelligence, ADI, institutional memory, digital records, model independence, provenance")
         width, height = letter
         if doc.page > 1:
             canvas.setStrokeColor(RULE)
@@ -343,7 +343,7 @@ def build(source: Path, output: Path) -> None:
     lines = text.splitlines()
     title = ascii_pdf(next(line[2:] for line in lines if line.startswith("# ")))
     subtitle = ascii_pdf(next(line[3:] for line in lines if line.startswith("## ")))
-    abstract_index = next(i for i, line in enumerate(lines) if line.strip() == "### Abstract")
+    abstract_index = next(i for i, line in enumerate(lines) if line.strip() == "## Abstract")
     st = styles()
     story: list = [
         Spacer(1, 0.72 * inch),
@@ -353,10 +353,10 @@ def build(source: Path, output: Path) -> None:
         Paragraph("Branden Laskowski", st["author"]),
         Paragraph("Cortex Agentics Global", st["meta"]),
         Paragraph("ADI Research Series - Paper 6", st["meta"]),
-        Paragraph("Preprint candidate v0.9 - Evidence review - 4 November 2026", st["meta"]),
+        Paragraph("Unreleased preprint candidate - evidence review - 15 November 2026", st["meta"]),
         Spacer(1, 0.38 * inch),
         Paragraph(
-            "When the model, client, machine, or runtime changes, can one governed memory substrate preserve the exact continuity of work without transferring authority over memory to the replacement model?",
+            "How can organizations preserve, govern, and use digital records as durable memory across changing AI systems while keeping record authority outside the model?",
             st["question"],
         ),
         Spacer(1, 0.16 * inch),

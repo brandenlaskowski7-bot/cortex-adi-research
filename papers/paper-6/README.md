@@ -25,7 +25,7 @@ The record does not establish universal model compatibility, complete hosted-pro
 
 ## Public verification package
 
-- Rendered preprint: **not yet generated or approved as Paper Six**
+- [Print-ready external-review edition](../../output/pdf/the-future-of-ai-and-institutional-memory-paper-six.pdf): generated locally; not released, deposited, or assigned a DOI
 - [Manuscript](MANUSCRIPT.md)
 - [Public evidence summary](PUBLIC_EVIDENCE_SUMMARY.md)
 - [Evidence reconciliation — 15 November 2026](EVIDENCE_RECONCILIATION_20261115.md)
@@ -34,6 +34,7 @@ The record does not establish universal model compatibility, complete hosted-pro
 - [Deposit metadata](METADATA.json)
 - [Citation metadata](CITATION.cff)
 - [Public artifact hashes](SHA256SUMS)
+- [External reproducibility protocol](REPRODUCIBILITY_PROTOCOL.md)
 - [Model-consumption fixture](reproducibility/model-consumption-fixture.json)
 - [Reference scorer](reproducibility/score-model-response.mjs)
 - [Expected passing response](reproducibility/expected-pass-response.json)
@@ -47,6 +48,6 @@ Live endpoint availability is controlled by the challenge status document. If an
 
 This branch contains research prose, synthetic fixtures, a public scorer, and bounded evidence summaries. It does not disclose proprietary subsystem names, internal role labels, implementation topology, source code for the private kernel, private records, credentials, or production deployment details.
 
-## Relationship to Paper Five
+## Relationship to Paper 5
 
-[Paper Five — *The Continuity Substrate*](../paper-5/README.md) introduces the substrate. Paper Six evaluates the narrower question of whether the institutional memory and its scopes remain independent of a particular model. The 1,000-client trial is logical authenticated-client scope evidence, not a claim of 1,000 simultaneous model inferences or a completed multi-agent model study.
+[Paper 5 - *The Continuity Substrate*](../paper-5/README.md) introduces the substrate. Paper 6 asks the next question: how can organizations preserve, govern, and use digital records as durable memory while models change? The 1,000-client trial is logical authenticated-client scope evidence, not a claim of 1,000 simultaneous model inferences or a completed multi-agent model study.

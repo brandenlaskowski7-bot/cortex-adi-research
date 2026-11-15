@@ -1,6 +1,6 @@
 # Paper Six preparation status
 
-This document was preserved and renumbered from the earlier Paper Five candidate. **No Paper Six release, Zenodo deposit, DOI or final PDF is claimed.** The legacy Paper Five PDF was intentionally not copied because it still contained the former number.
+**No Paper 6 release, Zenodo deposit, DOI, or final approved publication is claimed.** A local print-ready review edition exists, but it is not a published preprint. Paper 5 remains *The Continuity Substrate*; Paper 6 is *The Future of AI and Institutional Memory: Model-Independent Scoped Memory*.
 
 # Paper 6 Preprint Readiness Record
 
@@ -28,6 +28,7 @@ Status: preprint candidate prepared for owner review; not released, deposited, o
 - [x] Cortex Continuum Benchmark v1
 - [x] Independent replication report template
 - [x] Public artifact hash manifest
+- [x] External reproducibility protocol with required independent-report fields
 
 ## Disclosure review
 
